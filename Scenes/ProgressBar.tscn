@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://Sprites/greenBar.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/redBar.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/playerBillboard.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=5]
+[ext_resource path="res://Scripts/Hitsplat.gd" type="Script" id=6]
+
+[sub_resource type="StyleBoxTexture" id=12]
+texture = ExtResource( 1 )
+region_rect = Rect2( 0, 0, 554, 55 )
+margin_left = 4.96381
+margin_right = 4.76786
+
+[sub_resource type="StyleBoxTexture" id=13]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 554, 55 )
+margin_left = 4.303
+margin_right = 4.37984
+
+[node name="Player" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.44017, 0 )
+
+[node name="ProgressBarSprite" type="Sprite3D" parent="."]
+transform = Transform( -1.23756, 0.0011577, 0, -0.00150039, -1.60389, 0, 0, 0, 0.876285, 0, 1.12369, 0 )
+billboard = 1
+script = ExtResource( 2 )
+
+[node name="HitSplat" type="Sprite3D" parent="."]
+transform = Transform( 1.90893, -9.31323e-10, 0, 1.62981e-09, 1.90893, 0, 0, 0, 1.90893, -0.216779, -0.68756, 0.795292 )
+billboard = 1
+double_sided = false
+texture = ExtResource( 5 )
+script = ExtResource( 6 )
+
+[node name="PlayerSprite" type="Sprite3D" parent="."]
+transform = Transform( 9.16748, -3.72529e-09, 0, 8.3819e-09, 9.16748, 0, 0, 0, 9.16749, 0, 0, 0 )
+billboard = 1
+double_sided = false
+texture = ExtResource( 4 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 280, 27 )
+transparent_bg = true
+render_target_v_flip = true
+
+[node name="ProgressBar" type="ProgressBar" parent="Viewport"]
+margin_right = 280.0
+margin_bottom = 25.0
+custom_styles/fg = SubResource( 12 )
+custom_styles/bg = SubResource( 13 )
+step = 1.0
+value = 100.0
+rounded = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="value_changed" from="Viewport/ProgressBar" to="ProgressBarSprite" method="_on_ProgressBar_value_changed"]

@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/Jad.obj-3f2909d1c9d76cff0900d85f3ee7dfda.mesh"
+
+[deps]
+
+files=[ "res://.import/Jad.obj-3f2909d1c9d76cff0900d85f3ee7dfda.mesh" ]
+
+source_file="res://Models/Jad.obj"
+dest_files=[ "res://.import/Jad.obj-3f2909d1c9d76cff0900d85f3ee7dfda.mesh", "res://.import/Jad.obj-3f2909d1c9d76cff0900d85f3ee7dfda.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -1,0 +1,169 @@
+[gd_scene load_steps=13 format=2]
+
+[ext_resource path="res://Sprites/PrayTab/PrayOff.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
+[ext_resource path="res://Sprites/PrayIcon/mageIcon.png" type="Texture" id=3]
+[ext_resource path="res://Font/rsFont.tres" type="DynamicFont" id=4]
+[ext_resource path="res://SFX/mage.wav" type="AudioStream" id=5]
+[ext_resource path="res://SFX/ranged.wav" type="AudioStream" id=6]
+[ext_resource path="res://Scripts/RichTextLabel.gd" type="Script" id=7]
+
+
+
+
+
+
+
+
+[sub_resource type="Theme" id=4]
+
+[sub_resource type="StyleBoxFlat" id=5]
+content_margin_left = 10.0
+content_margin_right = 0.0
+content_margin_top = 10.0
+bg_color = Color( 0.6, 0.6, 0.6, 0 )
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.203922, 0.74902, 0.0901961, 1 )
+border_width_left = 6
+border_width_top = 3
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.180392, 0.627451, 0, 1 )
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.87451, 0, 0, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0, 0, 0, 1 )
+border_blend = true
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+
+[sub_resource type="DynamicFont" id=3]
+
+[node name="PrayNode" type="Node2D"]
+
+[node name="PrayPanel" type="Sprite" parent="."]
+position = Vector2( 904.929, 435.439 )
+texture = ExtResource( 1 )
+
+[node name="MageButton" type="Button" parent="."]
+margin_left = 849.326
+margin_top = 423.653
+margin_right = 887.326
+margin_bottom = 458.653
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RangedButton" type="Button" parent="."]
+margin_left = 888.327
+margin_top = 423.653
+margin_right = 926.327
+margin_bottom = 458.653
+focus_mode = 0
+toggle_mode = true
+enabled_focus_mode = 0
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Prayers" type="Node" parent="."]
+script = ExtResource( 2 )
+
+[node name="Mage" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -10.0
+
+[node name="Range" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+volume_db = -10.0
+
+[node name="PrayerIcon" type="Sprite" parent="."]
+position = Vector2( 411.701, 287.053 )
+scale = Vector2( 1.0264, 1.0264 )
+z_index = 4
+texture = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+margin_left = 452.682
+margin_top = 297.789
+margin_right = 492.682
+margin_bottom = 337.789
+theme = SubResource( 4 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/normal_font = ExtResource( 4 )
+custom_colors/default_color = Color( 0.988235, 1, 0.0666667, 1 )
+text = "0"
+scroll_active = false
+script = ExtResource( 7 )
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+margin_left = 362.092
+margin_top = 311.052
+margin_right = 457.092
+margin_bottom = 325.052
+rect_scale = Vector2( 0.983628, 0.71201 )
+custom_styles/fg = SubResource( 1 )
+custom_styles/bg = SubResource( 2 )
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 0.976471, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+step = 1.0
+value = 100.0
+rounded = true
+allow_greater = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect1" type="ColorRect" parent="."]
+visible = false
+margin_left = 400.444
+margin_top = 193.761
+margin_right = 440.444
+margin_bottom = 233.761
+color = Color( 0.0666667, 0.2, 0.921569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+visible = false
+margin_left = 566.01
+margin_top = 340.512
+margin_right = 606.01
+margin_bottom = 380.512
+color = Color( 0.0666667, 0.2, 0.921569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect3" type="ColorRect" parent="."]
+visible = false
+margin_left = 224.914
+margin_top = 330.948
+margin_right = 264.914
+margin_bottom = 370.948
+color = Color( 0.0666667, 0.2, 0.921569, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[connection signal="toggled" from="MageButton" to="Prayers" method="_on_mage_toggled"]
+[connection signal="toggled" from="RangedButton" to="Prayers" method="_on_ranged_toggled"]
