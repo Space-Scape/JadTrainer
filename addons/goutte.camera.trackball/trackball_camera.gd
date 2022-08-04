@@ -34,7 +34,7 @@ extends Camera
 # - (you <3)
 
 # Keep the horizon stable, the UP to Y
-export var stabilize_horizon = false
+export var stabilize_horizon = true
 export var mouse_enabled = true
 export var mouse_invert = false
 export var mouse_strength = 1.0
@@ -119,7 +119,7 @@ func input(event):
 
 func handle_input_mouse(event):
 	if (not mouse_move_mode) and (event is InputEventMouseButton):
-		if event.pressed and event.button_index == BUTTON_RIGHT:
+		if event.pressed and event.button_index == BUTTON_MIDDLE:
 			_mouseDragStart = get_mouse_position()
 		else:
 			_mouseDragStart = null
@@ -241,6 +241,3 @@ func apply_rotation_from_tangent(tangent):
 func get_mouse_position():
 	return get_viewport().get_mouse_position() \
 			/ get_viewport().get_visible_rect().size
-
-
-# That's all folks!
