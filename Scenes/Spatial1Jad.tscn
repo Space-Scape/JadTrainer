@@ -26206,54 +26206,54 @@ shortcut = SubResource( 25 )
 
 [sub_resource type="AtlasTexture" id=27]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 0, 82, 80 )
+region = Rect2( 0, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 0, 82, 80 )
+region = Rect2( 82, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 0, 82, 80 )
+region = Rect2( 164, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 0, 82, 80 )
+region = Rect2( 246, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 0, 80, 80 )
+region = Rect2( 320, 80, 80, 80 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 80, 82, 80 )
+region = Rect2( 0, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 80, 82, 80 )
+region = Rect2( 82, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 80, 82, 80 )
+region = Rect2( 164, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 80, 82, 80 )
+region = Rect2( 246, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 80, 80, 80 )
+region = Rect2( 320, 0, 80, 80 )
 
 [sub_resource type="SpriteFrames" id=37]
 animations = [ {
 "frames": [ SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
 "loop": true,
-"name": "Brew",
+"name": "Rest",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ) ],
 "loop": true,
-"name": "Rest",
+"name": "Brew",
 "speed": 5.0
 } ]
 
@@ -26378,7 +26378,7 @@ func _ready():
 	
 	select(0)
 
-func _on_OptionButton_item_selected(index):
+func _on_OptionButton_item_selected(_index):
 	if selected == 0:
 		key.set_shortcut(InputMap.get_action_list(\"F1\")[0])
 		$\"../../../TopTab/InvButton\".set_shortcut(key)
@@ -26459,9 +26459,6 @@ size = 66.0
 near = 0.01
 far = 1200.0
 script = ExtResource( 9 )
-action_pitchUp = "e"
-action_pitchDown = "q"
-zoom_strength = 5.0
 
 [node name="Jad" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
