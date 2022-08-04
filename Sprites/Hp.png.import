@@ -2,15 +2,33 @@
 
 importer="texture"
 type="StreamTexture"
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Sprites/Hp.png.import
 path="res://.import/Hp.png-8913d533e32449868b0cd3308d10c6da.stex"
+=======
+path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+>>>>>>> Stashed changes:addons/C#/icon.png.import
+=======
+path="res://.import/Hp.png-8913d533e32449868b0cd3308d10c6da.stex"
+>>>>>>> Stashed changes
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
+<<<<<<< Updated upstream
+<<<<<<< Updated upstream:Sprites/Hp.png.import
 source_file="res://Sprites/Hp.png"
 dest_files=[ "res://.import/Hp.png-8913d533e32449868b0cd3308d10c6da.stex" ]
+=======
+source_file="res://icon.png"
+dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
+>>>>>>> Stashed changes:addons/C#/icon.png.import
+=======
+source_file="res://Sprites/Hp.png"
+dest_files=[ "res://.import/Hp.png-8913d533e32449868b0cd3308d10c6da.stex" ]
+>>>>>>> Stashed changes
 
 [params]
 
