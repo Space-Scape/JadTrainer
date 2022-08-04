@@ -49,6 +49,7 @@ func _process(_x):
 
 func _on_mage_toggled(button_pressed):
 	if button_pressed and canPray:
+		$"../MagePray".play()
 		Globals.prayingMage = true
 		Globals.prayingRange = false
 		Globals.prayingMelee = false
@@ -79,6 +80,7 @@ func _on_mage_toggled(button_pressed):
 
 func _on_ranged_toggled(button_pressed):
 	if button_pressed and canPray: 
+		$"../RangePray".play()
 		Globals.prayingMage = false
 		Globals.prayingRange = true
 		Globals.prayingMelee = false

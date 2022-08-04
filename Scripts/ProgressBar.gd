@@ -2,6 +2,9 @@ extends Sprite3D
 
 onready var HpInput = $"../../PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl".text
 
+func _ready():
+	$"../Viewport/ProgressBar".max_value = 99
+
 func _process(_x):
 	if $"../Viewport/ProgressBar".value <= 0:
 		Globals.playerDied = true
@@ -10,21 +13,12 @@ func _process(_x):
 		Globals.playerDied = false
 	
 	if Globals.playerDied:
-<<<<<<< Updated upstream
-=======
-		Globals.hitDmg = false
->>>>>>> Stashed changes
 		$"../Viewport/ProgressBar".value = $"../Viewport/ProgressBar".max_value
 		$"../../PrayNode/OrbContainer/PrayerBar".value = $"../../PrayNode/OrbContainer/PrayerBar".max_value
 		$"../../Jad/KinematicBody/Viewport/TextureProgress".value = 255
 		$"../../PrayNode/OrbContainer2/HpBar".value = $"../../PrayNode/OrbContainer2/HpBar".max_value
 		$"../../Jad/KinematicBody/Viewport/HitSplat2".hide()
 		$"../../Jad/KinematicBody/Viewport/HitsplatNum2".hide()
-<<<<<<< Updated upstream
-=======
-		$"../Viewport/HitSplat".hide()
-		$"../Viewport/HitsplatNum".hide()
->>>>>>> Stashed changes
 		$"../../Healers/HealerFrontL/Timer".stop()
 		$"../../Healers/HealerBackL/Timer".stop()
 		$"../../Healers/HealerFrontR/Timer".stop()
