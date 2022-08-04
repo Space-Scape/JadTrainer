@@ -44,14 +44,14 @@ func _on_Player_area_entered(area):
 		Globals.hitDmg = false
 		
 	
-	if Globals.prayOff and area.get_name() == "Fireball":
+	if Globals.prayOff or Globals.prayingMelee and area.get_name() == "Fireball":
 		streakCounter.set_text(str(zero))
 		hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 		hpBar.value -= num
 		hpOrb.value -= num
 		hitSplat.show()
 		Globals.hitDmg = true
-	if Globals.prayOff and area.get_name() == "Boulder":
+	if Globals.prayOff or Globals.prayingMelee and area.get_name() == "Boulder":
 		streakCounter.set_text(str(zero))
 		hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 		hpBar.value -= num
