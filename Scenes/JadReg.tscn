@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=2]
+[gd_scene load_steps=46 format=2]
 
 [ext_resource path="res://Anim/MageAnim.tres" type="Animation" id=1]
 [ext_resource path="res://Scripts/RNG.gd" type="Script" id=2]
@@ -16,7 +16,6 @@
 [ext_resource path="res://Models/mats/tztj/mat902.material" type="Material" id=14]
 [ext_resource path="res://Models/mats/tztj/mat62342.material" type="Material" id=15]
 [ext_resource path="res://Models/mats/tztj/mat63368.material" type="Material" id=16]
-[ext_resource path="res://Scenes/Maging.tres" type="Material" id=17]
 [ext_resource path="res://Models/mats/tztj/mat65426.material" type="Material" id=18]
 [ext_resource path="res://Models/mats/tztj/mat64396.material" type="Material" id=19]
 
@@ -179,49 +178,6 @@ surfaces/12 = {
 "vertex_count": 50
 }
 
-[sub_resource type="Skin" id=2]
-resource_name = "Skin"
-bind_count = 13
-bind/0/name = "bone"
-bind/0/bone = -1
-bind/0/pose = Transform( 1, 6.90773e-07, -1.85541e-07, 3.97903e-13, 0.259404, 0.965769, 7.15256e-07, -0.965767, 0.259404, -2.76889e-06, -0.539796, 3.87118 )
-bind/1/name = "bone_1"
-bind/1/bone = -1
-bind/1/pose = Transform( 1, 6.27833e-07, 2.84217e-14, -4.01691e-13, 5.66243e-07, 1, 6.27831e-07, -0.999998, 1.7844e-20, -2.59804e-06, -0.482887, 4.13809 )
-bind/2/name = "bone_2"
-bind/2/bone = -1
-bind/2/pose = Transform( 1, 6.27833e-07, -1.12031e-26, -3.73269e-13, 5.66243e-07, 1, 6.27831e-07, -0.999998, -7.03366e-33, -2.59804e-06, -1.8258, 4.13809 )
-bind/3/name = "bone_3"
-bind/3/bone = -1
-bind/3/pose = Transform( 1, 5.68433e-14, -7.15256e-07, 2.92743e-12, 0.999998, 5.96046e-07, 7.15255e-07, 4.06575e-20, 1, 1.30591e-06, -4.13809, -1.8258 )
-bind/4/name = "bone_4"
-bind/4/bone = -1
-bind/4/pose = Transform( 1, 7.14153e-07, 3.96994e-08, -5.08037e-13, -0.0555029, 0.998458, 7.15254e-07, -0.998456, -0.0555037, -3.836e-06, -1.53049, 5.3631 )
-bind/5/name = "bone_5"
-bind/5/bone = -1
-bind/5/pose = Transform( 0.125642, -0.226947, -0.965769, 0.874876, 0.484345, 3.42726e-07, 0.467766, -0.844926, 0.259404, 1.40548, -2.00427, 3.37113 )
-bind/6/name = "bone_6"
-bind/6/bone = -1
-bind/6/pose = Transform( -0.249523, -0.0709134, -0.965769, 0.273371, -0.961906, -5.88595e-07, -0.928981, -0.264013, 0.259403, 1.35591, 4.51542, 3.18658 )
-bind/7/name = "bone_7"
-bind/7/bone = -1
-bind/7/pose = Transform( -0.259404, -3.86541e-09, -0.965769, -1.05145e-07, -0.999998, -6.21235e-07, -0.965769, -1.4391e-08, 0.259404, 1.15798, 3.16256, 2.4497 )
-bind/8/name = "bone_8"
-bind/8/bone = -1
-bind/8/pose = Transform( 0.111842, 0.234057, 0.965768, -0.902282, 0.431146, 1.19209e-07, -0.416388, -0.871393, 0.259406, -1.43491, -1.78413, 3.48065 )
-bind/9/name = "bone_9"
-bind/9/bone = -1
-bind/9/pose = Transform( -0.252874, 0.0578461, 0.965769, -0.222995, -0.974818, -4.99188e-07, 0.94145, -0.215361, 0.259406, -1.30769, 4.55496, 3.00705 )
-bind/10/name = "bone_10"
-bind/10/bone = -1
-bind/10/pose = Transform( -0.259406, 7.4632e-09, 0.965768, -8.29446e-08, -0.999998, -4.95404e-07, 0.965769, -1.34247e-08, 0.259406, -1.1421, 3.15682, 2.39054 )
-bind/11/name = "bone_11"
-bind/11/bone = -1
-bind/11/pose = Transform( 1, 0, 0, 0, -0.381642, -0.92431, 0, 0.92431, -0.381642, 0, 1.03394, -3.76941 )
-bind/12/name = "bone_12"
-bind/12/bone = -1
-bind/12/pose = Transform( 1, 0, 0, 0, -0.604295, -0.79676, 0, 0.79676, -0.604295, 0, 0.685892, -3.71724 )
-
 [sub_resource type="SpatialMaterial" id=3]
 albedo_color = Color( 0.352941, 0.0313726, 0.109804, 1 )
 
@@ -350,8 +306,8 @@ height = 0.002
 
 [sub_resource type="SphereMesh" id=18]
 
-[sub_resource type="SpatialMaterial" id=19]
-albedo_color = Color( 0.835294, 0.301961, 0.0117647, 1 )
+[sub_resource type="SpatialMaterial" id=29]
+albedo_color = Color( 0.721569, 0.258824, 0.0352941, 1 )
 
 [sub_resource type="CapsuleMesh" id=20]
 
@@ -467,7 +423,6 @@ bones/12/bound_children = [  ]
 
 [node name="jad" type="MeshInstance" parent="Armature/Skeleton"]
 mesh = SubResource( 1 )
-skin = SubResource( 2 )
 material/0 = SubResource( 3 )
 material/1 = SubResource( 4 )
 material/2 = SubResource( 5 )
@@ -503,7 +458,7 @@ transform = Transform( 1, 0, 0, 0, -0.0871558, 0.996195, 0, -0.996195, -0.087155
 transform = Transform( 1, 0, 0, 0, -0.996195, -0.0871556, 0, 0.0871556, -0.996195, 0, 2.677, -20.1579 )
 
 [node name="Fireball" type="Spatial" parent="."]
-transform = Transform( 0.621823, 0.280218, -0.00716099, -0.232951, 0.736229, 0.0789274, 0.0334035, -0.0820525, 0.683733, -0.0277364, 6.33914, 0.854632 )
+transform = Transform( 0.621737, 0.280466, -0.00782635, -0.178789, 0.545298, -0.463609, -0.153375, 0.501275, 0.508702, -0.0277364, 2.93479, 8.3662 )
 visible = false
 
 [node name="Fireball" type="Area" parent="Fireball"]
@@ -517,35 +472,35 @@ shape = SubResource( 17 )
 [node name="tail2" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.771692, 0, 0, 0, 8.96445e-08, -0.751993, 0, -0.91099, -1.08599e-07, 0, 0.156996, 0.456619 )
 mesh = SubResource( 18 )
-material/0 = SubResource( 19 )
+material/0 = SubResource( 29 )
 
 [node name="front2" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.395138, 0.662712, -0.014963, 0.0243242, 0.0257361, 0.279373, 0.377406, -1.16516, -0.00233992, 0.447807, 0, -0.214857 )
 mesh = SubResource( 20 )
-material/0 = ExtResource( 17 )
+material/0 = SubResource( 29 )
 
 [node name="front3" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.408308, 0, 0, 0, -4.27606e-08, 0.358702, 0, -1.92153, -2.29064e-07, 0, 0, -0.639032 )
 mesh = SubResource( 21 )
-material/0 = ExtResource( 17 )
+material/0 = SubResource( 29 )
 
 [node name="front4" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.352372, -0.531466, -0.023213, 0.0313783, -0.0422743, 0.26912, -0.336442, -1.2192, 0.000787282, -0.541726, 0, -0.214857 )
 mesh = SubResource( 21 )
-material/0 = ExtResource( 17 )
+material/0 = SubResource( 29 )
 
 [node name="front5" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.395334, -0.347555, -0.0356871, 0.133966, 0.337143, 0.255662, -0.253197, -1.23945, 0.0795494, -0.425387, 0.525787, -0.214857 )
 mesh = SubResource( 21 )
-material/0 = ExtResource( 17 )
+material/0 = SubResource( 29 )
 
 [node name="front6" type="MeshInstance" parent="Fireball"]
 transform = Transform( 0.466895, 0.245113, -0.0675682, 0.133966, 0.337143, 0.255662, -0.0490485, -1.26371, 0.0551019, 0.378952, 0.525787, -0.214857 )
 mesh = SubResource( 21 )
-material/0 = ExtResource( 17 )
+material/0 = SubResource( 29 )
 
 [node name="Boulder" type="Spatial" parent="."]
-transform = Transform( -1.03532, 0, 0.510025, 0, 0.978283, 0, -0.449415, 0, -0.912287, -0.302, -2.647, 10.439 )
+transform = Transform( -1.03532, 0, 0.510025, 0, 0.978283, 0, -0.449415, 0, -0.912287, -0.302, 23.855, 10.439 )
 visible = false
 
 [node name="Boulder" type="Area" parent="Boulder"]
