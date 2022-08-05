@@ -5,15 +5,14 @@ func _on_CheckBox_pressed():
 	Reset()
 
 func Reset():
-	if pressed:
-		$"../../PrayNode/InvBG/Brew1".frame = 0
-		$"../../PrayNode/InvBG/Brew2".frame = 0
-		$"../../PrayNode/InvBG/Brew3".frame = 0
-		$"../../PrayNode/InvBG/Brew4".frame = 0
-		$"../../PrayNode/InvBG/Rest1".frame = 0
-		$"../../PrayNode/InvBG/Rest2".frame = 0
-		$"../../PrayNode/InvBG/Rest3".frame = 0
-		$"../../PrayNode/InvBG/Rest4".frame = 0
+	$"../../PrayNode/InvBG/Brew1".frame = 0
+	$"../../PrayNode/InvBG/Brew2".frame = 0
+	$"../../PrayNode/InvBG/Brew3".frame = 0
+	$"../../PrayNode/InvBG/Brew4".frame = 0
+	$"../../PrayNode/InvBG/Rest1".frame = 0
+	$"../../PrayNode/InvBG/Rest2".frame = 0
+	$"../../PrayNode/InvBG/Rest3".frame = 0
+	$"../../PrayNode/InvBG/Rest4".frame = 0
 	Globals.hitDmg = false
 	Globals.healerhitDmg = false
 	$"../../MaxHit/Panel".hide()

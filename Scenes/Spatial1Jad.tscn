@@ -38349,17 +38349,6 @@ billboard = 1
 texture = SubResource( 7 )
 script = ExtResource( 14 )
 
-[node name="TrackballCamera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.866627, 0.498957, 0, -0.498957, 0.866627, -11.962, -4.25951, 40.4904 )
-fov = 47.0409
-far = 555.0
-script = ExtResource( 9 )
-action_pitchUp = "e"
-action_pitchDown = "q"
-zoom_strength = 10.0
-zoom_maximum = 666.0
-friction = 0.08
-
 [node name="Model" type="Spatial" parent="."]
 transform = Transform( -0.399999, 0, -4.61005e-08, 0, 0.4, 0, 4.61005e-08, 0, -0.399999, -15.7063, -41.4937, 6.07405 )
 
@@ -40753,6 +40742,20 @@ anims/Arm2 = SubResource( 2372 )
 anims/Arm1 = SubResource( 2373 )
 anims/Arm2 = SubResource( 2374 )
 
+[node name="Spatial" type="Spatial" parent="Model"]
+transform = Transform( 1, 0, -2.13163e-14, 0, 1, 0, 2.13163e-14, 0, 1, 7.62939e-06, 24.9944, -3.75515 )
+
+[node name="TrackballCamera" type="Camera" parent="Model/Spatial"]
+transform = Transform( -2.50001, -1.88352e-07, 3.27143e-07, 0, 2.16657, 1.24739, -3.7749e-07, 1.2474, -2.16657, -9.3608, 78.6318, -96.3235 )
+fov = 47.0409
+far = 555.0
+script = ExtResource( 9 )
+action_pitchUp = "e"
+action_pitchDown = "q"
+zoom_strength = 10.0
+zoom_maximum = 666.0
+friction = 0.08
+
 [node name="Jad" parent="." instance=ExtResource( 7 )]
 pause_mode = 2
 transform = Transform( 2.52201, 0, 0, 0, 2.52201, 0, 0, 0, 2.52201, -15.8736, -42.4733, -19.8212 )
@@ -40990,7 +40993,7 @@ __meta__ = {
 }
 
 [node name="PrayNode" type="Node2D" parent="."]
-position = Vector2( 188.344, 104.309 )
+position = Vector2( 188.344, 100.071 )
 scale = Vector2( 1.67228, 1.67228 )
 z_index = 3
 
@@ -41355,21 +41358,21 @@ __meta__ = {
 }
 
 [node name="StreakCounterTxt" type="RichTextLabel" parent="PrayNode"]
-margin_left = 103.87
-margin_top = -56.5239
-margin_right = 274.869
-margin_bottom = 8.47611
+margin_left = 124.719
+margin_top = -57.0
+margin_right = 398.719
+margin_bottom = 7.99999
 rect_scale = Vector2( 0.359271, 0.359271 )
 custom_fonts/normal_font = SubResource( 2397 )
-text = "Streak:"
+text = "Kill Streak:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="StreakCounter" type="Label" parent="PrayNode"]
-margin_left = 166.577
+margin_left = 217.163
 margin_top = -58.2175
-margin_right = 227.576
+margin_right = 278.162
 margin_bottom = -18.2175
 rect_scale = Vector2( 0.717157, 0.690555 )
 custom_fonts/font = SubResource( 2398 )
@@ -41691,10 +41694,10 @@ __meta__ = {
 wait_time = 2.0
 
 [node name="LightN" type="DirectionalLight" parent="."]
-transform = Transform( 0.961175, -7.16131e-09, -0.275939, 0.145244, 0.85026, 0.505926, 0.23462, -0.526362, 0.817249, -26.493, -30.5777, 14.3828 )
-light_color = Color( 0.996078, 0.996078, 0.996078, 1 )
-light_energy = 1.24
-light_indirect_energy = 4.76
+transform = Transform( 0.447487, -0.453128, -0.770993, 0.827851, 0.535984, 0.16548, 0.338256, -0.712318, 0.614968, -23.8817, 10.6647, 6.63754 )
+light_color = Color( 0.301961, 0.301961, 0.301961, 1 )
+light_energy = 0.6
+light_indirect_energy = 0.0
 light_specular = 1.0
 shadow_bias = 7.16
 shadow_reverse_cull_face = true
@@ -41703,11 +41706,11 @@ directional_shadow_blend_splits = true
 directional_shadow_normal_bias = 8.56
 directional_shadow_bias_split_scale = 0.56
 
-[node name="LightS" type="DirectionalLight" parent="."]
-transform = Transform( -0.827143, -0.345786, 0.44302, -0.0400539, 0.822571, 0.56725, -0.560562, 0.451453, -0.694234, 5.31815, -33.4346, -10.1331 )
-light_color = Color( 0.996078, 0.996078, 0.996078, 1 )
-light_energy = 2.21
-light_indirect_energy = 5.28
+[node name="LightN2" type="DirectionalLight" parent="."]
+transform = Transform( -0.261933, 0.962758, 0.0669955, -0.907353, -0.26932, 0.322765, 0.328788, 0.0237543, 0.944105, -23.8817, 10.7932, -13.0506 )
+light_color = Color( 0.717647, 0.717647, 0.717647, 1 )
+light_energy = 0.38
+light_indirect_energy = 6.98
 light_specular = 1.0
 shadow_bias = 7.16
 shadow_reverse_cull_face = true
@@ -41715,12 +41718,21 @@ directional_shadow_mode = 0
 directional_shadow_blend_splits = true
 directional_shadow_normal_bias = 8.56
 directional_shadow_bias_split_scale = 0.56
+
+[node name="LightS2" type="DirectionalLight" parent="."]
+transform = Transform( -0.553928, -0.275967, 0.785497, 0.122732, 0.906093, 0.404886, -0.823469, 0.320683, -0.46804, -7.33251, 10.2615, -12.095 )
+light_color = Color( 0.819608, 0.819608, 0.819608, 1 )
+light_energy = 0.82
+light_indirect_energy = 5.28
+light_specular = 0.0
+shadow_bias = 7.16
+shadow_reverse_cull_face = true
+directional_shadow_mode = 0
 
 [node name="HealerBar" type="NinePatchRect" parent="."]
-margin_left = 0.396858
-margin_top = 1.84258
-margin_right = 166.397
-margin_bottom = 44.8426
+margin_top = 2.0
+margin_right = 149.0
+margin_bottom = 44.0
 rect_scale = Vector2( 2.11354, 2.11354 )
 texture = ExtResource( 5 )
 patch_margin_left = 21
@@ -41734,24 +41746,24 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="HealerBar"]
-margin_left = 9.36613
-margin_top = 13.8695
-margin_right = 86.3662
-margin_bottom = 29.8695
+margin_left = 9.0
+margin_top = 14.0
+margin_right = 108.0
+margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
 custom_fonts/font = SubResource( 2412 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
-text = "Respawn Healers:"
+text = "Spawn Healers:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="CheckBox" type="TextureButton" parent="HealerBar"]
-margin_left = 138.951
-margin_top = 13.8485
-margin_right = 158.951
-margin_bottom = 33.8485
+margin_left = 123.0
+margin_top = 13.0
+margin_right = 140.0
+margin_bottom = 30.0
 focus_mode = 0
 enabled_focus_mode = 0
 texture_normal = ExtResource( 24 )
@@ -41763,10 +41775,9 @@ __meta__ = {
 }
 
 [node name="Reset" type="NinePatchRect" parent="."]
-margin_left = -0.358528
-margin_top = 279.542
-margin_right = 82.6415
-margin_bottom = 321.542
+margin_top = 275.762
+margin_right = 85.0
+margin_bottom = 317.762
 rect_scale = Vector2( 2.23885, 2.23885 )
 texture = ExtResource( 5 )
 patch_margin_left = 21
@@ -41780,10 +41791,10 @@ __meta__ = {
 }
 
 [node name="Label" type="Label" parent="Reset"]
-margin_left = 9.36613
-margin_top = 13.8695
-margin_right = 86.3662
-margin_bottom = 29.8695
+margin_left = 9.0
+margin_top = 14.0
+margin_right = 52.0
+margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
 custom_fonts/font = SubResource( 2412 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
@@ -41794,9 +41805,9 @@ __meta__ = {
 }
 
 [node name="CheckBox" type="CheckBox" parent="Reset"]
-margin_left = 55.0494
+margin_left = 54.8128
 margin_top = 10.7903
-margin_right = 80.0494
+margin_right = 79.8128
 margin_bottom = 35.7903
 focus_mode = 0
 custom_icons/checked = ExtResource( 3 )
@@ -41810,9 +41821,9 @@ __meta__ = {
 
 [node name="IconBar" type="NinePatchRect" parent="."]
 margin_left = -0.245336
-margin_top = 94.748
+margin_top = 90.5101
 margin_right = 123.755
-margin_bottom = 136.748
+margin_bottom = 132.51
 rect_scale = Vector2( 2.21375, 2.21375 )
 texture = ExtResource( 5 )
 patch_margin_left = 21
@@ -41840,10 +41851,10 @@ __meta__ = {
 }
 
 [node name="CheckBox" type="CheckBox" parent="IconBar"]
-margin_left = 95.9581
-margin_top = 10.6015
-margin_right = 120.958
-margin_bottom = 35.6015
+margin_left = 94.3866
+margin_top = 10.6415
+margin_right = 119.387
+margin_bottom = 35.6415
 focus_mode = 0
 custom_icons/checked = ExtResource( 3 )
 custom_icons/unchecked = ExtResource( 24 )
@@ -41855,9 +41866,9 @@ __meta__ = {
 
 [node name="MaxHit" type="NinePatchRect" parent="."]
 margin_left = 1.01176
-margin_top = 189.393
+margin_top = 185.155
 margin_right = 125.012
-margin_bottom = 231.393
+margin_bottom = 227.155
 rect_scale = Vector2( 2.14502, 2.14502 )
 texture = ExtResource( 5 )
 patch_margin_left = 21
@@ -41940,10 +41951,10 @@ __meta__ = {
 }
 
 [node name="CamButton" type="TextureButton" parent="."]
-margin_left = 7.84676
-margin_top = 569.909
-margin_right = 52.8468
-margin_bottom = 614.91
+margin_left = 3.08455
+margin_top = 373.294
+margin_right = 48.0846
+margin_bottom = 418.295
 rect_scale = Vector2( 2.15127, 2.15127 )
 focus_mode = 0
 toggle_mode = true
@@ -41958,10 +41969,10 @@ __meta__ = {
 }
 
 [node name="CamControls" type="Label" parent="."]
-margin_left = 10.1462
-margin_top = 666.167
-margin_right = 207.145
-margin_bottom = 847.167
+margin_left = 116.787
+margin_top = 389.897
+margin_right = 313.786
+margin_bottom = 570.897
 rect_scale = Vector2( 1.55786, 1.55786 )
 custom_fonts/font = SubResource( 2415 )
 custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
@@ -41971,6 +41982,13 @@ __meta__ = {
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
+
+[node name="OmniLight" type="OmniLight" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -19.5891, -16.5308, -6.49177 )
+light_color = Color( 0.568627, 0.101961, 0.101961, 1 )
+light_energy = 0.76
+omni_range = 4096.0
+omni_attenuation = 0.63728
 [connection signal="timeout" from="Viewport/ProgressBarSprite2/Timer" to="Jad/KinematicBody" method="_on_Timer_timeout"]
 [connection signal="input_event" from="Jad/KinematicBody" to="Jad/KinematicBody" method="_on_KinematicBody_input_event"]
 [connection signal="timeout" from="Healers/HealerFrontL/Timer" to="Healers/HealerFrontL" method="_on_Timer_timeout"]
