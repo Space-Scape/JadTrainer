@@ -10,6 +10,7 @@ onready var hitSplat = $"../../Viewport2/HitSplat"
 onready var hpBar = $"../../Viewport2/ProgressBar"
 
 onready var hpOrb = $"../../PrayNode/OrbContainer2/HpBar"
+
 func _on_Player_area_entered(area):
 	num = rand_range(0, 100)
 	numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"

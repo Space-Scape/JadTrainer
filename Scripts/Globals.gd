@@ -10,6 +10,7 @@ var prayOff
 var prayOn = false
 
 var hitDmg
+var healerhitDmg
 
 var attJad
 

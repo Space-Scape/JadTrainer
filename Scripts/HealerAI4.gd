@@ -13,7 +13,7 @@ var accuracyNum = 4.5
 onready var blueTex = load("res://Sprites/hitsplatBlue.png")
 onready var redTex = load("res://Sprites/hitsplatRed.png")
 
-onready var numContainer = $"../../Viewport2/HitsplatNum"
+onready var numContainer = $"../../Viewport2/HealerNum"
 onready var hpBar = $"../../Viewport2/ProgressBar"
 
 func _ready():
@@ -53,10 +53,13 @@ func _on_Timer_timeout():
 	if !Globals.prayingMelee:
 		if canMoveToPlayer and point.distance_to(transform.origin) < 0.6:
 			$"../Healer".play()
+			Globals.healerhitDmg = true
 			if accuracyRange >= accuracyNum:
-				Globals.hitDmg = true
 				hitNum = rand_range(1, 14)
 				$"../../Viewport2/ProgressBar".value -= hitNum
 				$"../../PrayNode/OrbContainer2/HpBar".value -= hitNum
 				numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
-				$"../../Viewport2/HitSplat".texture = redTex
+				$"../../Viewport2/HealerHitSplat".texture = redTex
+			else:
+				$"../../Viewport2/HealerHitSplat".texture = blueTex
+				$"../../Viewport2/HealerNum".text = ""

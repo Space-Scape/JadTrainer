@@ -1,4 +1,4 @@
-[gd_scene load_steps=2476 format=2]
+[gd_scene load_steps=2477 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -25,6 +25,7 @@
 [ext_resource path="res://Sprites/PrayTab/PrayOff.png" type="Texture" id=23]
 [ext_resource path="res://Sprites/grabberOff.png" type="Texture" id=24]
 [ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/HealerHitNum.gd" type="Script" id=26]
 [ext_resource path="res://Sprites/redBar.png" type="Texture" id=27]
 [ext_resource path="res://Sprites/InvTab/InvBG.png" type="Texture" id=28]
 [ext_resource path="res://Scripts/Healers.gd" type="Script" id=29]
@@ -38187,7 +38188,6 @@ __meta__ = {
 
 [node name="HitsplatNum2" type="RichTextLabel" parent="Viewport"]
 pause_mode = 2
-visible = false
 margin_left = 249.282
 margin_top = 176.711
 margin_right = 375.646
@@ -38208,6 +38208,7 @@ __meta__ = {
 
 [node name="HitSplat2" type="Sprite" parent="Viewport"]
 pause_mode = 2
+visible = false
 position = Vector2( 310.432, 33.06 )
 rotation = 8.05154e-10
 scale = Vector2( 1.334, 2 )
@@ -38227,7 +38228,9 @@ mouse_filter = 2
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 max_value = 250.0
-value = 250.0
+step = 1.0
+value = 1.0
+rounded = true
 percent_visible = false
 
 [node name="ProgressBarSprite2" type="Sprite3D" parent="Viewport"]
@@ -38253,10 +38256,10 @@ gui_disable_input = true
 [node name="HitSplat" type="Sprite" parent="Viewport2"]
 pause_mode = 2
 process_priority = 1
+visible = false
 position = Vector2( 1035.99, 419.552 )
 rotation = 8.05154e-10
 scale = Vector2( 1.848, 1.243 )
-z_index = -1
 texture = ExtResource( 25 )
 centered = false
 script = ExtResource( 6 )
@@ -38281,6 +38284,41 @@ text = "22"
 fit_content_height = true
 scroll_active = false
 script = ExtResource( 35 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HealerHitSplat" type="Sprite" parent="Viewport2"]
+pause_mode = 2
+process_priority = 1
+visible = false
+position = Vector2( 820, 419.552 )
+rotation = 8.05154e-10
+scale = Vector2( 1.848, 1.243 )
+texture = ExtResource( 25 )
+centered = false
+script = ExtResource( 6 )
+
+[node name="HealerNum" type="RichTextLabel" parent="Viewport2"]
+pause_mode = 2
+visible = false
+anchor_right = 0.084
+anchor_bottom = 0.035
+margin_left = 768.38
+margin_top = 485.0
+margin_right = 811.771
+margin_bottom = 515.305
+rect_scale = Vector2( 1, -1 )
+rect_clip_content = false
+size_flags_horizontal = 0
+size_flags_vertical = 0
+custom_fonts/normal_font = ExtResource( 34 )
+bbcode_enabled = true
+meta_underlined = false
+text = "22"
+fit_content_height = true
+scroll_active = false
+script = ExtResource( 26 )
 __meta__ = {
 "_edit_use_anchors_": false
 }

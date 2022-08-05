@@ -15,12 +15,15 @@ func Reset():
 		$"../../PrayNode/InvBG/Rest3".frame = 0
 		$"../../PrayNode/InvBG/Rest4".frame = 0
 	Globals.hitDmg = false
+	Globals.healerhitDmg = false
 	$"../../MaxHit/Panel".hide()
 	$"../../PrayNode/OrbContainer2/HpBar".value = $"../../PrayNode/OrbContainer2/HpBar".max_value
 	$"../../PrayNode/OrbContainer/PrayerBar".value = $"../../PrayNode/OrbContainer/PrayerBar".max_value
 	$"../../Viewport/TextureProgress".value = 250
 	$"../../Viewport2/HitSplat".hide()
 	$"../../Viewport2/HitsplatNum".hide()
+	$"../../Viewport2/HealerHitSplat".hide()
+	$"../../Viewport2/HealerNum".hide()
 	$"../../Viewport2/ProgressBar".value = $"../../Viewport2/ProgressBar".max_value
 	$"../../Healers/HealerFrontL/Timer".stop()
 	$"../../Healers/HealerBackL/Timer".stop()
