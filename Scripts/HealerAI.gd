@@ -8,7 +8,7 @@ var canMoveToPlayer
 
 var hitNum
 var accuracyRange
-var accuracynum = 3.8
+var accuracyNum = 4.5
 
 onready var blueTex = load("res://Sprites/hitsplatBlue.png")
 onready var redTex = load("res://Sprites/hitsplatRed.png")
@@ -21,6 +21,9 @@ func _ready():
 
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
+	
+	if $"../../PrayNode/Rigour".pressed:
+		accuracyNum = 5
 	
 	if  $"../../Jad/KinematicBody/Viewport/TextureProgress".value <= 125:
 		point = Vector3(-31.477,4.3,-21.196)
@@ -50,7 +53,7 @@ func _on_Timer_timeout():
 	if !Globals.prayingMelee:
 		if canMoveToPlayer and point.distance_to(transform.origin) < 0.6:
 			$"../Healer".play()
-			if accuracyRange >= accuracynum:
+			if accuracyRange >= accuracyNum:
 				Globals.hitDmg = true
 				hitNum = rand_range(1, 14)
 				$"../../3DPlayer/Viewport/ProgressBar".value -= hitNum

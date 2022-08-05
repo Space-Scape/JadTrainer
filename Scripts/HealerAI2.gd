@@ -8,7 +8,7 @@ var canMoveToPlayer
 
 var hitNum
 var accuracyRange
-var accuracyNum = 3.8
+var accuracyNum = 4.5
 
 onready var blueTex = load("res://Sprites/hitsplatBlue.png")
 onready var redTex = load("res://Sprites/hitsplatRed.png")
@@ -21,6 +21,9 @@ func _ready():
 
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
+	
+	if $"../../PrayNode/Rigour".pressed:
+		accuracyNum = 5
 	
 	if  $"../../Jad/KinematicBody/Viewport/TextureProgress".value <= 125:
 		point = Vector3(-29.035,1.708,-32.321)

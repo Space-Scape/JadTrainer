@@ -22,6 +22,9 @@ func _process(_delta):
 	accuracyRange = rand_range(0,6)
 	if maxHit > int(hitLabel.text):
 		maxHit = int(hitLabel.text)
+	if Globals.attJad == true:
+		$"../../Player/Model/AnimationPlayer".play("Arm1")
+		$"../../Player/Model/AnimationPlayer2".play("Arm2")
 
 func _on_KinematicBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -31,8 +34,6 @@ func _on_KinematicBody_input_event(_camera, event, _click_position, _click_norma
 
 func _on_Timer_timeout():
 	if Globals.attJad == true:
-		$"../../Player/untitled/AnimationPlayer".play("Arm2")
-		$"../../Player/untitled/AnimationPlayer2".play("Arm1")
 		$"Viewport/HitsplatNum2".show()
 		$"Viewport/HitSplat2".show()
 		if accuracyRange >= accuracyNum + accuracyAddSub:
