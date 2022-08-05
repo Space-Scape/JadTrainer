@@ -18,10 +18,10 @@ func Reset():
 	$"../../MaxHit/Panel".hide()
 	$"../../PrayNode/OrbContainer2/HpBar".value = $"../../PrayNode/OrbContainer2/HpBar".max_value
 	$"../../PrayNode/OrbContainer/PrayerBar".value = $"../../PrayNode/OrbContainer/PrayerBar".max_value
-	$"../../Jad/KinematicBody/Viewport/TextureProgress".value = 250
-	$"../../3DPlayer/Viewport/HitSplat".hide()
-	$"../../3DPlayer/Viewport/HitsplatNum".hide()
-	$"../../3DPlayer/Viewport/ProgressBar".value = $"../../3DPlayer/Viewport/ProgressBar".max_value
+	$"../../Viewport/TextureProgress".value = 250
+	$"../../Viewport2/HitSplat".hide()
+	$"../../Viewport2/HitsplatNum".hide()
+	$"../../Viewport2/ProgressBar".value = $"../../Viewport2/ProgressBar".max_value
 	$"../../Healers/HealerFrontL/Timer".stop()
 	$"../../Healers/HealerBackL/Timer".stop()
 	$"../../Healers/HealerFrontR/Timer".stop()

@@ -4,10 +4,10 @@ var streak
 var zero = 0
 var num
 
-onready var numContainer = $"../Viewport/HitsplatNum"
+onready var numContainer = $"../../Viewport2/HitsplatNum"
 
-onready var hitSplat = $"../Viewport/HitSplat"
-onready var hpBar = $"../Viewport/ProgressBar"
+onready var hitSplat = $"../../Viewport2/HitSplat"
+onready var hpBar = $"../../Viewport2/ProgressBar"
 
 onready var hpOrb = $"../../PrayNode/OrbContainer2/HpBar"
 func _on_Player_area_entered(area):

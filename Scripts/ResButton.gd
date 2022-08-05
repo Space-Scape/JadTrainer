@@ -17,7 +17,7 @@ func _on_Button_pressed():
 		$"../../../OrbContainer/PrayerBar".value += 30
 
 func _process(delta):
-	if $"../../../../Jad/KinematicBody/Viewport/TextureProgress".value == 255 or Globals.playerDied:
+	if $"../../../../Viewport/TextureProgress".value == 255 or Globals.playerDied:
 		self.disabled = false
 		get_parent().frame = 0
 	if Globals.brewDose <= 0:

@@ -11,7 +11,7 @@ func _on_Button_pressed():
 	if cooldown.is_ready():
 		get_parent().frame += 1
 		$"../../../../MaxHit/Panel".show()
-		$"../../../../3DPlayer/Viewport/ProgressBar".value += 18
+		$"../../../../Viewport2/ProgressBar".value += 18
 		$"../../../OrbContainer2/HpBar".value += 18
 		Globals.attJad = false
 		
@@ -24,7 +24,7 @@ func _on_Button_pressed():
 			self.disabled = true
 
 func _process(delta):
-	if $"../../../../Jad/KinematicBody/Viewport/TextureProgress".value == 255 or Globals.playerDied:
+	if $"../../../../Viewport/TextureProgress".value == 255 or Globals.playerDied:
 		self.disabled = false
 		get_parent().frame = 0
 		Globals.brewDose = 0
