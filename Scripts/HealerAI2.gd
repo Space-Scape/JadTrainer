@@ -44,7 +44,7 @@ func _process(_delta):
 	move_and_slide(direction)
 	
 	if point.distance_to(transform.origin) < 1 and visible and !canMoveToPlayer:
-		$"../../Jad/KinematicBody/Viewport/TextureProgress".value += 2
+		$"../../Jad/KinematicBody/Viewport/TextureProgress".value += 0.3
 	
 	if $"../../HealerBar/CheckBox".pressed:
 		translation = Vector3(-46.458,1.76,-62.36)

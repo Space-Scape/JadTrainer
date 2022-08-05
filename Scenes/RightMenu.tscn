@@ -1,0 +1,413 @@
+[gd_scene load_steps=28 format=2]
+
+[ext_resource path="res://runescape_uf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Scenes/Spatial1Jad.tres" type="StyleBox" id=2]
+[ext_resource path="res://Scripts/HpOrb.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/OptionButton.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/PrayerBar.gd" type="Script" id=5]
+[ext_resource path="res://Sprites/grabber.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/border.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Backpack.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Lvl.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/brew.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Hp.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/prayer.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Orb.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/OrbContainer.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/grabberOff.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/OrbBg.png" type="Texture" id=16]
+
+[sub_resource type="StyleBoxEmpty" id=2408]
+
+[sub_resource type="StyleBoxFlat" id=2409]
+bg_color = Color( 0.0862745, 0.0784314, 0.0901961, 1 )
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color( 0.556863, 0.556863, 0.556863, 1 )
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 3
+
+[sub_resource type="DynamicFont" id=2410]
+size = 32
+use_filter = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2411]
+font_data = ExtResource( 1 )
+
+[sub_resource type="DynamicFont" id=2401]
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=2402]
+texture = ExtResource( 7 )
+region_rect = Rect2( 0, 0, 42, 42 )
+margin_left = 6.0
+margin_right = 6.0
+margin_top = 8.0
+margin_bottom = 8.0
+expand_margin_left = 4.0
+expand_margin_right = 2.0
+expand_margin_top = 2.0
+expand_margin_bottom = 3.0
+
+[sub_resource type="Theme" id=2403]
+PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
+PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
+PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
+PopupMenu/constants/hseparation = 4
+PopupMenu/constants/vseparation = 4
+PopupMenu/fonts/font = SubResource( 2401 )
+PopupMenu/icons/checked = ExtResource( 6 )
+PopupMenu/icons/radio_checked = ExtResource( 6 )
+PopupMenu/icons/radio_unchecked = ExtResource( 15 )
+PopupMenu/icons/submenu = null
+PopupMenu/icons/unchecked = ExtResource( 15 )
+PopupMenu/styles/hover = null
+PopupMenu/styles/labeled_separator_left = null
+PopupMenu/styles/labeled_separator_right = null
+PopupMenu/styles/panel = SubResource( 2402 )
+PopupMenu/styles/panel_disabled = null
+PopupMenu/styles/separator = null
+
+[sub_resource type="StyleBoxFlat" id=2404]
+content_margin_left = 9.0
+bg_color = Color( 0.290196, 0.290196, 0.290196, 1 )
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color( 0.839216, 0.839216, 0.839216, 1 )
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+anti_aliasing = false
+
+[sub_resource type="StyleBoxEmpty" id=2405]
+
+[sub_resource type="DynamicFont" id=2406]
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 1 )
+
+[sub_resource type="GDScript" id=2407]
+script/source = "extends OptionButton
+
+var key = ShortCut.new()
+
+func _ready():
+	key.set_shortcut(InputMap.get_action_list(\"F1\")[0])
+	$\"../../../TopTab/InvButton\".set_shortcut(key)
+	
+	add_item(\"F1\")
+	add_item(\"F2\")
+	add_item(\"F3\")
+	add_item(\"F4\")
+	
+	select(0)
+
+func _on_OptionButton_item_selected(_index):
+	if selected == 0:
+		key.set_shortcut(InputMap.get_action_list(\"F1\")[0])
+		$\"../../../TopTab/InvButton\".set_shortcut(key)
+	if selected == 1:
+		key.set_shortcut(InputMap.get_action_list(\"F2\")[0])
+		$\"../../../TopTab/InvButton\".set_shortcut(key)
+	if selected == 2:
+		key.set_shortcut(InputMap.get_action_list(\"F3\")[0])
+		$\"../../../TopTab/InvButton\".set_shortcut(key)
+	if selected == 3:
+		key.set_shortcut(InputMap.get_action_list(\"F4\")[0])
+		$\"../../../TopTab/InvButton\".set_shortcut(key)
+"
+
+[node name="Control" type="Node2D"]
+
+[node name="OptionsCanvas" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="CanvasLayer" type="CanvasLayer" parent="OptionsCanvas"]
+layer = -2
+
+[node name="LevelWindow" type="NinePatchRect" parent="OptionsCanvas/CanvasLayer"]
+show_behind_parent = true
+margin_left = 1609.79
+margin_top = 364.895
+margin_right = 1770.79
+margin_bottom = 437.895
+rect_scale = Vector2( 1.808, 1.808 )
+texture = ExtResource( 7 )
+region_rect = Rect2( 2.41528, 1.81439, 37.3471, 37.0155 )
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpIcon" type="TextureRect" parent="OptionsCanvas/CanvasLayer/LevelWindow"]
+margin_left = 4.86316
+margin_top = 41.6955
+margin_right = 32.8632
+margin_bottom = 66.6955
+texture = ExtResource( 11 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpLvl" type="LineEdit" parent="OptionsCanvas/CanvasLayer/LevelWindow/HpIcon"]
+anchor_left = 1.172
+anchor_top = 0.602
+anchor_right = 2.527
+anchor_bottom = 1.289
+margin_left = 0.459999
+margin_top = -10.0657
+margin_right = 38.52
+margin_bottom = 8.75927
+rect_scale = Vector2( 0.516648, 0.516648 )
+custom_styles/focus = SubResource( 2408 )
+custom_styles/normal = SubResource( 2409 )
+custom_fonts/font = SubResource( 2410 )
+custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
+text = "99"
+align = 1
+max_length = 3
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HpLvl2" type="TextureRect" parent="OptionsCanvas/CanvasLayer/LevelWindow/HpIcon"]
+margin_left = -0.266357
+margin_top = 11.2868
+margin_right = 14.7336
+margin_bottom = 25.2868
+texture = ExtResource( 9 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayerIcon" type="TextureRect" parent="OptionsCanvas/CanvasLayer/LevelWindow"]
+margin_left = 83.7797
+margin_top = 40.596
+margin_right = 110.78
+margin_bottom = 65.596
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayerLvl" type="LineEdit" parent="OptionsCanvas/CanvasLayer/LevelWindow/PrayerIcon"]
+anchor_left = 1.033
+anchor_top = 0.634016
+anchor_right = 2.26
+anchor_bottom = 1.21102
+margin_left = 4.44573
+margin_top = -9.78132
+margin_right = 47.3167
+margin_bottom = 11.7937
+rect_scale = Vector2( 0.516648, 0.516648 )
+custom_styles/focus = SubResource( 2408 )
+custom_styles/normal = SubResource( 2409 )
+custom_fonts/font = SubResource( 2410 )
+custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
+text = "99"
+align = 1
+max_length = 3
+caret_blink = true
+caret_blink_speed = 0.5
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+
+[node name="PrayerLvl2" type="TextureRect" parent="OptionsCanvas/CanvasLayer/LevelWindow/PrayerIcon"]
+margin_left = -0.399414
+margin_top = 11.9868
+margin_right = 14.6006
+margin_bottom = 25.9868
+texture = ExtResource( 9 )
+expand = true
+
+[node name="OrbContainer2" type="Sprite" parent="OptionsCanvas"]
+position = Vector2( 1571.69, 403.38 )
+scale = Vector2( 1.17491, 1.17491 )
+texture = ExtResource( 14 )
+
+[node name="HpBar" type="TextureProgress" parent="OptionsCanvas/OrbContainer2"]
+modulate = Color( 0.85098, 0.129412, 0.129412, 1 )
+margin_left = -2.13696
+margin_top = -14.1428
+margin_right = 25.863
+margin_bottom = 13.8572
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 13 )
+fill_mode = 3
+nine_patch_stretch = true
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsCanvas/OrbContainer2"]
+margin_left = -28.0
+margin_top = -2.0
+margin_right = 4.0
+margin_bottom = 24.0
+custom_fonts/normal_font = SubResource( 2411 )
+bbcode_enabled = true
+visible_characters = 3
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OrbContainer" type="Sprite" parent="OptionsCanvas"]
+position = Vector2( 1571.89, 446.893 )
+scale = Vector2( 1.17491, 1.17491 )
+texture = ExtResource( 14 )
+
+[node name="PrayerBar" type="TextureProgress" parent="OptionsCanvas/OrbContainer"]
+margin_left = -2.13696
+margin_top = -14.0
+margin_right = 25.863
+margin_bottom = 14.0
+max_value = 99.0
+value = 99.0
+rounded = true
+texture_under = ExtResource( 16 )
+texture_progress = ExtResource( 13 )
+fill_mode = 3
+tint_progress = Color( 0.294118, 0.364706, 0.764706, 1 )
+nine_patch_stretch = true
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsCanvas/OrbContainer"]
+margin_left = -28.0
+margin_top = -3.19067
+margin_right = 2.0
+margin_bottom = 13.8093
+custom_fonts/normal_font = SubResource( 2411 )
+bbcode_enabled = true
+fit_content_height = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Timer" type="Timer" parent="OptionsCanvas/OrbContainer"]
+wait_time = 2.0
+
+[node name="Panel" type="Panel" parent="OptionsCanvas"]
+margin_left = 1466.13
+margin_top = 390.079
+margin_right = 1534.13
+margin_bottom = 463.079
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="OptionsCanvas/Panel"]
+margin_left = 2.0
+margin_top = 48.5737
+margin_right = 65.0
+margin_bottom = 68.5737
+bbcode_enabled = true
+scroll_active = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="OptionsCanvas/Panel"]
+margin_left = 20.6257
+margin_top = 1.42456
+margin_right = 49.6257
+margin_bottom = 42.4246
+texture = ExtResource( 10 )
+expand = true
+
+[node name="Inv" type="TextureRect" parent="OptionsCanvas"]
+margin_left = 1618.64
+margin_top = 381.233
+margin_right = 1643.64
+margin_bottom = 408.233
+rect_scale = Vector2( 1.99967, 1.99967 )
+texture = ExtResource( 8 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton" type="OptionButton" parent="OptionsCanvas/Inv"]
+margin_left = 30.2269
+margin_top = 4.70929
+margin_right = 76.2269
+margin_bottom = 22.7093
+rect_scale = Vector2( 0.783212, 0.920047 )
+theme = SubResource( 2403 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = SubResource( 2404 )
+custom_styles/focus = SubResource( 2405 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 2406 )
+shortcut_in_tooltip = false
+align = 1
+script = SubResource( 2407 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PrayerIcon2" type="TextureRect" parent="OptionsCanvas"]
+margin_left = 1757.31
+margin_top = 381.82
+margin_right = 1784.31
+margin_bottom = 406.82
+rect_scale = Vector2( 1.9424, 1.9424 )
+texture = ExtResource( 12 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="OptionButton2" type="OptionButton" parent="OptionsCanvas/PrayerIcon2"]
+margin_left = 32.8243
+margin_top = 4.7093
+margin_right = 78.8243
+margin_bottom = 22.7093
+rect_scale = Vector2( 0.783212, 0.920047 )
+theme = SubResource( 2403 )
+custom_styles/hover = ExtResource( 2 )
+custom_styles/pressed = SubResource( 2404 )
+custom_styles/focus = SubResource( 2405 )
+custom_styles/normal = ExtResource( 2 )
+custom_fonts/font = SubResource( 2406 )
+shortcut_in_tooltip = false
+align = 1
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
+[connection signal="text_changed" from="OptionsCanvas/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="OptionsCanvas/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
+[connection signal="text_changed" from="OptionsCanvas/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="OptionsCanvas/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
+[connection signal="item_selected" from="OptionsCanvas/Inv/OptionButton" to="OptionsCanvas/Inv/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="OptionsCanvas/PrayerIcon2/OptionButton2" to="OptionsCanvas/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]

@@ -23,8 +23,8 @@ func _process(_delta):
 	if maxHit > int(hitLabel.text):
 		maxHit = int(hitLabel.text)
 	if Globals.attJad == true:
-		$"../../Player/Model/AnimationPlayer".play("Arm1")
-		$"../../Player/Model/AnimationPlayer2".play("Arm2")
+		$"../../Model/AnimationPlayer".play("Arm1")
+		$"../../Model/AnimationPlayer2".play("Arm2")
 
 func _on_KinematicBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:

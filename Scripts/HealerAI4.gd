@@ -44,7 +44,7 @@ func _process(_delta):
 	move_and_slide(direction)
 	
 	if point.distance_to(transform.origin) < 1 and visible and !canMoveToPlayer:
-		$"../../Jad/KinematicBody/Viewport/TextureProgress".value += 2
+		$"../../Jad/KinematicBody/Viewport/TextureProgress".value += 0.3
 	
 	if $"../../HealerBar/CheckBox".pressed:
 		translation = Vector3(18.053,1.653,-62.418)
@@ -60,3 +60,4 @@ func _on_Timer_timeout():
 				$"../../PrayNode/OrbContainer2/HpBar".value -= hitNum
 				numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
 				$"../../3DPlayer/Viewport/HitSplat".texture = redTex
+				
