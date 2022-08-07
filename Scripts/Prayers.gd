@@ -3,6 +3,7 @@ extends Node
 onready var prayPanel = $"/root/Spatial/PrayNode/PrayPanel"
 onready var prayIcon = $"/root/Spatial/PrayNode/PrayerIcon"
 onready var prayOff = load("res://Sprites/PrayTab/PrayOff.png")
+var canPlayDrain = true
 
 onready var prayMage = load("res://Sprites/PrayTab/prayMage.png")
 onready var mageIcon = load("res://Sprites/PrayIcon/mageIcon.png")
@@ -32,6 +33,9 @@ func _ready():
 func _process(_x):
 	PrayOff()
 	if $"../OrbContainer/PrayerBar".value <= 0:
+		if canPlayDrain:
+			canPlayDrain = false
+			$"../PrayDrain".play()
 		Globals.prayingMage = false
 		Globals.prayingRange = false
 		Globals.prayingMelee = false
@@ -147,6 +151,7 @@ func PrayOff():
 
 func _on_SharpEye_toggled(button_pressed):
 	if button_pressed and canPray:
+		$"../SharpEyeSfx".play()
 		$"../SharpEye".icon = sharpEye
 		Globals.prayOn = true
 		$"../SharpEye".pressed = true
@@ -162,9 +167,11 @@ func _on_SharpEye_toggled(button_pressed):
 		$"../SharpEye".icon = null
 		$"../../Jad/KinematicBody".accuracyAddSub += 0.5
 		$"../../Jad/KinematicBody".maxHit -= 1
+		$"../PrayOff".play()
 
 func _on_HawkEye_toggled(button_pressed):
 	if button_pressed and canPray:
+		$"../HawkEyeSfx".play()
 		$"../HawkEye".icon = hawkEye
 		Globals.prayOn = true
 		$"../SharpEye".pressed = false
@@ -180,9 +187,11 @@ func _on_HawkEye_toggled(button_pressed):
 		$"../HawkEye".icon = null
 		$"../../Jad/KinematicBody".accuracyAddSub += 1
 		$"../../Jad/KinematicBody".maxHit -= 2
+		$"../PrayOff".play()
 
 func _on_EagleEye_toggled(button_pressed):
 	if button_pressed and canPray:
+		$"../EagleEyeSfx".play()
 		$"../EagleEye".icon = eagleEye
 		Globals.prayOn = true
 		$"../SharpEye".pressed = false
@@ -198,9 +207,11 @@ func _on_EagleEye_toggled(button_pressed):
 		$"../EagleEye".icon = null
 		$"../../Jad/KinematicBody".accuracyAddSub += 1.5
 		$"../../Jad/KinematicBody".maxHit -= 3
+		$"../PrayOff".play()
 
 func _on_Rigour_toggled(button_pressed):
 	if button_pressed and canPray:
+		$"../RigourSfx".play()
 		$"../Rigour".icon = rigourIcon
 		Globals.prayOn = true
 		$"../SharpEye".pressed = false
@@ -216,6 +227,7 @@ func _on_Rigour_toggled(button_pressed):
 		$"../Rigour".icon = null
 		$"../../Jad/KinematicBody".accuracyAddSub += 2
 		$"../../Jad/KinematicBody".maxHit -= 4
+		$"../PrayOff".play()
 
 func _on_Timer_timeout():
 	if $"../OrbContainer/PrayerBar".value > 0:
