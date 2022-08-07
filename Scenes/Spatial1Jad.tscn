@@ -1274,12 +1274,6 @@ __meta__ = {
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PrayNode/Label"]
 anims/TextAnim = SubResource( 41 )
 
-[node name="Mage" type="AudioStreamPlayer" parent="PrayNode"]
-stream = ExtResource( 21 )
-
-[node name="Range" type="AudioStreamPlayer" parent="PrayNode"]
-stream = ExtResource( 17 )
-
 [node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 21 )
 volume_db = 16.932
