@@ -474,9 +474,9 @@ rect_pivot_offset = Vector2( 75.085, 0 )
 mouse_filter = 2
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
-max_value = 250.0
+max_value = 255.0
 step = 1.0
-value = 250.0
+value = 255.0
 rounded = true
 percent_visible = false
 
@@ -1245,7 +1245,6 @@ margin_bottom = -18.2175
 rect_scale = Vector2( 0.717157, 0.690555 )
 custom_fonts/font = SubResource( 39 )
 custom_colors/font_color = Color( 0.972549, 1, 0.0666667, 1 )
-text = "0"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -1283,15 +1282,15 @@ stream = ExtResource( 17 )
 
 [node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 21 )
-volume_db = 10.097
+volume_db = 16.932
 
 [node name="RangePray" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 17 )
-volume_db = 10.097
+volume_db = 19.185
 
 [node name="PrayOff" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 20 )
-volume_db = 10.097
+volume_db = 17.165
 
 [node name="EagleEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 52 )
@@ -1311,7 +1310,7 @@ volume_db = 10.097
 
 [node name="PrayDrain" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 53 )
-volume_db = 10.097
+volume_db = 8.077
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="PrayNode"]
 layer = 2

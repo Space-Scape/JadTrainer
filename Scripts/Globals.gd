@@ -17,3 +17,4 @@ var attJad
 var playerDied
 
 var brewDose : int
+var killStreak : int
