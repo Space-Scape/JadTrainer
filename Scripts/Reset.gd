@@ -7,14 +7,22 @@ func _on_CheckBox_pressed():
 func Reset():
 	if pressed:
 		$"../../PrayNode/StreakCounter".text = str(0)
-	$"../../PrayNode/InvBG/Brew1".frame = 0
-	$"../../PrayNode/InvBG/Brew2".frame = 0
-	$"../../PrayNode/InvBG/Brew3".frame = 0
-	$"../../PrayNode/InvBG/Brew4".frame = 0
-	$"../../PrayNode/InvBG/Rest1".frame = 0
-	$"../../PrayNode/InvBG/Rest2".frame = 0
-	$"../../PrayNode/InvBG/Rest3".frame = 0
-	$"../../PrayNode/InvBG/Rest4".frame = 0
+		$"../../PrayNode/InvBG/Brew1".frame = 0
+		$"../../PrayNode/InvBG/Brew2".frame = 0
+		$"../../PrayNode/InvBG/Brew3".frame = 0
+		$"../../PrayNode/InvBG/Brew4".frame = 0
+		$"../../PrayNode/InvBG/Rest1".frame = 0
+		$"../../PrayNode/InvBG/Rest2".frame = 0
+		$"../../PrayNode/InvBG/Rest3".frame = 0
+		$"../../PrayNode/InvBG/Rest4".frame = 0
+	$"../../PrayNode/InvBG/Brew1/Button".disabled = false
+	$"../../PrayNode/InvBG/Brew2/Button2".disabled = false
+	$"../../PrayNode/InvBG/Brew3/Button3".disabled = false
+	$"../../PrayNode/InvBG/Brew4/Button4".disabled = false
+	$"../../PrayNode/InvBG/Rest1/Button5".disabled = false
+	$"../../PrayNode/InvBG/Rest2/Button6".disabled = false
+	$"../../PrayNode/InvBG/Rest3/Button7".disabled = false
+	$"../../PrayNode/InvBG/Rest4/Button8".disabled = false
 	Globals.hitDmg = false
 	Globals.healerhitDmg = false
 	$"../../MaxHit/Panel".hide()
