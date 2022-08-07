@@ -479,6 +479,7 @@ percent_visible = false
 pause_mode = 2
 transform = Transform( -6.4935, 0.00607446, 0, 0.00302906, 3.23801, 0, 0, 0, -7.26541, -15.8767, 25.314, -19.4314 )
 billboard = 1
+alpha_cut = 2
 texture = SubResource( 4 )
 region_rect = Rect2( 444, 444, 444, 444 )
 script = ExtResource( 40 )
@@ -496,13 +497,13 @@ usage = 0
 gui_disable_input = true
 
 [node name="AnimatedSprite" type="AnimatedSprite3D" parent="Viewport2"]
-transform = Transform( 0.999428, 0, -0.0338123, 0, 1, 0, 0.0338123, 0, 0.999428, -15.7911, 3.40631, 7.78763 )
+transform = Transform( 1.00935, 0, -0.034148, 0, 1.00993, 0, 0.034148, 0, 1.00935, -15.7916, 3.53281, 7.78751 )
 axis = 0
 alpha_cut = 2
 frames = SubResource( 52 )
 
 [node name="AnimatedSprite3" type="AnimatedSprite3D" parent="Viewport2"]
-transform = Transform( 1.04683, 0, -0.144932, 0, 1.071, 0, 0.153338, 0, 0.989442, -15.6882, 3.37514, 7.81249 )
+transform = Transform( 1.05722, 0, -0.146371, 0, 1.08163, 0, 0.15486, 0, 0.999265, -15.6877, 3.50132, 7.81262 )
 extra_cull_margin = 3523.44
 double_sided = false
 alpha_cut = 2

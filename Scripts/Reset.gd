@@ -5,6 +5,8 @@ func _on_CheckBox_pressed():
 	Reset()
 
 func Reset():
+	if pressed:
+		$"../../PrayNode/StreakCounter".text = str(0)
 	$"../../PrayNode/InvBG/Brew1".frame = 0
 	$"../../PrayNode/InvBG/Brew2".frame = 0
 	$"../../PrayNode/InvBG/Brew3".frame = 0
