@@ -37,6 +37,7 @@ func _on_KinematicBody_input_event(_camera, event, _click_position, _click_norma
 
 func _on_Timer_timeout():
 	if Globals.attJad == true:
+		$"../JadHit".play()
 		$"../../Viewport/HitsplatNum2".show()
 		$"../../Viewport/HitSplat2".show()
 		if accuracyRange >= accuracyNum + accuracyAddSub:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=131 format=2]
+[gd_scene load_steps=133 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -59,6 +59,8 @@
 [ext_resource path="res://Sprites/PurpleSweet.png" type="Texture" id=57]
 [ext_resource path="res://Scenes/Sweets.gd" type="Script" id=58]
 [ext_resource path="res://Scenes/TickSystem.gd" type="Script" id=59]
+[ext_resource path="res://SFX/JadHeal.wav" type="AudioStream" id=60]
+[ext_resource path="res://SFX/JadHit.wav" type="AudioStream" id=61]
 [ext_resource path="res://Sprites/Hp.png" type="Texture" id=2409]
 [ext_resource path="res://Sprites/prayer.png" type="Texture" id=2410]
 [ext_resource path="res://Sprites/Orb.png" type="Texture" id=2411]
@@ -464,11 +466,12 @@ __meta__ = {
 
 [node name="HitsplatNum2" type="RichTextLabel" parent="Viewport"]
 pause_mode = 2
-margin_left = 412.384
-margin_top = 200.848
-margin_right = 547.384
-margin_bottom = 265.848
-rect_scale = Vector2( 1, -1 )
+visible = false
+margin_left = 380.491
+margin_top = 216.971
+margin_right = 515.49
+margin_bottom = 281.971
+rect_scale = Vector2( 1.5, -1.5 )
 rect_clip_content = false
 size_flags_horizontal = 0
 size_flags_vertical = 0
@@ -486,12 +489,13 @@ __meta__ = {
 
 [node name="HitSplat2" type="Sprite" parent="Viewport"]
 pause_mode = 2
-position = Vector2( 319.876, 33.06 )
+visible = false
+position = Vector2( 309.412, 33.06 )
 rotation = 8.05154e-10
-scale = Vector2( 2.002, 2 )
+scale = Vector2( 2.152, 2.024 )
 z_index = -1
 texture = ExtResource( 25 )
-offset = Vector2( 81.417, 65.912 )
+offset = Vector2( 80.554, 65.912 )
 
 [node name="TextureProgress" type="ProgressBar" parent="Viewport"]
 pause_mode = 2
@@ -505,9 +509,8 @@ mouse_filter = 2
 custom_styles/fg = SubResource( 2 )
 custom_styles/bg = SubResource( 3 )
 max_value = 250.0
-step = 1.0
+step = 0.1
 value = 250.0
-rounded = true
 percent_visible = false
 
 [node name="ProgressBarSprite2" type="Sprite3D" parent="Viewport"]
@@ -573,7 +576,6 @@ size_flags_vertical = 0
 custom_fonts/normal_font = ExtResource( 34 )
 bbcode_enabled = true
 meta_underlined = false
-text = "22"
 fit_content_height = true
 scroll_active = false
 script = ExtResource( 35 )
@@ -666,6 +668,10 @@ script = ExtResource( 39 )
 [node name="CollisionShape" type="CollisionShape" parent="Jad/KinematicBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.01638, -0.242762 )
 shape = SubResource( 16 )
+
+[node name="JadHit" type="AudioStreamPlayer" parent="Jad"]
+stream = ExtResource( 61 )
+volume_db = 13.585
 
 [node name="Healers" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.9604, 0 )
@@ -811,6 +817,10 @@ shape = SubResource( 17 )
 
 [node name="Healer" type="AudioStreamPlayer" parent="Healers"]
 stream = ExtResource( 30 )
+
+[node name="JadHeal" type="AudioStreamPlayer" parent="Healers"]
+stream = ExtResource( 60 )
+volume_db = 4.273
 
 [node name="Floor" type="Spatial" parent="."]
 pause_mode = 2
