@@ -57,7 +57,10 @@ func _on_Timer_timeout():
 		if canMoveToPlayer and point.distance_to(transform.origin) < 0.6:
 			if Globals.tick == 1:
 				yield($"../../Timer", "timeout")
-				$"../Healer".play()
+				if  $"../../Viewport/TextureProgress".value < 250:
+					$"../Healer".play()
+				else:
+					$"../Healer".stop()
 				Globals.healerhitDmg = true
 				if accuracyRange >= accuracyNum:
 					hitNum = rand_range(1, 14)
@@ -74,7 +77,8 @@ func _on_Timer_timeout():
 				
 			if Globals.tick == 2:
 				yield($"../../Timer2", "timeout")
-				$"../Healer".play()
+				if  $"../../Viewport/TextureProgress".value < 250:
+					$"../Healer".play()
 				Globals.healerhitDmg = true
 				if accuracyRange >= accuracyNum:
 					hitNum = rand_range(1, 14)

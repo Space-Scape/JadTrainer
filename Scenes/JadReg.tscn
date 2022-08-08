@@ -577,7 +577,7 @@ wait_time = 0.1
 autostart = true
 
 [node name="Timer" type="Timer" parent="."]
-wait_time = 5.4
+wait_time = 4.8
 autostart = true
 
 [node name="Jad_Att" type="Sprite3D" parent="."]
