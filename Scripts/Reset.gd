@@ -1,6 +1,5 @@
 extends CheckBox
 
-
 func _on_CheckBox_pressed():
 	Reset()
 
@@ -49,6 +48,10 @@ func Reset():
 	$"../../Healers/HealerFrontR".canMoveToPlayer = false
 	$"../../Healers/HealerBackL".canMoveToPlayer = false
 	$"../../Healers/HealerBackR".canMoveToPlayer = false
+	$"../../Healers/HealerFrontL/HealerM1/HealerHit".hide()
+	$"../../Healers/HealerBackL/HealerHM2S/HealerHit2".hide()
+	$"../../Healers/HealerFrontR/HealerM3/HealerHit4".hide()
+	$"../../Healers/HealerBackR/HealerM3/HealerHit3".hide()
 	$"../../Healers/HealerFrontL".point = Vector3(-91.863, 4.3, -20.779)
 	$"../../Healers/HealerFrontR".point = Vector3(46.943,1.708,-21.572)
 	$"../../Healers/HealerBackL".point = Vector3(-46.458,1.76,-62.36)

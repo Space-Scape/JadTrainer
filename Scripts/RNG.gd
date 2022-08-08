@@ -40,9 +40,16 @@ func set_anim():
 			Globals.attWithRange = true
 
 func _on_Timer_timeout():
-	attDetermined = true
-	set_anim()
-	set_attack()
+	if Globals.tick == 1:
+		yield($"/root/Spatial/Timer", "timeout")
+		attDetermined = true
+		set_anim()
+		set_attack()
+	elif Globals.tick == 2:
+		yield($"/root/Spatial/Timer2", "timeout")
+		attDetermined = true
+		set_anim()
+		set_attack()
 
 func _on_Timer2_timeout():
 	attDetermined = false

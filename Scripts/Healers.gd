@@ -24,6 +24,9 @@ func _on_AreaHM1_input_event(_camera, event, _click_position, _click_normal, _sh
 			Globals.attJad = false
 			$"Healer".play()
 			$"HealerFrontL/Timer".start()
+			$"HealerFrontL/HealerM1/HealerHit".show()
+			yield($"HealerFrontL/Timer", "timeout")
+			$"HealerFrontL/HealerM1/HealerHit".hide()
 
 func _on_AreaHM2_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -33,7 +36,9 @@ func _on_AreaHM2_input_event(_camera, event, _click_position, _click_normal, _sh
 			Globals.attJad = false
 			$"Healer".play()
 			$"HealerBackL/Timer".start()
-			
+			$"HealerBackL/HealerHM2S/HealerHit2".show()
+			yield($"HealerBackL/Timer", "timeout")
+			$"HealerBackL/HealerHM2S/HealerHit2".hide()
 
 func _on_AreaHM3_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -43,6 +48,9 @@ func _on_AreaHM3_input_event(_camera, event, _click_position, _click_normal, _sh
 			Globals.attJad = false
 			$"Healer".play()
 			$"HealerFrontR/Timer".start()
+			$"HealerFrontR/HealerM3/HealerHit4".show()
+			yield($"HealerFrontR/Timer", "timeout")
+			$"HealerFrontR/HealerM3/HealerHit4".hide()
 
 func _on_AreaHM4_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
@@ -52,3 +60,6 @@ func _on_AreaHM4_input_event(_camera, event, _click_position, _click_normal, _sh
 			Globals.attJad = false
 			$"Healer".play()
 			$"HealerBackR/Timer".start()
+			$"HealerBackR/HealerM3/HealerHit3".show()
+			yield($"HealerBackR/Timer", "timeout")
+			$"HealerBackR/HealerM3/HealerHit3".hide()

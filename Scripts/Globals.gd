@@ -1,5 +1,7 @@
 extends Node
 
+var tick : int
+
 var attWithMage
 var attWithRange
 
@@ -11,10 +13,12 @@ var prayOn = false
 
 var hitDmg
 var healerhitDmg
+var ate
 
 var attJad
 
 var playerDied
 
 var brewDose : int
+
 var killStreak : int

@@ -24,7 +24,7 @@ func _on_Button_pressed():
 			self.disabled = true
 
 func _process(delta):
-	if $"../../../../Viewport/TextureProgress".value == 255 or Globals.playerDied:
+	if $"../../../../Viewport2/ProgressBar".value <= 0 or Globals.playerDied:
 		self.disabled = false
 		get_parent().frame = 0
 		Globals.brewDose = 0

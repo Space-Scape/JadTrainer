@@ -2,7 +2,7 @@ extends Button
 
 const Cooldown = preload('res://Scripts/Cooldown.gd')
 
-onready var cooldown = Cooldown.new(1.2)
+onready var cooldown = Cooldown.new(0.6)
 
 func _on_Button_pressed():
 	if cooldown.is_ready():
