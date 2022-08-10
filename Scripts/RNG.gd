@@ -16,12 +16,10 @@ func _ready():
 		yield($"/root/Spatial/Timer", "timeout")
 	if Globals.tick == 2:
 		attDetermined = true
-		yield($"/root/Spatial/Timer", "timeout")
+		yield($"/root/Spatial/Timer2", "timeout")
 
 func _process(_x):
 	number = rand_range(-5,5)
-	yield(timer,"timeout")
-	number = 0
 
 func set_attack():
 	number = rand_range(-5,5)

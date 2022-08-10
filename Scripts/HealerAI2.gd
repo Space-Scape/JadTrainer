@@ -50,10 +50,9 @@ func _physics_process(_delta):
 	if global_transform.origin.distance_to($"../../Jad".global_transform.origin) < 20 and visible and !canMoveToPlayer:
 		yield($"../../Timer", "timeout")
 		$"../../ViewportContainer/Viewport/TextureProgress".value += 0.1
-		canMoveToJad = false
 		$"../JadHeal".play()
 	
-	if $"../../HealerBar/CheckBox".pressed or $"../../ViewportContainer/Viewport/TextureProgress".value <= 0 or $"../../ViewportContainer2/Viewport2/ProgressBar".value <= 0:
+	if $"../../HealerBar/CheckBox".pressed:
 		translation = Vector3(-88.83, 4, -56.035)
 		canMoveToJad = true
 		canMoveToPlayer = false
@@ -65,6 +64,12 @@ func _physics_process(_delta):
 			speed = 7
 			velocity = translation.direction_to($"../../Jad".global_transform.origin) * speed
 		velocity = move_and_slide(velocity)
+	
+	if $"../../ViewportContainer/Viewport/TextureProgress".value <= 0 or $"../../ViewportContainer2/Viewport2/ProgressBar".value <= 0:
+		translation = Vector3(-88.83, 4, -56.035)
+		canMoveToJad = false
+		canMoveToPlayer = false
+		self.hide()
 
 func _on_Timer_timeout():
 	if !Globals.prayingMelee:

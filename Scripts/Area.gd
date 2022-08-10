@@ -13,7 +13,25 @@ onready var hpBar = $"../../ViewportContainer2/Viewport2/ProgressBar"
 
 onready var hpOrb = $"../../PrayNode/OrbContainer2/HpBar"
 
+func _process(delta):
+	if $"../../Jad/Jad_Att/AttScript".number != null:
+		if $"../../Jad/Jad_Att/AttScript".attWithMage:
+				$"MageHitbox5".disabled = false
+				$"MageHitbox4".disabled = false
+				$"MageHitbox3".disabled = false
+				$"MageHitbox2".disabled = false
+				$"MageHitbox".disabled = false
+		if $"../../Jad/Jad_Att/AttScript".attWithRanged:
+				$"MageHitbox5".disabled = true
+				$"MageHitbox4".disabled = true
+				$"MageHitbox3".disabled = true
+				$"MageHitbox2".disabled = true
+				$"MageHitbox".disabled = true
+
+
 func _on_Player_area_entered(area):
+	num = rand_range(1, jadHit)
+	
 	if Globals.tick == 1:
 		if Globals.prayingMage and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
@@ -22,54 +40,42 @@ func _on_Player_area_entered(area):
 		if Globals.prayingMage and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingRange and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingRange and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
@@ -78,106 +84,82 @@ func _on_Player_area_entered(area):
 		if Globals.prayingMelee and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingMelee and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayOff and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayOff and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		
 	elif Globals.tick == 2:
@@ -188,54 +170,42 @@ func _on_Player_area_entered(area):
 		if Globals.prayingMage and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingRange and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingRange and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
@@ -244,106 +214,82 @@ func _on_Player_area_entered(area):
 		if Globals.prayingMelee and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayingMelee and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayOff and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 		if Globals.prayOff and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
-			num = rand_range(1, jadHit)
 			numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+			Globals.hitDmg = true
 			if Globals.ate:
 				if hpBar.value <= num:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
 					hpBar.value = 1
 					hpOrb.value = 1
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
-					Globals.hitDmg = true
 					hpBar.value -= num
 					hpOrb.value -= num
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			else:
 				hpBar.value -= num
 				hpOrb.value -= num
-				Globals.hitDmg = true
-				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 
 func _on_Area_area_entered(area):
@@ -363,26 +309,21 @@ func _on_Melee_area_exited(area):
 				hitSplat.show()
 				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				Globals.hitDmg = true
 				if Globals.ate:
 					if hpBar.value <= num:
-						Globals.hitDmg = true
 						hpBar.value -= num
 						hpOrb.value -= num
 						hpBar.value = 1
 						hpOrb.value = 1
-						num = rand_range(1, jadHit)
 						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 					else:
-						Globals.hitDmg = true
 						hpBar.value -= num
 						hpOrb.value -= num
-						num = rand_range(1, jadHit)
 						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
 					hpBar.value -= num
 					hpOrb.value -= num
-					Globals.hitDmg = true
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			if Globals.prayingMelee and $"../../Jad/Jad_Att/AttScript".attWithMelee:
 				hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
@@ -396,26 +337,21 @@ func _on_Melee_area_exited(area):
 				hitSplat.show()
 				num = rand_range(1, jadHit)
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
+				Globals.hitDmg = true
 				if Globals.ate:
 					if hpBar.value <= num:
-						Globals.hitDmg = true
 						hpBar.value -= num
 						hpOrb.value -= num
 						hpBar.value = 1
 						hpOrb.value = 1
-						num = rand_range(1, jadHit)
 						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 					else:
-						Globals.hitDmg = true
 						hpBar.value -= num
 						hpOrb.value -= num
-						num = rand_range(1, jadHit)
 						numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 				else:
 					hpBar.value -= num
 					hpOrb.value -= num
-					Globals.hitDmg = true
-					num = rand_range(1, jadHit)
 					numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 			if Globals.prayingMelee and $"../../Jad/Jad_Att/AttScript".attWithMelee:
 				hitSplat.texture = load("res://Sprites/hitsplatBlue.png")

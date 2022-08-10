@@ -1,4 +1,4 @@
-[gd_scene load_steps=198 format=2]
+[gd_scene load_steps=199 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -123,38 +123,38 @@ viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 7
-atlas = ExtResource( 51 )
-region = Rect2( 353, 0, 353, 628 )
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 518, 814 )
 
 [sub_resource type="AtlasTexture" id=7]
 flags = 7
-atlas = ExtResource( 51 )
-region = Rect2( 706, 0, 353, 628 )
+atlas = ExtResource( 86 )
+region = Rect2( 518, 0, 518, 814 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 7
 atlas = ExtResource( 51 )
-region = Rect2( 0, 0, 353, 628 )
+region = Rect2( 353, 0, 353, 628 )
 
 [sub_resource type="AtlasTexture" id=9]
+flags = 7
+atlas = ExtResource( 51 )
+region = Rect2( 706, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 7
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=11]
 flags = 7
 atlas = ExtResource( 49 )
 region = Rect2( 0, 0, 305, 677 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=12]
 flags = 7
 atlas = ExtResource( 49 )
 region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 7
-atlas = ExtResource( 84 )
-region = Rect2( 0, 0, 325, 677 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 7
-atlas = ExtResource( 84 )
-region = Rect2( 325, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=13]
 flags = 7
@@ -168,29 +168,29 @@ region = Rect2( 443, 0, 443, 815 )
 
 [sub_resource type="AtlasTexture" id=15]
 flags = 7
-atlas = ExtResource( 86 )
-region = Rect2( 0, 0, 518, 814 )
+atlas = ExtResource( 84 )
+region = Rect2( 0, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=16]
 flags = 7
-atlas = ExtResource( 86 )
-region = Rect2( 518, 0, 518, 814 )
+atlas = ExtResource( 84 )
+region = Rect2( 325, 0, 325, 677 )
 
 [sub_resource type="SpriteFrames" id=17]
 animations = [ {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
+"frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "RCB",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 8 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ) ],
 "loop": true,
 "name": "Tbow",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "BP",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
-"loop": true,
-"name": "ACB",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
@@ -200,7 +200,7 @@ animations = [ {
 }, {
 "frames": [ SubResource( 15 ), SubResource( 15 ), SubResource( 15 ), SubResource( 16 ) ],
 "loop": true,
-"name": "RCB",
+"name": "ACB",
 "speed": 1.0
 } ]
 
@@ -556,140 +556,143 @@ radius = 3.34903
 height = 0.736843
 
 [sub_resource type="BoxShape" id=49]
-extents = Vector3( 4.11367, 4.67478, 0.729373 )
-
-[sub_resource type="BoxShape" id=98]
-extents = Vector3( 0.154771, 2.55076, 0.793852 )
+extents = Vector3( 4.11367, 4.67478, 1.19975 )
 
 [sub_resource type="BoxShape" id=50]
-extents = Vector3( 0.135376, 0.208159, 0.140028 )
+extents = Vector3( 0.154771, 2.55076, 0.793852 )
 
 [sub_resource type="BoxShape" id=51]
-extents = Vector3( 93.1817, 30.5361, 58.996 )
+extents = Vector3( 0.135376, 0.208159, 0.140028 )
 
 [sub_resource type="BoxShape" id=52]
-extents = Vector3( 15.7145, 0.573431, 16.5564 )
-
-[sub_resource type="BoxShape" id=53]
-extents = Vector3( 0.664113, 1, 0.0255331 )
+extents = Vector3( 93.1817, 30.5361, 58.996 )
 
 [sub_resource type="BoxShape" id=54]
-extents = Vector3( 0.661524, 1, 0.0201867 )
+extents = Vector3( 0.664113, 1, 0.0255331 )
+
+[sub_resource type="BoxShape" id=99]
+extents = Vector3( 0.664113, 0.334789, 0.703211 )
 
 [sub_resource type="BoxShape" id=55]
-extents = Vector3( 0.0312375, 1, 0.638838 )
+extents = Vector3( 0.661524, 1, 0.0201867 )
 
 [sub_resource type="BoxShape" id=56]
+extents = Vector3( 0.0312375, 1, 0.638838 )
+
+[sub_resource type="BoxShape" id=57]
 extents = Vector3( 0.0212294, 1, 0.634888 )
 
-[sub_resource type="StyleBoxEmpty" id=57]
+[sub_resource type="BoxShape" id=53]
+extents = Vector3( 15.7145, 0.573431, 19.3822 )
 
 [sub_resource type="StyleBoxEmpty" id=58]
 
-[sub_resource type="StyleBoxTexture" id=59]
+[sub_resource type="StyleBoxEmpty" id=59]
+
+[sub_resource type="StyleBoxTexture" id=60]
 texture = ExtResource( 42 )
 region_rect = Rect2( 0, 0, 68, 68 )
 
-[sub_resource type="StyleBoxEmpty" id=60]
-
 [sub_resource type="StyleBoxEmpty" id=61]
 
-[sub_resource type="InputEventAction" id=62]
+[sub_resource type="StyleBoxEmpty" id=62]
+
+[sub_resource type="InputEventAction" id=63]
 action = "Prayer"
 
-[sub_resource type="ShortCut" id=63]
-shortcut = SubResource( 62 )
-
-[sub_resource type="AtlasTexture" id=64]
-atlas = ExtResource( 45 )
-region = Rect2( 0, 80, 82, 80 )
+[sub_resource type="ShortCut" id=64]
+shortcut = SubResource( 63 )
 
 [sub_resource type="AtlasTexture" id=65]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 80, 82, 80 )
+region = Rect2( 0, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=66]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 80, 82, 80 )
+region = Rect2( 82, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=67]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 80, 82, 80 )
+region = Rect2( 164, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=68]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 80, 80, 80 )
+region = Rect2( 246, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=69]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 0, 82, 80 )
+region = Rect2( 320, 80, 80, 80 )
 
 [sub_resource type="AtlasTexture" id=70]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 0, 82, 80 )
+region = Rect2( 0, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=71]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 0, 82, 80 )
+region = Rect2( 82, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=72]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 0, 82, 80 )
+region = Rect2( 164, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=73]
 atlas = ExtResource( 45 )
+region = Rect2( 246, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=74]
+atlas = ExtResource( 45 )
 region = Rect2( 320, 0, 80, 80 )
 
-[sub_resource type="SpriteFrames" id=74]
+[sub_resource type="SpriteFrames" id=75]
 animations = [ {
-"frames": [ SubResource( 64 ), SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ) ],
+"frames": [ SubResource( 65 ), SubResource( 66 ), SubResource( 67 ), SubResource( 68 ), SubResource( 69 ) ],
 "loop": true,
 "name": "Rest",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 69 ), SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ) ],
+"frames": [ SubResource( 70 ), SubResource( 71 ), SubResource( 72 ), SubResource( 73 ), SubResource( 74 ) ],
 "loop": true,
 "name": "Brew",
 "speed": 5.0
 } ]
 
-[sub_resource type="StyleBoxEmpty" id=75]
-
-[sub_resource type="AtlasTexture" id=76]
-atlas = ExtResource( 57 )
-region = Rect2( 0, 0, 28, 24 )
+[sub_resource type="StyleBoxEmpty" id=76]
 
 [sub_resource type="AtlasTexture" id=77]
 atlas = ExtResource( 57 )
+region = Rect2( 0, 0, 28, 24 )
+
+[sub_resource type="AtlasTexture" id=78]
+atlas = ExtResource( 57 )
 region = Rect2( 28, 0, 28, 24 )
 
-[sub_resource type="SpriteFrames" id=78]
+[sub_resource type="SpriteFrames" id=79]
 animations = [ {
-"frames": [ SubResource( 76 ), SubResource( 77 ) ],
+"frames": [ SubResource( 77 ), SubResource( 78 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=79]
+[sub_resource type="DynamicFont" id=80]
 size = 62
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=80]
+[sub_resource type="DynamicFont" id=81]
 size = 40
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=81]
+[sub_resource type="DynamicFont" id=82]
 size = 32
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="Animation" id=82]
+[sub_resource type="Animation" id=83]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -717,10 +720,10 @@ tracks/1/keys = {
 "values": [ 0.0, 2.29144, 0.0, -3.13036 ]
 }
 
-[sub_resource type="DynamicFont" id=83]
+[sub_resource type="DynamicFont" id=84]
 font_data = ExtResource( 10 )
 
-[sub_resource type="StyleBoxTexture" id=84]
+[sub_resource type="StyleBoxTexture" id=85]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 42, 42 )
 margin_left = 6.0
@@ -732,14 +735,14 @@ expand_margin_right = 2.0
 expand_margin_top = 2.0
 expand_margin_bottom = 3.0
 
-[sub_resource type="Theme" id=85]
+[sub_resource type="Theme" id=86]
 PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
 PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/constants/hseparation = 4
 PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = SubResource( 83 )
+PopupMenu/fonts/font = SubResource( 84 )
 PopupMenu/icons/checked = ExtResource( 3 )
 PopupMenu/icons/radio_checked = ExtResource( 3 )
 PopupMenu/icons/radio_unchecked = ExtResource( 24 )
@@ -748,11 +751,11 @@ PopupMenu/icons/unchecked = ExtResource( 24 )
 PopupMenu/styles/hover = null
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 84 )
+PopupMenu/styles/panel = SubResource( 85 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
-[sub_resource type="StyleBoxFlat" id=86]
+[sub_resource type="StyleBoxFlat" id=87]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_bottom = 0.0
@@ -769,14 +772,14 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id=87]
+[sub_resource type="StyleBoxEmpty" id=88]
 
-[sub_resource type="DynamicFont" id=88]
+[sub_resource type="DynamicFont" id=89]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="GDScript" id=89]
+[sub_resource type="GDScript" id=90]
 script/source = "extends OptionButton
 
 var key = ShortCut.new()
@@ -807,9 +810,9 @@ func _on_OptionButton_item_selected(_index):
 		$\"../../../TopTab/InvButton\".set_shortcut(key)
 "
 
-[sub_resource type="StyleBoxEmpty" id=90]
+[sub_resource type="StyleBoxEmpty" id=91]
 
-[sub_resource type="StyleBoxFlat" id=91]
+[sub_resource type="StyleBoxFlat" id=92]
 bg_color = Color( 0.0862745, 0.0784314, 0.0901961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -822,20 +825,20 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 3
 
-[sub_resource type="DynamicFont" id=92]
+[sub_resource type="DynamicFont" id=93]
 size = 32
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=93]
+[sub_resource type="DynamicFont" id=94]
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=94]
+[sub_resource type="DynamicFont" id=95]
 outline_size = 1
 extra_spacing_char = 1
 font_data = ExtResource( 10 )
 
-[sub_resource type="StyleBoxFlat" id=95]
+[sub_resource type="StyleBoxFlat" id=96]
 content_margin_top = 4.0
 bg_color = Color( 0.0196078, 0.0235294, 0.0784314, 1 )
 border_width_left = 2
@@ -851,13 +854,13 @@ corner_radius_bottom_left = 5
 corner_detail = 1
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=96]
+[sub_resource type="DynamicFont" id=97]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=97]
+[sub_resource type="DynamicFont" id=98]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
@@ -1077,7 +1080,6 @@ billboard = 2
 alpha_cut = 2
 frames = SubResource( 17 )
 animation = "RCB"
-frame = 3
 playing = true
 
 [node name="JadHealerCollider" type="KinematicBody" parent="."]
@@ -1392,7 +1394,7 @@ collision_mask = 7
 
 [node name="CollisionShape" type="CollisionShape" parent="Jad/Melee"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 0.999999, 0, 4.44474, 0.737223 )
-shape = SubResource( 98 )
+shape = SubResource( 50 )
 
 [node name="Healers" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -43.9604, 0 )
@@ -1425,13 +1427,13 @@ texture = ExtResource( 25 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Healers/HealerFrontL"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="AreaHM1" type="Area" parent="Healers/HealerFrontL"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
 
 [node name="CollisionShape2" type="CollisionShape" parent="Healers/HealerFrontL/AreaHM1"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="HealerBackL" type="KinematicBody" parent="Healers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -88.8298, 4, -56.0349 )
@@ -1460,13 +1462,13 @@ texture = ExtResource( 25 )
 [node name="CollisionShape2" type="CollisionShape" parent="Healers/HealerBackL"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.0483088, 0 )
 visible = false
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="AreaHM2" type="Area" parent="Healers/HealerBackL"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.0483088, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Healers/HealerBackL/AreaHM2"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="HealerFrontR" type="KinematicBody" parent="Healers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 55.3229, 4, -21.572 )
@@ -1497,13 +1499,13 @@ __meta__ = {
 [node name="CollisionShape4" type="CollisionShape" parent="Healers/HealerFrontR"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.0363188, 0 )
 visible = false
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="AreaHM3" type="Area" parent="Healers/HealerFrontR"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.0363188, 0 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Healers/HealerFrontR/AreaHM3"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="HealerBackR" type="KinematicBody" parent="Healers"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 54.9864, 4, -51.5569 )
@@ -1531,13 +1533,13 @@ texture = ExtResource( 25 )
 [node name="CollisionShape4" type="CollisionShape" parent="Healers/HealerBackR"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, -0.00528574, 0 )
 visible = false
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="AreaHM4" type="Area" parent="Healers/HealerBackR"]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, -0.00528574, 0 )
 
 [node name="CollisionShape3" type="CollisionShape" parent="Healers/HealerBackR/AreaHM4"]
-shape = SubResource( 50 )
+shape = SubResource( 51 )
 
 [node name="Healer" type="AudioStreamPlayer" parent="Healers"]
 stream = ExtResource( 30 )
@@ -1633,7 +1635,7 @@ collision_mask = 7
 
 [node name="FloorCollider" type="CollisionShape" parent="Floor/StaticBody"]
 transform = Transform( 0.999999, 0, -3.55271e-14, 0, 1, 0, 3.55271e-14, 0, 0.999999, -3.66573, -36.9465, 18.5332 )
-shape = SubResource( 51 )
+shape = SubResource( 52 )
 
 [node name="3DPlayer" type="Spatial" parent="."]
 pause_mode = 2
@@ -1651,18 +1653,18 @@ collision_layer = 7
 collision_mask = 7
 script = ExtResource( 4 )
 
-[node name="RangedHitbox" type="CollisionShape" parent="3DPlayer/HitBoxes"]
+[node name="MageHitbox" type="CollisionShape" parent="3DPlayer/HitBoxes"]
 pause_mode = 2
-transform = Transform( 0.0154716, 0, 0.578841, 0, 1, 0, -0.470954, 0, 0.0109826, 0.0808746, 1.87657, -0.380409 )
-shape = SubResource( 52 )
+transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999668, 0.0236956, 0.597732, -1.58162 )
+shape = SubResource( 54 )
 __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="MageHitbox" type="CollisionShape" parent="3DPlayer/HitBoxes"]
+[node name="MageHitbox5" type="CollisionShape" parent="3DPlayer/HitBoxes"]
 pause_mode = 2
-transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999668, 0.0236956, 0.597732, -1.58162 )
-shape = SubResource( 53 )
+transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999665, -0.0428337, -0.136569, -2.25365 )
+shape = SubResource( 99 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1670,7 +1672,7 @@ __meta__ = {
 [node name="MageHitbox2" type="CollisionShape" parent="3DPlayer/HitBoxes"]
 pause_mode = 2
 transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999668, -0.0311992, 0.597732, -2.9054 )
-shape = SubResource( 54 )
+shape = SubResource( 55 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1678,7 +1680,7 @@ __meta__ = {
 [node name="MageHitbox3" type="CollisionShape" parent="3DPlayer/HitBoxes"]
 pause_mode = 2
 transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999668, -0.710594, 0.597732, -2.22622 )
-shape = SubResource( 55 )
+shape = SubResource( 56 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1686,7 +1688,15 @@ __meta__ = {
 [node name="MageHitbox4" type="CollisionShape" parent="3DPlayer/HitBoxes"]
 pause_mode = 2
 transform = Transform( -0.999669, 0, -0.0257246, 0, 1, 0, 0.0257246, 0, -0.999667, 0.684726, 0.597732, -2.2785 )
-shape = SubResource( 56 )
+shape = SubResource( 57 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="RangedHitbox" type="CollisionShape" parent="3DPlayer/HitBoxes"]
+pause_mode = 2
+transform = Transform( 0.0154716, 0, 0.578841, 0, 1, 0, -0.470954, 0, 0.0109826, 0.953779, 1.87657, -2.86922 )
+shape = SubResource( 53 )
 __meta__ = {
 "_editor_description_": ""
 }
@@ -1742,7 +1752,7 @@ margin_top = 426.464
 margin_right = 887.0
 margin_bottom = 462.464
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1757,7 +1767,7 @@ margin_top = 425.568
 margin_right = 925.0
 margin_bottom = 460.568
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1772,7 +1782,7 @@ margin_top = 426.912
 margin_right = 963.251
 margin_bottom = 461.912
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1788,7 +1798,7 @@ margin_right = 1032.03
 margin_bottom = 601.671
 rect_scale = Vector2( 0.285632, 0.285632 )
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1805,9 +1815,9 @@ margin_top = 308.149
 margin_right = 963.84
 margin_bottom = 346.149
 focus_mode = 0
-custom_styles/hover = SubResource( 58 )
-custom_styles/pressed = SubResource( 59 )
-custom_styles/normal = SubResource( 60 )
+custom_styles/hover = SubResource( 59 )
+custom_styles/pressed = SubResource( 60 )
+custom_styles/normal = SubResource( 61 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1823,7 +1833,7 @@ margin_top = 382.0
 margin_right = 892.0
 margin_bottom = 426.0
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1840,7 +1850,7 @@ margin_right = 1001.48
 margin_bottom = 459.467
 rect_scale = Vector2( 1.20218, 1.20218 )
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1856,7 +1866,7 @@ margin_top = 496.869
 margin_right = 930.799
 margin_bottom = 544.869
 focus_mode = 0
-custom_styles/focus = SubResource( 57 )
+custom_styles/focus = SubResource( 58 )
 toggle_mode = true
 action_mode = 0
 enabled_focus_mode = 0
@@ -1885,7 +1895,7 @@ margin_left = 113.0
 margin_top = 1.0
 margin_right = 146.0
 margin_bottom = 41.0
-custom_styles/focus = SubResource( 61 )
+custom_styles/focus = SubResource( 62 )
 shortcut_in_tooltip = false
 action_mode = 0
 flat = true
@@ -1899,10 +1909,10 @@ margin_left = 183.0
 margin_top = 1.0
 margin_right = 217.0
 margin_bottom = 41.0
-custom_styles/focus = SubResource( 61 )
+custom_styles/focus = SubResource( 62 )
 shortcut_in_tooltip = false
 action_mode = 0
-shortcut = SubResource( 63 )
+shortcut = SubResource( 64 )
 flat = true
 script = ExtResource( 44 )
 __meta__ = {
@@ -1923,7 +1933,7 @@ __meta__ = {
 [node name="Brew1" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 36.3613, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Brew"
 
 [node name="Button" type="Button" parent="PrayNode/InvBG/Brew1"]
@@ -1932,7 +1942,7 @@ margin_top = -34.0
 margin_right = 32.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1943,7 +1953,7 @@ __meta__ = {
 [node name="Brew2" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 78.8093, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Brew"
 
 [node name="Button2" type="Button" parent="PrayNode/InvBG/Brew2"]
@@ -1952,7 +1962,7 @@ margin_top = -34.0
 margin_right = 30.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1964,7 +1974,7 @@ __meta__ = {
 [node name="Brew3" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 118.242, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Brew"
 
 [node name="Button3" type="Button" parent="PrayNode/InvBG/Brew3"]
@@ -1973,7 +1983,7 @@ margin_top = -34.0
 margin_right = 30.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1985,7 +1995,7 @@ __meta__ = {
 [node name="Brew4" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 156.421, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Brew"
 
 [node name="Button4" type="Button" parent="PrayNode/InvBG/Brew4"]
@@ -1994,7 +2004,7 @@ margin_top = -34.0
 margin_right = 29.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -2006,7 +2016,7 @@ __meta__ = {
 [node name="Rest1" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 36.3613, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Rest"
 
 [node name="Button5" type="Button" parent="PrayNode/InvBG/Rest1"]
@@ -2015,7 +2025,7 @@ margin_top = -41.0
 margin_right = 29.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -2027,7 +2037,7 @@ __meta__ = {
 [node name="Rest2" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 78.8093, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Rest"
 
 [node name="Button6" type="Button" parent="PrayNode/InvBG/Rest2"]
@@ -2036,7 +2046,7 @@ margin_top = -41.0
 margin_right = 31.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -2048,7 +2058,7 @@ __meta__ = {
 [node name="Rest3" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 118.242, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Rest"
 
 [node name="Button7" type="Button" parent="PrayNode/InvBG/Rest3"]
@@ -2057,7 +2067,7 @@ margin_top = -41.0
 margin_right = 31.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -2069,7 +2079,7 @@ __meta__ = {
 [node name="Rest4" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 156.421, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 74 )
+frames = SubResource( 75 )
 animation = "Rest"
 
 [node name="Button8" type="Button" parent="PrayNode/InvBG/Rest4"]
@@ -2078,7 +2088,7 @@ margin_top = -41.0
 margin_right = 27.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -2090,7 +2100,7 @@ __meta__ = {
 [node name="Sweets" type="AnimatedSprite" parent="PrayNode/InvBG"]
 position = Vector2( 34.1071, 110.178 )
 scale = Vector2( 1.16059, 1.16059 )
-frames = SubResource( 78 )
+frames = SubResource( 79 )
 speed_scale = 2.0
 
 [node name="Button9" type="Button" parent="PrayNode/InvBG/Sweets"]
@@ -2099,7 +2109,7 @@ margin_top = -14.0
 margin_right = 14.0
 margin_bottom = 13.0
 focus_mode = 1
-custom_styles/focus = SubResource( 75 )
+custom_styles/focus = SubResource( 76 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 58 )
@@ -2122,7 +2132,7 @@ margin_top = -57.0
 margin_right = 398.719
 margin_bottom = 7.99999
 rect_scale = Vector2( 0.359271, 0.359271 )
-custom_fonts/normal_font = SubResource( 79 )
+custom_fonts/normal_font = SubResource( 80 )
 text = "Kill Streak:"
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2134,7 +2144,7 @@ margin_top = -58.2175
 margin_right = 278.162
 margin_bottom = -18.2175
 rect_scale = Vector2( 0.717157, 0.690555 )
-custom_fonts/font = SubResource( 80 )
+custom_fonts/font = SubResource( 81 )
 custom_colors/font_color = Color( 0.972549, 1, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2147,7 +2157,7 @@ margin_right = 1085.0
 margin_bottom = 222.904
 rect_scale = Vector2( 0.622035, 0.622035 )
 rect_pivot_offset = Vector2( 161.906, 56.0449 )
-custom_fonts/font = SubResource( 81 )
+custom_fonts/font = SubResource( 82 )
 custom_colors/font_color = Color( 0.921569, 1, 0, 1 )
 text = "Join Lost Legion on OSRS!
 
@@ -2163,7 +2173,7 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="PrayNode/Label"]
-anims/TextAnim = SubResource( 82 )
+anims/TextAnim = SubResource( 83 )
 
 [node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
 stream = ExtResource( 21 )
@@ -2225,15 +2235,15 @@ margin_top = 4.70929
 margin_right = 76.2269
 margin_bottom = 22.7093
 rect_scale = Vector2( 0.783212, 0.920047 )
-theme = SubResource( 85 )
+theme = SubResource( 86 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 86 )
-custom_styles/focus = SubResource( 87 )
+custom_styles/pressed = SubResource( 87 )
+custom_styles/focus = SubResource( 88 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 88 )
+custom_fonts/font = SubResource( 89 )
 shortcut_in_tooltip = false
 align = 1
-script = SubResource( 89 )
+script = SubResource( 90 )
 __meta__ = {
 "_edit_use_anchors_": true
 }
@@ -2264,12 +2274,12 @@ margin_top = 4.7093
 margin_right = 78.8243
 margin_bottom = 22.7093
 rect_scale = Vector2( 0.707901, 0.831579 )
-theme = SubResource( 85 )
+theme = SubResource( 86 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 86 )
-custom_styles/focus = SubResource( 87 )
+custom_styles/pressed = SubResource( 87 )
+custom_styles/focus = SubResource( 88 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 88 )
+custom_fonts/font = SubResource( 89 )
 shortcut_in_tooltip = false
 align = 1
 script = ExtResource( 2420 )
@@ -2324,9 +2334,9 @@ margin_top = -10.0657
 margin_right = 38.52
 margin_bottom = 8.75927
 rect_scale = Vector2( 0.516648, 0.516648 )
-custom_styles/focus = SubResource( 90 )
-custom_styles/normal = SubResource( 91 )
-custom_fonts/font = SubResource( 92 )
+custom_styles/focus = SubResource( 91 )
+custom_styles/normal = SubResource( 92 )
+custom_fonts/font = SubResource( 93 )
 custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
 text = "99"
 align = 1
@@ -2367,9 +2377,9 @@ margin_top = -9.78132
 margin_right = 47.3167
 margin_bottom = 11.7937
 rect_scale = Vector2( 0.516648, 0.516648 )
-custom_styles/focus = SubResource( 90 )
-custom_styles/normal = SubResource( 91 )
-custom_fonts/font = SubResource( 92 )
+custom_styles/focus = SubResource( 91 )
+custom_styles/normal = SubResource( 92 )
+custom_fonts/font = SubResource( 93 )
 custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
 text = "99"
 align = 1
@@ -2434,7 +2444,7 @@ margin_top = -2.0
 margin_right = 4.0
 margin_bottom = 24.0
 rect_scale = Vector2( 1.41128, 1.41128 )
-custom_fonts/normal_font = SubResource( 93 )
+custom_fonts/normal_font = SubResource( 94 )
 bbcode_enabled = true
 visible_characters = 3
 fit_content_height = true
@@ -2484,7 +2494,7 @@ margin_top = -2.0
 margin_right = 5.41101
 margin_bottom = 24.0
 rect_scale = Vector2( 1.41128, 1.41128 )
-custom_fonts/normal_font = SubResource( 93 )
+custom_fonts/normal_font = SubResource( 94 )
 bbcode_enabled = true
 fit_content_height = true
 scroll_active = false
@@ -2579,7 +2589,7 @@ margin_top = 14.0
 margin_right = 108.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 94 )
+custom_fonts/font = SubResource( 95 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Spawn Healers:"
@@ -2625,7 +2635,7 @@ margin_top = 14.0
 margin_right = 52.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 94 )
+custom_fonts/font = SubResource( 95 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Reset:"
@@ -2672,7 +2682,7 @@ margin_top = 14.0
 margin_right = 62.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 94 )
+custom_fonts/font = SubResource( 95 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Max Hit:"
@@ -2692,8 +2702,8 @@ focus_mode = 1
 size_flags_horizontal = 12
 size_flags_vertical = 12
 size_flags_stretch_ratio = 0.42
-custom_styles/normal = SubResource( 95 )
-custom_fonts/font = SubResource( 96 )
+custom_styles/normal = SubResource( 96 )
+custom_fonts/font = SubResource( 97 )
 align = 1
 max_length = 3
 expand_to_text_length = true
@@ -2758,7 +2768,7 @@ margin_top = 13.8695
 margin_right = 86.3662
 margin_bottom = 29.8695
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 94 )
+custom_fonts/font = SubResource( 95 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Weapon:"
@@ -2776,12 +2786,12 @@ margin_top = 123.201
 margin_right = 767.429
 margin_bottom = 141.201
 rect_scale = Vector2( 0.783212, 0.920047 )
-theme = SubResource( 85 )
+theme = SubResource( 86 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 86 )
-custom_styles/focus = SubResource( 87 )
+custom_styles/pressed = SubResource( 87 )
+custom_styles/focus = SubResource( 88 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 88 )
+custom_fonts/font = SubResource( 89 )
 shortcut_in_tooltip = false
 clip_text = true
 align = 1
@@ -2814,7 +2824,7 @@ margin_top = 389.897
 margin_right = 313.786
 margin_bottom = 570.897
 rect_scale = Vector2( 1.55786, 1.55786 )
-custom_fonts/font = SubResource( 97 )
+custom_fonts/font = SubResource( 98 )
 custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
