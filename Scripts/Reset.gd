@@ -21,17 +21,19 @@ func Reset():
 	$"../../PrayNode/InvBG/Rest2/Button6".disabled = false
 	$"../../PrayNode/InvBG/Rest3/Button7".disabled = false
 	$"../../PrayNode/InvBG/Rest4/Button8".disabled = false
+	$"../../Jad/KinematicBody".maxHit = $"../../MaxHit/Label2".text
+	Globals.brewDose = 0
 	Globals.hitDmg = false
 	Globals.healerhitDmg = false
 	$"../../MaxHit/Panel".hide()
 	$"../../PrayNode/OrbContainer2/HpBar".value = $"../../PrayNode/OrbContainer2/HpBar".max_value
 	$"../../PrayNode/OrbContainer/PrayerBar".value = $"../../PrayNode/OrbContainer/PrayerBar".max_value
-	$"../../Viewport/TextureProgress".value = 250
-	$"../../Viewport2/HitSplat".hide()
-	$"../../Viewport2/HitsplatNum".hide()
-	$"../../Viewport2/HealerHitSplat".hide()
-	$"../../Viewport2/HealerNum".hide()
-	$"../../Viewport2/ProgressBar".value = $"../../Viewport2/ProgressBar".max_value
+	$"../../ViewportContainer/Viewport/TextureProgress".value = 250
+	$"../../ViewportContainer2/Viewport2/HitSplat".hide()
+	$"../../ViewportContainer2/Viewport2/HitsplatNum".hide()
+	$"../../ViewportContainer2/Viewport2/HealerHitSplat".hide()
+	$"../../ViewportContainer2/Viewport2/HealerNum".hide()
+	$"../../ViewportContainer2/Viewport2/ProgressBar".value = $"../../ViewportContainer2/Viewport2/ProgressBar".max_value
 	$"../../Healers/HealerFrontL/Timer".stop()
 	$"../../Healers/HealerBackL/Timer".stop()
 	$"../../Healers/HealerFrontR/Timer".stop()
@@ -52,7 +54,11 @@ func Reset():
 	$"../../Healers/HealerBackL/HealerHM2S/HealerHit2".hide()
 	$"../../Healers/HealerFrontR/HealerM3/HealerHit4".hide()
 	$"../../Healers/HealerBackR/HealerM3/HealerHit3".hide()
-	$"../../Healers/HealerFrontL".point = Vector3(-91.863, 4.3, -20.779)
-	$"../../Healers/HealerFrontR".point = Vector3(46.943,1.708,-21.572)
-	$"../../Healers/HealerBackL".point = Vector3(-46.458,1.76,-62.36)
-	$"../../Healers/HealerBackR".point = Vector3(18.053,1.653,-62.418)
+	$"../../Healers/HealerFrontL".translation = Vector3(-91.863, 4, -20.779)
+	$"../../Healers/HealerFrontR".translation = Vector3(55.323, 4, -21.572)
+	$"../../Healers/HealerBackL".translation = Vector3(-88.83, 4, -56.035)
+	$"../../Healers/HealerBackR".translation = Vector3(54.986, 4, -51.557)
+	$"../../Healers/HealerFrontL".speed = 7
+	$"../../Healers/HealerFrontR".speed = 7
+	$"../../Healers/HealerBackL".speed = 7
+	$"../../Healers/HealerBackR".speed = 7

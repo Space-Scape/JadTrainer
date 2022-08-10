@@ -4,6 +4,7 @@ var tick : int
 
 var attWithMage
 var attWithRange
+var attWithMelee
 
 var prayingMage
 var prayingRange
@@ -19,6 +20,6 @@ var attJad
 
 var playerDied
 
-var brewDose : int
+var brewDose : int = 0
 
 var killStreak : int

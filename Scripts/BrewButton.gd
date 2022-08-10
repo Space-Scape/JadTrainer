@@ -7,24 +7,39 @@ onready var cooldown = Cooldown.new(1.2)
 var brewMaxHit
 var canDrain
 
+func _ready():
+	cooldown.time = 0
+
 func _on_Button_pressed():
 	if cooldown.is_ready():
-		get_parent().frame += 1
-		$"../../../../MaxHit/Panel".show()
-		$"../../../../Viewport2/ProgressBar".value += 18
-		$"../../../OrbContainer2/HpBar".value += 18
-		Globals.attJad = false
-		
 		if canDrain:
+			$"../../../../MaxHit/Panel".show()
 			Globals.brewDose += 5
 			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
 			brewMaxHit = $"../../../../Jad/KinematicBody".maxHit - 5
 			$"../../../../Jad/KinematicBody".maxHit = brewMaxHit
-		if get_parent().frame == 4:
-			self.disabled = true
+			if get_parent().frame == 4:
+				self.disabled = true
+		
+		if Globals.tick == 1:
+			$"../../Potion".play()
+			yield($"../../../../Timer","timeout")
+			get_parent().frame += 1
+			$"../../../../ViewportContainer2/Viewport2/ProgressBar".value += 18
+			$"../../../OrbContainer2/HpBar".value += 18
+			Globals.attJad = false
+			yield($"../../../../Timer2","timeout")
+		elif Globals.tick == 2:
+			$"../../Potion".play()
+			yield($"../../../../Timer2","timeout")
+			get_parent().frame += 1
+			$"../../../../ViewportContainer2/Viewport2/ProgressBar".value += 18
+			$"../../../OrbContainer2/HpBar".value += 18
+			Globals.attJad = false
+			yield($"../../../../Timer","timeout")
 
 func _process(delta):
-	if $"../../../../Viewport2/ProgressBar".value <= 0 or Globals.playerDied:
+	if $"../../../../ViewportContainer2/Viewport2/ProgressBar".value <= 0 or Globals.playerDied:
 		self.disabled = false
 		get_parent().frame = 0
 		Globals.brewDose = 0

@@ -2,20 +2,40 @@ extends Button
 
 const Cooldown = preload('res://Scripts/Cooldown.gd')
 
-onready var cooldown = Cooldown.new(0.6)
+onready var cooldown = Cooldown.new(1.2)
+
+func _ready():
+	cooldown.time = 0
 
 func _on_Button_pressed():
 	if cooldown.is_ready():
-		$"../../../Prayers".canPlayDrain = true
-		get_parent().frame += 1
-		$"../../../../Jad/KinematicBody".maxHit += 15
-		Globals.brewDose -= 15
-		$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
-		Globals.attJad = false
-		if get_parent().frame == 4:
-			self.disabled = true
+		if Globals.tick == 1:
+			yield($"../../../../Timer","timeout")
+			$"../../Potion".play()
+			$"../../../Prayers".canPlayDrain = true
+			get_parent().frame += 1
+			$"../../../../Jad/KinematicBody".maxHit += 15
+			Globals.brewDose -= 15
+			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
+			Globals.attJad = false
+			if get_parent().frame == 4:
+				self.disabled = true
+			$"../../../OrbContainer/PrayerBar".value += 30
+			yield($"../../../../Timer2","timeout")
 		
-		$"../../../OrbContainer/PrayerBar".value += 30
+		elif Globals.tick == 2:
+			yield($"../../../../Timer2","timeout")
+			$"../../Potion".play()
+			$"../../../Prayers".canPlayDrain = true
+			get_parent().frame += 1
+			$"../../../../Jad/KinematicBody".maxHit += 15
+			Globals.brewDose -= 15
+			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
+			Globals.attJad = false
+			if get_parent().frame == 4:
+				self.disabled = true
+			$"../../../OrbContainer/PrayerBar".value += 30
+			yield($"../../../../Timer","timeout")
 
 func _process(delta):
 	if Globals.brewDose <= 0:

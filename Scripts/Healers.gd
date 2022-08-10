@@ -6,13 +6,6 @@ onready var cooldown = Cooldown.new(1.2)
 
 onready var healerToggle = get_node("../HealerBar/CheckBox")
 
-func _ready():
-	$"HealerFrontL".canMoveToJad = false
-	$"HealerFrontR".canMoveToJad = false
-	$"HealerBackL".canMoveToJad = false
-	$"HealerBackR".canMoveToJad = false
-	$"HealerFrontL".translation = Vector3(-91.863, 4.3, -20.779)
-
 func _process(delta):
 	cooldown.tick(delta)
 
