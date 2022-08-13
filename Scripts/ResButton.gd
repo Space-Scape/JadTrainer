@@ -14,7 +14,10 @@ func _on_Button_pressed():
 			$"../../Potion".play()
 			$"../../../Prayers".canPlayDrain = true
 			get_parent().frame += 1
-			$"../../../../Jad/KinematicBody".maxHit += 15
+			if Globals.canBoostMaxHit:
+				Globals.maxHit += 15
+			else:
+				Globals.maxHit += 0
 			Globals.brewDose -= 15
 			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
 			Globals.attJad = false
@@ -28,7 +31,10 @@ func _on_Button_pressed():
 			$"../../Potion".play()
 			$"../../../Prayers".canPlayDrain = true
 			get_parent().frame += 1
-			$"../../../../Jad/KinematicBody".maxHit += 15
+			if Globals.canBoostMaxHit:
+				Globals.maxHit += 15
+			else:
+				Globals.maxHit += 0
 			Globals.brewDose -= 15
 			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
 			Globals.attJad = false

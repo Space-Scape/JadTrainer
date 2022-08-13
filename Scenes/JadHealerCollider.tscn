@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=2]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.200826, 0.159073, 0.194753 )
+
+[node name="JadHealerCollider" type="StaticBody"]
+transform = Transform( 2.5, 0, 0, 0, 17.118, 0, 0, 0, 2.5, -67.46, -42.176, -96.53 )
+input_ray_pickable = false
+collision_layer = 8
+collision_mask = 8
+
+[node name="CollisionShape2" type="CollisionShape" parent="."]
+transform = Transform( 19.3499, 0, 0, 0, 6.29447, 0, 0, 0, 18.8833, 0, -0.378759, -0.770034 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}

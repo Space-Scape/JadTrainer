@@ -1,4 +1,4 @@
-extends Area
+extends Spatial
 
 var streak
 var zero = 0
@@ -6,28 +6,12 @@ var num
 var jadHit = 99
 var jadCanMelee = false
 
-onready var numContainer = $"../../ViewportContainer2/Viewport2/HitsplatNum"
+onready var numContainer = $"/root/Spatial/ViewportContainer2/Viewport2/HitsplatNum"
 
-onready var hitSplat = $"../../ViewportContainer2/Viewport2/HitSplat"
-onready var hpBar = $"../../ViewportContainer2/Viewport2/ProgressBar"
+onready var hitSplat = $"/root/Spatial/ViewportContainer2/Viewport2/HitSplat"
+onready var hpBar = $"/root/Spatial/ViewportContainer2/Viewport2/ProgressBar"
 
-onready var hpOrb = $"../../PrayNode/OrbContainer2/HpBar"
-
-func _process(delta):
-	if $"../../Jad/Jad_Att/AttScript".number != null:
-		if $"../../Jad/Jad_Att/AttScript".attWithMage:
-				$"MageHitbox5".disabled = false
-				$"MageHitbox4".disabled = false
-				$"MageHitbox3".disabled = false
-				$"MageHitbox2".disabled = false
-				$"MageHitbox".disabled = false
-		if $"../../Jad/Jad_Att/AttScript".attWithRanged:
-				$"MageHitbox5".disabled = true
-				$"MageHitbox4".disabled = true
-				$"MageHitbox3".disabled = true
-				$"MageHitbox2".disabled = true
-				$"MageHitbox".disabled = true
-
+onready var hpOrb = $"/root/Spatial/PrayNode/OrbContainer2/HpBar"
 
 func _on_Player_area_entered(area):
 	num = rand_range(1, jadHit)
@@ -37,6 +21,7 @@ func _on_Player_area_entered(area):
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 			hitSplat.show()
 			Globals.hitDmg = false
+			numContainer.bbcode_text = ""
 		if Globals.prayingMage and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
@@ -81,6 +66,7 @@ func _on_Player_area_entered(area):
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 			hitSplat.show()
 			Globals.hitDmg = false
+			numContainer.bbcode_text = ""
 		if Globals.prayingMelee and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
@@ -167,6 +153,7 @@ func _on_Player_area_entered(area):
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 			hitSplat.show()
 			Globals.hitDmg = false
+			numContainer.bbcode_text = ""
 		if Globals.prayingMage and area.get_name() == "Boulder":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
@@ -211,6 +198,7 @@ func _on_Player_area_entered(area):
 			hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 			hitSplat.show()
 			Globals.hitDmg = false
+			numContainer.bbcode_text = ""
 		if Globals.prayingMelee and area.get_name() == "Fireball":
 			hitSplat.texture = load("res://Sprites/hitsplatRed.png")
 			hitSplat.show()
@@ -292,7 +280,7 @@ func _on_Player_area_entered(area):
 				hpOrb.value -= num
 				numContainer.bbcode_text = "[center]" + str(num).pad_decimals(0) + "[/center]"
 
-func _on_Area_area_entered(area):
+func _on_MeleeDistance_area_entered(area):
 	if area.get_name() == "Player":
 		jadCanMelee = true
 
@@ -329,6 +317,7 @@ func _on_Melee_area_exited(area):
 				hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 				hitSplat.show()
 				Globals.hitDmg = false
+				numContainer.bbcode_text = ""
 			
 		elif Globals.tick == 2:
 			jadCanMelee = true
@@ -357,4 +346,4 @@ func _on_Melee_area_exited(area):
 				hitSplat.texture = load("res://Sprites/hitsplatBlue.png")
 				hitSplat.show()
 				Globals.hitDmg = false
-
+				numContainer.bbcode_text = ""

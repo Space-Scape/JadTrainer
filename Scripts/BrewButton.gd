@@ -13,11 +13,11 @@ func _ready():
 func _on_Button_pressed():
 	if cooldown.is_ready():
 		if canDrain:
+			Globals.canBoostMaxHit = true
 			$"../../../../MaxHit/Panel".show()
 			Globals.brewDose += 5
+			Globals.maxHit -= 5
 			$"../../../../MaxHit/Panel/RichTextLabel".bbcode_text = "[color=red][center]-" + str(Globals.brewDose)
-			brewMaxHit = $"../../../../Jad/KinematicBody".maxHit - 5
-			$"../../../../Jad/KinematicBody".maxHit = brewMaxHit
 			if get_parent().frame == 4:
 				self.disabled = true
 		
@@ -43,17 +43,26 @@ func _process(delta):
 		self.disabled = false
 		get_parent().frame = 0
 		Globals.brewDose = 0
-		brewMaxHit = 0
-		$"../../../../Jad/KinematicBody".maxHit = int($"../../../../MaxHit/Label2".text)
+		Globals.maxHit = int($"../../../../MaxHit/Label2".text)
 		
 	if Globals.brewDose <= 0:
 		Globals.brewDose = 0
 		$"../../../../MaxHit/Panel".hide()
-	if $"../../../../Jad/KinematicBody".maxHit <= 0:
+	if Globals.maxHit <= 0:
 		canDrain = false
-		brewMaxHit = 0
-		$"../../../../Jad/KinematicBody".maxHit = 0
+		Globals.maxHit = 0
 	else:
 		canDrain = true
+		
+	if Globals.brewDose == 0:
+		Globals.canBoostMaxHit = false
+	else:
+		Globals.canBoostMaxHit = true
+		
+	if Globals.maxHit >= int($"/root/Spatial/MaxHit/Label2".text):
+		Globals.canBoostMaxHit = false
+		Globals.maxHit = int($"/root/Spatial/MaxHit/Label2".text)
+	else:
+		Globals.canBoostMaxHit = true
 	
 	cooldown.tick(delta)

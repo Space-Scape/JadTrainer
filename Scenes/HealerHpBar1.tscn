@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://runescape_uf.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/redBar.png" type="Texture" id=3]
+[ext_resource path="res://Scenes/HpBar.tres" type="StyleBox" id=4]
+[ext_resource path="res://Scripts/Hitsplat.gd" type="Script" id=5]
+[ext_resource path="res://Scripts/HealerHp.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/HpBarSprite.gd" type="Script" id=7]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=8]
+[ext_resource path="res://SFX/hitHealer.wav" type="AudioStream" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="DynamicFont" id=2]
+outline_size = 1
+outline_color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxTexture" id=3]
+texture = ExtResource( 3 )
+region_rect = Rect2( 0, 0, 554, 55 )
+margin_left = 5.0
+
+[sub_resource type="ViewportTexture" id=5]
+viewport_path = NodePath("Viewport")
+
+[node name="ViewportContainer" type="ViewportContainer"]
+margin_left = 21.8633
+margin_top = 1102.18
+margin_right = 321.863
+margin_bottom = 1393.18
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 300, 291 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="HealerHitSplat" type="Sprite" parent="Viewport"]
+visible = false
+position = Vector2( 91.12, 225.238 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 2 )
+offset = Vector2( 37.354, 0 )
+script = ExtResource( 5 )
+
+[node name="HitNum" type="RichTextLabel" parent="Viewport/HealerHitSplat"]
+visible = false
+margin_left = -12.605
+margin_top = -15.324
+margin_right = 36.091
+margin_bottom = 6.676
+rect_scale = Vector2( 2, 2 )
+custom_styles/normal = SubResource( 4 )
+custom_fonts/normal_font = SubResource( 2 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HpBar" type="ProgressBar" parent="Viewport"]
+margin_right = 299.0
+margin_bottom = 40.0
+custom_styles/fg = ExtResource( 4 )
+custom_styles/bg = SubResource( 3 )
+max_value = 60.0
+step = 1.0
+value = 60.0
+percent_visible = false
+script = ExtResource( 6 )
+
+[node name="HpBarSprite" type="Sprite3D" parent="Viewport"]
+transform = Transform( 1.6, 0, 0, 0, 1.0975, 0, 0, 0, 1.6, 0, 4.06846, 0 )
+flip_v = true
+billboard = 1
+texture = SubResource( 5 )
+script = ExtResource( 7 )
+
+[node name="HitTimer" type="Timer" parent="Viewport"]
+wait_time = 3.0
+one_shot = true
+autostart = true
+script = ExtResource( 8 )
+
+[node name="Healer" type="AudioStreamPlayer" parent="Viewport"]
+stream = ExtResource( 9 )
+volume_db = 13.183
+[connection signal="timeout" from="Viewport/HitTimer" to="Viewport/HpBar" method="_on_HitTimer_timeout"]

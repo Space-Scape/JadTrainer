@@ -1,0 +1,306 @@
+[gd_scene load_steps=19 format=2]
+
+[ext_resource path="res://Sprites/Healer.png" type="Texture" id=1]
+[ext_resource path="res://runescape_uf.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Scripts/HealerAIMid.gd" type="Script" id=3]
+[ext_resource path="res://SFX/hitHealer.wav" type="AudioStream" id=4]
+[ext_resource path="res://SFX/JadHeal.wav" type="AudioStream" id=5]
+[ext_resource path="res://Sprites/hitsplatRed.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/redBar.png" type="Texture" id=9]
+[ext_resource path="res://Scenes/HpBar.tres" type="StyleBox" id=10]
+[ext_resource path="res://Scripts/Hitsplat.gd" type="Script" id=11]
+[ext_resource path="res://Scripts/HpBarSprite.gd" type="Script" id=12]
+[ext_resource path="res://Scripts/Timer.gd" type="Script" id=13]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 0.177349, 0.195897, 0.201811 )
+
+[sub_resource type="GDScript" id=2]
+script/source = "extends Node
+
+const Cooldown = preload('res://Scripts/Cooldown.gd')
+
+onready var cooldown = Cooldown.new(1.2)
+
+onready var blueTex = load(\"res://Sprites/hitsplatBlue.png\")
+onready var redTex = load(\"res://Sprites/hitsplatRed.png\")
+
+onready var backSprite = $\"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3\"
+
+onready var hitSplat = $\"../ViewportContainer/Viewport/HealerHitSplat\"
+onready var hitSplatNum = $\"../ViewportContainer/Viewport/HealerHitSplat/HitNum\"
+onready var attTimer = $\"../ViewportContainer/Viewport/HitTimer\"
+onready var hpBar = $\"../ViewportContainer/Viewport/HpBar\"
+
+var hitNum
+var accuracyRange
+var accuracyNum = 3
+
+func _process(delta):
+	cooldown.tick(delta)
+	
+	if Globals.selectBP:
+		cooldown.max_time = 1.2
+	if Globals.selectBF:
+		cooldown.max_time = 2.4
+	if Globals.selectRCB:
+		cooldown.max_time = 3
+	if Globals.selectACB:
+		cooldown.max_time = 3
+	if Globals.selectTB:
+		cooldown.max_time = 3
+
+func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
+	if event is InputEventMouseButton:
+		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
+			get_parent().canMoveToJad = false
+			get_parent().canMoveToPlayer = true
+			$\"../ViewportContainer/Viewport/HpBarSprite\".show()
+			$\"../ViewportContainer/Viewport/HealerHitSplat\".show()
+			Globals.attHealer1 = false
+			Globals.attHealer2 = true
+			Globals.attHealer3 = false
+			Globals.attHealer4 = false
+			Globals.attJad = false
+			$\"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
+			$\"../Timer\".start()
+			$\"../ViewportContainer/Viewport/HitTimer\".start()
+			
+			accuracyRange = rand_range(0,6)
+			
+			$\"../Healer\".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+			hpBar.value -= hitNum
+"
+
+[sub_resource type="StyleBoxEmpty" id=3]
+content_margin_left = 2.0
+content_margin_right = 2.0
+content_margin_top = 2.0
+content_margin_bottom = 2.0
+
+[sub_resource type="DynamicFont" id=4]
+outline_size = 1
+outline_color = Color( 0.0352941, 0.00392157, 0.00392157, 1 )
+extra_spacing_char = 1
+font_data = ExtResource( 2 )
+
+[sub_resource type="StyleBoxTexture" id=5]
+texture = ExtResource( 9 )
+region_rect = Rect2( 0, 0, 554, 55 )
+margin_left = 5.0
+
+[sub_resource type="GDScript" id=6]
+script/source = "extends ProgressBar
+
+onready var blueTex = load(\"res://Sprites/hitsplatBlue.png\")
+onready var redTex = load(\"res://Sprites/hitsplatRed.png\")
+
+onready var backSprite = $\"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3\"
+
+onready var hitSplat = $\"../HealerHitSplat\"
+onready var hitSplatNum = $\"../HealerHitSplat/HitNum\"
+onready var attTimer = $\"../HitTimer\"
+onready var hpBar = self
+
+var hitNum
+var accuracyRange
+var accuracyNum = 3
+
+func _ready():
+	accuracyRange = rand_range(0,6)
+	
+	if Globals.attHealer2:
+		$\"../Healer\".play()
+		hitSplatNum.show()
+		hitSplat.show()
+		hpBar.show()
+		if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+			hitNum = rand_range(1, Globals.maxHit)
+			hitSplat.texture = redTex
+		else:
+			hitNum = 0
+			hitSplat.texture = blueTex
+		hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+		hpBar.value -= hitNum
+
+func _process(_delta):
+	accuracyRange = rand_range(0,6)
+	
+	if Globals.attHealer2 == true:
+		backSprite.play()
+		hpBar.show()
+	else:
+		backSprite.stop()
+		attTimer.stop()
+		hitSplat.hide()
+		hitSplatNum.hide()
+	
+	if hpBar.value <= 0:
+		$\"../../..\".hide()
+		$\"../../..\".transform.origin = Vector3(-24.07, -40, -95.719)
+		hitSplat.hide()
+		hitSplatNum.hide()
+		attTimer.stop()
+		hpBar.hide()
+
+func _on_HitTimer_timeout():
+	if Globals.attHealer2:
+		if Globals.tick == 1:
+			yield($\"/root/Spatial/Timer\", \"timeout\")
+			$\"../Healer\".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+			hpBar.value -= hitNum
+			yield($\"/root/Spatial/Timer2\", \"timeout\")
+		
+		elif Globals.tick == 2:
+			yield($\"/root/Spatial/Timer\", \"timeout\")
+			$\"../Healer\".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = \"[center]\" + str(hitNum).pad_decimals(0) + \"[/center]\"
+			hpBar.value -= hitNum
+			yield($\"/root/Spatial/Timer2\", \"timeout\")
+
+"
+
+[sub_resource type="ViewportTexture" id=7]
+viewport_path = NodePath("ViewportContainer/Viewport")
+
+[node name="Healer2" type="KinematicBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.37493, 0 )
+collision_layer = 8
+collision_mask = 31
+script = ExtResource( 3 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="HealerSprite" type="Sprite3D" parent="."]
+transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
+cast_shadow = 0
+flip_h = true
+pixel_size = 0.0094
+billboard = 1
+alpha_cut = 2
+texture = ExtResource( 1 )
+
+[node name="CollisionShape" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0145398, 0 )
+shape = SubResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="Area" type="Area" parent="."]
+transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
+gravity = 0.0
+linear_damp = 0.0
+angular_damp = 0.0
+collision_layer = 8
+collision_mask = 31
+
+[node name="CollisionShape2" type="CollisionShape" parent="Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0145398, 0 )
+shape = SubResource( 1 )
+
+[node name="JadHeal" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = 4.273
+
+[node name="Healer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 4 )
+volume_db = 13.183
+
+[node name="HealerAggro" type="Node" parent="."]
+script = SubResource( 2 )
+
+[node name="ViewportContainer" type="ViewportContainer" parent="."]
+margin_left = 21.8633
+margin_top = 1102.18
+margin_right = 321.863
+margin_bottom = 1393.18
+stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Viewport" type="Viewport" parent="ViewportContainer"]
+size = Vector2( 300, 291 )
+transparent_bg = true
+handle_input_locally = false
+render_target_update_mode = 3
+
+[node name="HealerHitSplat" type="Sprite" parent="ViewportContainer/Viewport"]
+visible = false
+position = Vector2( 91.12, 225.238 )
+scale = Vector2( 2, 2 )
+z_index = 1
+texture = ExtResource( 8 )
+offset = Vector2( 37.354, 0 )
+script = ExtResource( 11 )
+
+[node name="HitNum" type="RichTextLabel" parent="ViewportContainer/Viewport/HealerHitSplat"]
+visible = false
+margin_left = -12.605
+margin_top = -15.324
+margin_right = 36.091
+margin_bottom = 6.676
+rect_scale = Vector2( 2, 2 )
+custom_styles/normal = SubResource( 3 )
+custom_fonts/normal_font = SubResource( 4 )
+bbcode_enabled = true
+scroll_active = false
+
+[node name="HpBar" type="ProgressBar" parent="ViewportContainer/Viewport"]
+margin_right = 299.0
+margin_bottom = 40.0
+custom_styles/fg = ExtResource( 10 )
+custom_styles/bg = SubResource( 5 )
+max_value = 60.0
+step = 1.0
+value = 60.0
+percent_visible = false
+script = SubResource( 6 )
+
+[node name="HpBarSprite" type="Sprite3D" parent="ViewportContainer/Viewport"]
+transform = Transform( 1.6, 0, 0, 0, 1.0975, 0, 0, 0, 1.6, 0, 4.06846, 0 )
+visible = false
+flip_v = true
+billboard = 1
+texture = SubResource( 7 )
+script = ExtResource( 12 )
+
+[node name="HitTimer" type="Timer" parent="ViewportContainer/Viewport"]
+wait_time = 3.0
+script = ExtResource( 13 )
+
+[node name="Healer" type="AudioStreamPlayer" parent="ViewportContainer/Viewport"]
+stream = ExtResource( 4 )
+volume_db = 13.183
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="input_event" from="Area" to="HealerAggro" method="_on_Area_input_event"]
+[connection signal="timeout" from="ViewportContainer/Viewport/HitTimer" to="ViewportContainer/Viewport/HpBar" method="_on_HitTimer_timeout"]

@@ -272,8 +272,8 @@ func _on_SharpEye_toggled(button_pressed):
 				$"../SharpEyeSfx".play()
 				$"../SharpEye".icon = sharpEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 0.5
-				$"../../Jad/KinematicBody".maxHit += 1
+				Globals.accuracyAddSub -= 0.5
+				Globals.maxHit += 1
 				yield($"../../Timer2", "timeout")
 			elif Globals.tick == 2:
 				$"../HawkEye".pressed = false
@@ -285,8 +285,8 @@ func _on_SharpEye_toggled(button_pressed):
 				$"../SharpEyeSfx".play()
 				$"../SharpEye".icon = sharpEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 0.5
-				$"../../Jad/KinematicBody".maxHit += 1
+				Globals.accuracyAddSub -= 0.5
+				Globals.maxHit += 1
 				yield($"../../Timer", "timeout")
 	else:
 		if Globals.tick == 1:
@@ -294,8 +294,8 @@ func _on_SharpEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer", "timeout")
 			$"../SharpEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 0.5
-			$"../../Jad/KinematicBody".maxHit -= 1
+			Globals.accuracyAddSub += 0.5
+			Globals.maxHit -= 1
 			$"../PrayOff".play()
 			yield($"../../Timer2", "timeout")
 		if Globals.tick == 2:
@@ -303,8 +303,8 @@ func _on_SharpEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer2", "timeout")
 			$"../SharpEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 0.5
-			$"../../Jad/KinematicBody".maxHit -= 1
+			Globals.accuracyAddSub += 0.5
+			Globals.maxHit -= 1
 			$"../PrayOff".play()
 			yield($"../../Timer", "timeout")
 
@@ -321,8 +321,8 @@ func _on_HawkEye_toggled(button_pressed):
 				$"../HawkEyeSfx".play()
 				$"../HawkEye".icon = hawkEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 1
-				$"../../Jad/KinematicBody".maxHit += 2
+				Globals.accuracyAddSub -= 1
+				Globals.maxHit += 2
 				yield($"../../Timer2", "timeout")
 			elif Globals.tick == 2:
 				$"../SharpEye".pressed = false
@@ -334,8 +334,8 @@ func _on_HawkEye_toggled(button_pressed):
 				$"../HawkEyeSfx".play()
 				$"../HawkEye".icon = hawkEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 1
-				$"../../Jad/KinematicBody".maxHit += 2
+				Globals.accuracyAddSub -= 1
+				Globals.maxHit += 2
 				yield($"../../Timer", "timeout")
 	else:
 		if Globals.tick == 1:
@@ -343,8 +343,8 @@ func _on_HawkEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer", "timeout")
 			$"../HawkEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 1
-			$"../../Jad/KinematicBody".maxHit -= 2
+			Globals.accuracyAddSub += 1
+			Globals.maxHit -= 2
 			$"../PrayOff".play()
 			yield($"../../Timer2", "timeout")
 		elif Globals.tick == 2:
@@ -352,8 +352,8 @@ func _on_HawkEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer2", "timeout")
 			$"../HawkEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 1
-			$"../../Jad/KinematicBody".maxHit -= 2
+			Globals.accuracyAddSub += 1
+			Globals.maxHit -= 2
 			$"../PrayOff".play()
 			yield($"../../Timer", "timeout")
 
@@ -370,8 +370,8 @@ func _on_EagleEye_toggled(button_pressed):
 				$"../EagleEyeSfx".play()
 				$"../EagleEye".icon = eagleEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 1.5
-				$"../../Jad/KinematicBody".maxHit += 3
+				Globals.accuracyAddSub -= 1.5
+				Globals.maxHit += 3
 				yield($"../../Timer2", "timeout")
 			elif Globals.tick == 2:
 				$"../SharpEye".pressed = false
@@ -383,8 +383,8 @@ func _on_EagleEye_toggled(button_pressed):
 				$"../EagleEyeSfx".play()
 				$"../EagleEye".icon = eagleEye
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 1.5
-				$"../../Jad/KinematicBody".maxHit += 3
+				Globals.accuracyAddSub -= 1.5
+				Globals.maxHit += 3
 				yield($"../../Timer", "timeout")
 	else:
 		if Globals.tick == 1:
@@ -392,8 +392,8 @@ func _on_EagleEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer", "timeout")
 			$"../EagleEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 1.5
-			$"../../Jad/KinematicBody".maxHit -= 3
+			Globals.accuracyAddSub += 1.5
+			Globals.maxHit -= 3
 			$"../PrayOff".play()
 			yield($"../../Timer2", "timeout")
 		elif Globals.tick == 2:
@@ -401,8 +401,8 @@ func _on_EagleEye_toggled(button_pressed):
 			prayerDrainRate -= 1
 			yield($"../../Timer2", "timeout")
 			$"../EagleEye".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 1.5
-			$"../../Jad/KinematicBody".maxHit -= 3
+			Globals.accuracyAddSub += 1.5
+			Globals.maxHit -= 3
 			$"../PrayOff".play()
 			yield($"../../Timer", "timeout")
 
@@ -410,6 +410,7 @@ func _on_Rigour_pressed(button_pressed):
 	if button_pressed:
 		if canPray:
 			if Globals.tick == 1:
+				Globals.prayingRigour = true
 				$"../SharpEye".pressed = false
 				$"../HawkEye".pressed = false
 				$"../EagleEye".pressed = false
@@ -419,10 +420,11 @@ func _on_Rigour_pressed(button_pressed):
 				$"../RigourSfx".play()
 				$"../Rigour".icon = rigourIcon
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 2
-				$"../../Jad/KinematicBody".maxHit += 4
+				Globals.accuracyAddSub -= 2
+				Globals.maxHit += 4
 				yield($"../../Timer2", "timeout")
 			elif Globals.tick == 2:
+				Globals.prayingRigour = true
 				$"../SharpEye".pressed = false
 				$"../HawkEye".pressed = false
 				$"../EagleEye".pressed = false
@@ -432,26 +434,28 @@ func _on_Rigour_pressed(button_pressed):
 				$"../RigourSfx".play()
 				$"../Rigour".icon = rigourIcon
 				Globals.prayOn = true
-				$"../../Jad/KinematicBody".accuracyAddSub -= 2
-				$"../../Jad/KinematicBody".maxHit += 4
+				Globals.accuracyAddSub -= 2
+				Globals.maxHit += 4
 				yield($"../../Timer", "timeout")
 	else:
 		if Globals.tick == 1:
 			button_pressed = false
+			Globals.prayingRigour = false
 			prayerDrainRate -= 1
 			yield($"../../Timer", "timeout")
 			$"../Rigour".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 2
-			$"../../Jad/KinematicBody".maxHit -= 4
+			Globals.accuracyAddSub += 2
+			Globals.maxHit -= 4
 			$"../PrayOff".play()
 			yield($"../../Timer2", "timeout")
 		elif Globals.tick == 2:
 			button_pressed = false
+			Globals.prayingRigour = false
 			prayerDrainRate -= 1
 			yield($"../../Timer2", "timeout")
 			$"../Rigour".icon = null
-			$"../../Jad/KinematicBody".accuracyAddSub += 2
-			$"../../Jad/KinematicBody".maxHit -= 4
+			Globals.accuracyAddSub += 2
+			Globals.maxHit -= 4
 			$"../PrayOff".play()
 			yield($"../../Timer", "timeout")
 

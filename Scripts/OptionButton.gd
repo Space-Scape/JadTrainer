@@ -6,14 +6,8 @@ func _ready():
 	key.set_shortcut(InputMap.get_action_list("F2")[0])
 	$"../../../TopTab/PrayerButton".set_shortcut(key)
 	
-	add_item("F1")
-	add_item("F2")
-	add_item("F3")
-	add_item("F4")
+	select(Save.prayerFkey)
 	
-	select(1)
-
-func _on_OptionButton2_item_selected(_index):
 	if selected == 0:
 		key.set_shortcut(InputMap.get_action_list("F1")[0])
 		$"../../../TopTab/PrayerButton".set_shortcut(key)
@@ -24,5 +18,27 @@ func _on_OptionButton2_item_selected(_index):
 		key.set_shortcut(InputMap.get_action_list("F3")[0])
 		$"../../../TopTab/PrayerButton".set_shortcut(key)
 	if selected == 3:
+		key.set_shortcut(InputMap.get_action_list("F4")[0])
+		$"../../../TopTab/PrayerButton".set_shortcut(key)
+
+func _on_OptionButton2_item_selected(_index):
+	if _index == 0:
+		Save.prayerFkey = 0
+		Globals.setDefaults = false
+		key.set_shortcut(InputMap.get_action_list("F1")[0])
+		$"../../../TopTab/PrayerButton".set_shortcut(key)
+	if _index == 1:
+		Save.prayerFkey = 1
+		Globals.setDefaults = false
+		key.set_shortcut(InputMap.get_action_list("F2")[0])
+		$"../../../TopTab/PrayerButton".set_shortcut(key)
+	if _index == 2:
+		Save.prayerFkey = 2
+		Globals.setDefaults = false
+		key.set_shortcut(InputMap.get_action_list("F3")[0])
+		$"../../../TopTab/PrayerButton".set_shortcut(key)
+	if _index == 3:
+		Save.prayerFkey = 3
+		Globals.setDefaults = false
 		key.set_shortcut(InputMap.get_action_list("F4")[0])
 		$"../../../TopTab/PrayerButton".set_shortcut(key)

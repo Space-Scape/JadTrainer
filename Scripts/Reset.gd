@@ -1,64 +1,65 @@
 extends CheckBox
 
+onready var Jad = preload("res://Scenes/Jad.tscn")
+onready var jadInstance = Jad.instance()
+
 func _on_CheckBox_pressed():
 	Reset()
 
 func Reset():
-	$"../../PrayNode/StreakCounter".text = str(0)
-	$"../../PrayNode/InvBG/Brew1".frame = 0
-	$"../../PrayNode/InvBG/Brew2".frame = 0
-	$"../../PrayNode/InvBG/Brew3".frame = 0
-	$"../../PrayNode/InvBG/Brew4".frame = 0
-	$"../../PrayNode/InvBG/Rest1".frame = 0
-	$"../../PrayNode/InvBG/Rest2".frame = 0
-	$"../../PrayNode/InvBG/Rest3".frame = 0
-	$"../../PrayNode/InvBG/Rest4".frame = 0
-	$"../../PrayNode/InvBG/Brew1/Button".disabled = false
-	$"../../PrayNode/InvBG/Brew2/Button2".disabled = false
-	$"../../PrayNode/InvBG/Brew3/Button3".disabled = false
-	$"../../PrayNode/InvBG/Brew4/Button4".disabled = false
-	$"../../PrayNode/InvBG/Rest1/Button5".disabled = false
-	$"../../PrayNode/InvBG/Rest2/Button6".disabled = false
-	$"../../PrayNode/InvBG/Rest3/Button7".disabled = false
-	$"../../PrayNode/InvBG/Rest4/Button8".disabled = false
-	$"../../Jad/KinematicBody".maxHit = $"../../MaxHit/Label2".text
-	Globals.brewDose = 0
-	Globals.hitDmg = false
+	get_tree().reload_current_scene()
+	Globals.setDefaults = false
 	Globals.healerhitDmg = false
-	$"../../MaxHit/Panel".hide()
-	$"../../PrayNode/OrbContainer2/HpBar".value = $"../../PrayNode/OrbContainer2/HpBar".max_value
-	$"../../PrayNode/OrbContainer/PrayerBar".value = $"../../PrayNode/OrbContainer/PrayerBar".max_value
-	$"../../ViewportContainer/Viewport/TextureProgress".value = 250
-	$"../../ViewportContainer2/Viewport2/HitSplat".hide()
-	$"../../ViewportContainer2/Viewport2/HitsplatNum".hide()
+	Globals.hitDmg = false
 	$"../../ViewportContainer2/Viewport2/HealerHitSplat".hide()
-	$"../../ViewportContainer2/Viewport2/HealerNum".hide()
-	$"../../ViewportContainer2/Viewport2/ProgressBar".value = $"../../ViewportContainer2/Viewport2/ProgressBar".max_value
-	$"../../Healers/HealerFrontL/Timer".stop()
-	$"../../Healers/HealerBackL/Timer".stop()
-	$"../../Healers/HealerFrontR/Timer".stop()
-	$"../../Healers/HealerBackR/Timer".stop()
-	$"../../Healers/HealerFrontL".visible = false
-	$"../../Healers/HealerFrontR".visible = false
-	$"../../Healers/HealerBackL".visible = false
-	$"../../Healers/HealerBackR".visible = false
-	$"../../Healers/HealerFrontL".canMoveToJad = false
-	$"../../Healers/HealerFrontR".canMoveToJad = false
-	$"../../Healers/HealerBackL".canMoveToJad = false
-	$"../../Healers/HealerBackR".canMoveToJad = false
-	$"../../Healers/HealerFrontL".canMoveToPlayer = false
-	$"../../Healers/HealerFrontR".canMoveToPlayer = false
-	$"../../Healers/HealerBackL".canMoveToPlayer = false
-	$"../../Healers/HealerBackR".canMoveToPlayer = false
-	$"../../Healers/HealerFrontL/HealerM1/HealerHit".hide()
-	$"../../Healers/HealerBackL/HealerHM2S/HealerHit2".hide()
-	$"../../Healers/HealerFrontR/HealerM3/HealerHit4".hide()
-	$"../../Healers/HealerBackR/HealerM3/HealerHit3".hide()
-	$"../../Healers/HealerFrontL".translation = Vector3(-91.863, 4, -20.779)
-	$"../../Healers/HealerFrontR".translation = Vector3(55.323, 4, -21.572)
-	$"../../Healers/HealerBackL".translation = Vector3(-88.83, 4, -56.035)
-	$"../../Healers/HealerBackR".translation = Vector3(54.986, 4, -51.557)
-	$"../../Healers/HealerFrontL".speed = 7
-	$"../../Healers/HealerFrontR".speed = 7
-	$"../../Healers/HealerBackL".speed = 7
-	$"../../Healers/HealerBackR".speed = 7
+	$"../../Attack Speed/OptionButton2".select(Save.weaponSelect)
+	$"../../PrayNode/CanvasLayer2/Inv/OptionButton".select(Save.invFkey)
+	$"../../PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2".select(Save.prayerFkey)
+	$"../../PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl".text = Save.hpText
+	$"../../ViewportContainer2/Viewport2/AnimatedSprite3".play(Save.playerAnim)
+	Globals.maxHit = Save.maxHit
+
+func _on_CheckBox_button_down():
+	Globals.spawnHealers = true
+	Globals.attHealer1 = false
+	Globals.attHealer2 = false
+	Globals.attHealer3 = false
+	Globals.attHealer4 = false
+	
+	if get_tree().get_root().get_child(2).has_node("Healer"):
+		$"/root/Spatial/Healer/ViewportContainer/Viewport/HpBar".value = 60
+		$"/root/Spatial/Healer".canMoveToPlayer = false
+		$"/root/Spatial/Healer".canMoveToJad = true
+		$"/root/Spatial/Healer".show()
+		$"/root/Spatial/Healer".translation = Vector3(-112.47, -40, -96.504)
+	else:
+		$"/root/Spatial/Jad/SpawnHealers".AddHealers()
+	
+	if get_tree().get_root().get_child(2).has_node("Healer2"):
+		$"/root/Spatial/Healer2/ViewportContainer/Viewport/HpBar".value = 60
+		$"/root/Spatial/Healer2".canMoveToPlayer = false
+		$"/root/Spatial/Healer2".canMoveToJad = true
+		$"/root/Spatial/Healer2".show()
+		$"/root/Spatial/Healer2".translation = Vector3(-24.07, -40, -95.719)
+	else:
+		$"/root/Spatial/Jad/SpawnHealers".AddHealers()
+	
+	if get_tree().get_root().get_child(2).has_node("Healer3"):
+		$"/root/Spatial/Healer3/ViewportContainer/Viewport/HpBar".value = 60
+		$"/root/Spatial/Healer3".canMoveToPlayer = false
+		$"/root/Spatial/Healer3".canMoveToJad = true
+		$"/root/Spatial/Healer3".show()
+		$"/root/Spatial/Healer3".translation = Vector3(-107.823, -40, -127.299)
+	else:
+		$"/root/Spatial/Jad/SpawnHealers".AddHealers()
+	
+	if get_tree().get_root().get_child(2).has_node("Healer4"):
+		$"/root/Spatial/Healer4/ViewportContainer/Viewport/HpBar".value = 60
+		$"/root/Spatial/Healer4".canMoveToPlayer = false
+		$"/root/Spatial/Healer4".canMoveToJad = true
+		$"/root/Spatial/Healer4".show()
+		$"/root/Spatial/Healer4".translation = Vector3(-23.068, -40, -118.506)
+	else:
+		$"/root/Spatial/Jad/SpawnHealers".AddHealers()
+	Globals.canMoveToPlayer = false
+	Globals.canMoveToJad = true

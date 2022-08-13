@@ -1,58 +1,66 @@
-extends Spatial
+extends Node
 
 const Cooldown = preload('res://Scripts/Cooldown.gd')
 
 onready var cooldown = Cooldown.new(1.2)
 
-onready var healerToggle = get_node("../HealerBar/CheckBox")
+onready var blueTex = load("res://Sprites/hitsplatBlue.png")
+onready var redTex = load("res://Sprites/hitsplatRed.png")
+
+onready var backSprite = $"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3"
+
+onready var hitSplat = $"../ViewportContainer/Viewport/HealerHitSplat"
+onready var hitSplatNum = $"../ViewportContainer/Viewport/HealerHitSplat/HitNum"
+onready var attTimer = $"../ViewportContainer/Viewport/HitTimer"
+onready var hpBar = $"../ViewportContainer/Viewport/HpBar"
+
+var hitNum
+var accuracyRange
+var accuracyNum = 3
+
+func _ready():
+	get_parent().transform.origin = Vector3(-112.47, -40, -96.504)
 
 func _process(delta):
 	cooldown.tick(delta)
+	
+	if Globals.selectBP:
+		cooldown.max_time = 1.2
+	if Globals.selectBF:
+		cooldown.max_time = 2.4
+	if Globals.selectRCB:
+		cooldown.max_time = 3
+	if Globals.selectACB:
+		cooldown.max_time = 3
+	if Globals.selectTB:
+		cooldown.max_time = 3
 
-func _on_AreaHM1_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
+func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
-			$"HealerFrontL".canMoveToJad = false
-			$"HealerFrontL".canMoveToPlayer = true
+			get_parent().canMoveToJad = false
+			get_parent().canMoveToPlayer = true
+			$"../ViewportContainer/Viewport/HpBarSprite".show()
+			$"../ViewportContainer/Viewport/HealerHitSplat".show()
+			Globals.attHealer1 = true
+			Globals.attHealer2 = false
+			Globals.attHealer3 = false
+			Globals.attHealer4 = false
 			Globals.attJad = false
-			$"Healer".play()
-			$"HealerFrontL/Timer".start()
-			$"HealerFrontL/HealerM1/HealerHit".show()
-			yield($"HealerFrontL/Timer", "timeout")
-			$"HealerFrontL/HealerM1/HealerHit".hide()
-
-func _on_AreaHM2_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
-			$"HealerBackL".canMoveToJad = false
-			$"HealerBackL".canMoveToPlayer = true
-			Globals.attJad = false
-			$"Healer".play()
-			$"HealerBackL/Timer".start()
-			$"HealerBackL/HealerHM2S/HealerHit2".show()
-			yield($"HealerBackL/Timer", "timeout")
-			$"HealerBackL/HealerHM2S/HealerHit2".hide()
-
-func _on_AreaHM3_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
-			$"HealerFrontR".canMoveToJad = false
-			$"HealerFrontR".canMoveToPlayer = true
-			Globals.attJad = false
-			$"Healer".play()
-			$"HealerFrontR/Timer".start()
-			$"HealerFrontR/HealerM3/HealerHit4".show()
-			yield($"HealerFrontR/Timer", "timeout")
-			$"HealerFrontR/HealerM3/HealerHit4".hide()
-
-func _on_AreaHM4_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
-	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
-			$"HealerBackR".canMoveToJad = false
-			$"HealerBackR".canMoveToPlayer = true
-			Globals.attJad = false
-			$"Healer".play()
-			$"HealerBackR/Timer".start()
-			$"HealerBackR/HealerM3/HealerHit3".show()
-			yield($"HealerBackR/Timer", "timeout")
-			$"HealerBackR/HealerM3/HealerHit3".hide()
+			$"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer".stop()
+			$"../Timer".start()
+			$"../ViewportContainer/Viewport/HitTimer".start()
+			
+			accuracyRange = rand_range(0,6)
+			
+			$"../Healer".play()
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
+			else:
+				hitNum = 0
+				hitSplat.texture = blueTex
+			hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
+			hpBar.value -= hitNum

@@ -30,4 +30,9 @@ func _on_StaticBody_input_event(_camera, event, click_position, _click_normal, _
 		if event.button_index == BUTTON_LEFT and event.pressed:
 			target = click_position
 			Globals.attJad = false
+			$"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer".stop()
+			Globals.attHealer1 = false
+			Globals.attHealer2 = false
+			Globals.attHealer3 = false
+			Globals.attHealer4 = false
 			$"../ViewportContainer2/Viewport2/AnimatedSprite3".frame = 0

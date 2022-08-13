@@ -3,78 +3,68 @@ extends KinematicBody
 onready var blueTex = load("res://Sprites/hitsplatBlue.png")
 onready var redTex = load("res://Sprites/hitsplatRed.png")
 
-onready var backSprite = $"../../ViewportContainer2/Viewport2/AnimatedSprite3"
+onready var backSprite = $"/root/Spatial/ViewportContainer2/Viewport2/AnimatedSprite3"
 
-var maxHit : int
-onready var hitLabel = $"../../MaxHit/Label2"
+onready var hitSplat = $"../ViewportContainer/Viewport/HitSplat2"
+onready var hitSplatNum = $"../ViewportContainer/Viewport/HitsplatNum2"
+onready var attTimer = $"../ViewportContainer/Viewport/ProgressBarSprite2/Timer"
+onready var hpBar = $"../ViewportContainer/Viewport/TextureProgress"
 
 var hitNum
-var attSpd = 5
 var accuracyRange
-var accuracyNum = 4
-var accuracyAddSub = 0
-
-onready var numContainer = $"../../ViewportContainer/Viewport/HitsplatNum2"
-
-func _ready():
-	maxHit = 32
-	Globals.attJad = true
+var accuracyNum = 4.5
 
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
-	if maxHit > int(hitLabel.text):
-		maxHit = int(hitLabel.text)
+	
 	if Globals.attJad == true:
 		backSprite.play()
-	else:
-		backSprite.stop()
+	
+	if hpBar.value <= 0:
+		get_parent().queue_free()
 
 func _on_KinematicBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
-		if event.button_index == BUTTON_LEFT and event.pressed == true:
-			if Globals.attJad == false:
-				$"../../ViewportContainer/Viewport/ProgressBarSprite2/Timer".start()
-				Globals.attJad = true
+		if event.button_index == BUTTON_LEFT and event.pressed == true and Globals.attJad == false:
+				attTimer.start()
 
 func _on_Timer_timeout():
+	Globals.attJad = true
 	if Globals.tick == 1:
 		if Globals.attJad == true:
-			yield($"../../Timer", "timeout")
+			yield($"/root/Spatial/Timer", "timeout")
 			$"../JadHit".play()
-			$"../../ViewportContainer/Viewport/HitsplatNum2".show()
-			$"../../ViewportContainer/Viewport/HitSplat2".show()
-			if accuracyRange >= accuracyNum + accuracyAddSub:
-				hitNum = rand_range(1, maxHit)
-				$"../../ViewportContainer/Viewport/HitSplat2".texture = redTex
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
 			else:
 				hitNum = 0
-				$"../../ViewportContainer/Viewport/HitSplat2".texture = blueTex
+				hitSplat.texture = blueTex
 			
-			numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
-			$"../../ViewportContainer/Viewport/TextureProgress".value -= hitNum
-			yield($"../../Timer2", "timeout")
+			hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
+			hpBar.value -= hitNum
+			yield($"/root/Spatial/Timer2", "timeout")
 		else:
-			$"../../ViewportContainer/Viewport/HitsplatNum2".hide()
-			$"../../ViewportContainer/Viewport/HitSplat2".hide()
+			hitSplatNum.hide()
+			hitSplat.hide()
 	if Globals.tick == 2:
 		if Globals.attJad == true:
-			yield($"../../Timer2", "timeout")
+			yield($"/root/Spatial/Timer2", "timeout")
 			$"../JadHit".play()
-			$"../../ViewportContainer/Viewport/HitsplatNum2".show()
-			$"../../ViewportContainer/Viewport/HitSplat2".show()
-			if accuracyRange >= accuracyNum + accuracyAddSub:
-				hitNum = rand_range(1, maxHit)
-				$"../../ViewportContainer/Viewport/HitSplat2".texture = redTex
+			hitSplatNum.show()
+			hitSplat.show()
+			if accuracyRange >= accuracyNum + Globals.accuracyAddSub:
+				hitNum = rand_range(1, Globals.maxHit)
+				hitSplat.texture = redTex
 			else:
 				hitNum = 0
-				$"../../ViewportContainer/Viewport/HitSplat2".texture = blueTex
+				hitSplat.texture = blueTex
 			
-			numContainer.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
-			$"../../ViewportContainer/Viewport/TextureProgress".value -= hitNum
-			yield($"../../Timer", "timeout")
+			hitSplatNum.bbcode_text = "[center]" + str(hitNum).pad_decimals(0) + "[/center]"
+			hpBar.value -= hitNum
+			yield($"/root/Spatial/Timer", "timeout")
 		else:
-			$"../../ViewportContainer/Viewport/HitsplatNum2".hide()
-			$"../../ViewportContainer/Viewport/HitSplat2".hide()
-
-func _on_Label2_text_changed(new_text):
-	maxHit = int(new_text)
+			hitSplatNum.hide()
+			hitSplat.hide()
