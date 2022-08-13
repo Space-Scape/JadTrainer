@@ -82,13 +82,13 @@ viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
 
 [sub_resource type="AtlasTexture" id=5]
 flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
 
 [sub_resource type="AtlasTexture" id=6]
 flags = 7
@@ -102,23 +102,23 @@ region = Rect2( 518, 0, 518, 814 )
 
 [sub_resource type="AtlasTexture" id=8]
 flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 0, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 443, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 7
 atlas = ExtResource( 84 )
 region = Rect2( 0, 0, 325, 677 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=9]
 flags = 7
 atlas = ExtResource( 84 )
 region = Rect2( 325, 0, 325, 677 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 7
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 7
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
 
 [sub_resource type="AtlasTexture" id=12]
 flags = 7
@@ -137,9 +137,9 @@ region = Rect2( 0, 0, 353, 628 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
-"frames": [ SubResource( 4 ), SubResource( 5 ) ],
+"frames": [ SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
-"name": "BP",
+"name": "BoFa",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
@@ -149,12 +149,12 @@ animations = [ {
 }, {
 "frames": [ SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
-"name": "BoFa",
+"name": "ACB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
-"name": "ACB",
+"name": "BP",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 12 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
