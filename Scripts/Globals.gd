@@ -42,7 +42,7 @@ var prayingRigour
 
 var playerDied
 
-var maxHit : int
+var maxHit : int = 32
 var canBoostMaxHit : bool = false
 var accuracyAddSub : float = 0
 

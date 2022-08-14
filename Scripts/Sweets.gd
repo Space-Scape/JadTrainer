@@ -10,15 +10,15 @@ func _on_Button_pressed():
 				$"../Timer".start()
 				get_parent().frame = 1
 				Globals.ate = true
-				yield($"../../../../Timer", "timeout")
-				$"../../../../ViewportContainer2/Viewport2/ProgressBar".value += 1
+				yield($"../../../../../Timer", "timeout")
+				$"../../../../../ViewportContainer2/Viewport2/ProgressBar".value += 1
 				$"../../../OrbContainer2/HpBar".value += 1
 			elif Globals.tick == 2:
 				$"../Timer".start()
 				get_parent().frame = 1
 				Globals.ate = true
-				yield($"../../../../Timer2", "timeout")
-				$"../../../../ViewportContainer2/Viewport2/ProgressBar".value += 1
+				yield($"../../../../../Timer2", "timeout")
+				$"../../../../../ViewportContainer2/Viewport2/ProgressBar".value += 1
 				$"../../../OrbContainer2/HpBar".value += 1
 
 func _process(delta):

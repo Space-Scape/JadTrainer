@@ -15,12 +15,12 @@ func Reset():
 	Globals.attHealer2 = false
 	Globals.attHealer3 = false
 	Globals.attHealer4 = false
-	$"../../ViewportContainer2/Viewport2/HealerHitSplat".hide()
-	$"../../Attack Speed/OptionButton2".select(Save.weaponSelect)
-	$"../../PrayNode/CanvasLayer2/Inv/OptionButton".select(Save.invFkey)
-	$"../../PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2".select(Save.prayerFkey)
-	$"../../PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl".text = Save.hpText
-	$"../../ViewportContainer2/Viewport2/AnimatedSprite3".play(Save.playerAnim)
+	$"../../../ViewportContainer2/Viewport2/HealerHitSplat".hide()
+	$"/root/Spatial/CanvasLayer/Attack Speed/OptionButton2".select(Save.weaponSelect)
+	$"/root/Spatial/CanvasLayer/PrayNode/CanvasLayer2/Inv/OptionButton".select(Save.invFkey)
+	$"/root/Spatial/CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2".select(Save.prayerFkey)
+	$"/root/Spatial/CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl".text = Save.hpText
+	$"../../../ViewportContainer2/Viewport2/AnimatedSprite3".play(Save.playerAnim)
 	Globals.maxHit = Save.maxHit
 
 func _on_CheckBox_button_down():

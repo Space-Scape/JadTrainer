@@ -10,7 +10,7 @@ onready var numContainer = $"/root/Spatial/ViewportContainer2/Viewport2/Hitsplat
 onready var hitSplat = $"/root/Spatial/ViewportContainer2/Viewport2/HitSplat"
 onready var hpBar = $"/root/Spatial/ViewportContainer2/Viewport2/ProgressBar"
 
-onready var hpOrb = $"/root/Spatial/PrayNode/OrbContainer2/HpBar"
+onready var hpOrb = $"/root/Spatial/CanvasLayer/PrayNode/OrbContainer2/HpBar"
 
 func _on_HitBoxes_area_exited(area):
 	num = rand_range(1, jadHit)

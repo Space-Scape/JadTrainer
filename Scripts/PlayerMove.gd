@@ -24,8 +24,8 @@ func _physics_process(_delta):
 			speed = 0
 	velocity = move_and_slide(velocity, Vector3.UP)
 	
-	$"../PrayNode/PrayerIcon".translation = translation
-	$"../PrayNode/PrayerIcon".translation.y = 10
+	$"../CanvasLayer/PrayNode/PrayerIcon".translation = translation
+	$"../CanvasLayer/PrayNode/PrayerIcon".translation.y = 10
 	$"../Spatial".translation = translation
 	$"../Spatial".translation.y = -35
 	$"../ViewportContainer2/Viewport2/PlayerHPbarSprite".translation = translation

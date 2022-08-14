@@ -1,7 +1,7 @@
 extends Sprite3D
 
 func _process(_x):
-	$"/root/Spatial/PrayNode/StreakCounter".text = str(Globals.killStreak)
+	$"/root/Spatial/CanvasLayer/PrayNode/StreakCounter".text = str(Globals.killStreak)
 	
 	if $"../TextureProgress".value <= 0:
 		Globals.killStreak += 1

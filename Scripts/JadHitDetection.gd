@@ -17,10 +17,20 @@ var accuracyNum = 4.5
 func _process(_delta):
 	accuracyRange = rand_range(0,6)
 	
+	if Globals.selectBF:
+		accuracyNum = 3.5
+	if Globals.selectTB:
+		accuracyNum = 2.5
+	
 	if Globals.attJad == true:
 		backSprite.play()
-	
+	else:
+		hitSplatNum.hide()
+		hitSplat.hide()
+
 	if hpBar.value <= 0:
+		attTimer.stop()
+		Globals.attJad = false
 		get_parent().queue_free()
 
 func _on_KinematicBody_input_event(_camera, event, _click_position, _click_normal, _shape_idx):

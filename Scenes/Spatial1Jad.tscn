@@ -1,4 +1,4 @@
-[gd_scene load_steps=128 format=2]
+[gd_scene load_steps=130 format=2]
 
 [ext_resource path="res://Sprites/PrayTab/prayRedemption.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Prayers.gd" type="Script" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=9]
 [ext_resource path="res://runescape_uf.ttf" type="DynamicFontData" id=10]
 [ext_resource path="res://Sprites/FireFloor.png" type="Texture" id=11]
+[ext_resource path="res://Scripts/InvOptionButton.gd" type="Script" id=12]
 [ext_resource path="res://Scripts/RedemButton.gd" type="Script" id=13]
 [ext_resource path="res://Scripts/ProgressBar.gd" type="Script" id=14]
 [ext_resource path="res://Sprites/cameraIconHi.png" type="Texture" id=15]
@@ -81,59 +82,59 @@ flags = 4
 viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=4]
-flags = 7
+flags = 1
 atlas = ExtResource( 84 )
 region = Rect2( 0, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=5]
-flags = 7
+flags = 1
 atlas = ExtResource( 84 )
 region = Rect2( 325, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=6]
-flags = 7
-atlas = ExtResource( 51 )
-region = Rect2( 353, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 7
-atlas = ExtResource( 51 )
-region = Rect2( 706, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 7
-atlas = ExtResource( 51 )
-region = Rect2( 0, 0, 353, 628 )
-
-[sub_resource type="AtlasTexture" id=9]
-flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=10]
-flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 0, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=12]
-flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 443, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=13]
-flags = 7
+flags = 1
 atlas = ExtResource( 86 )
 region = Rect2( 0, 0, 518, 814 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 7
+[sub_resource type="AtlasTexture" id=7]
+flags = 1
 atlas = ExtResource( 86 )
 region = Rect2( 518, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 1
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 1
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 1
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 1
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 1
+atlas = ExtResource( 51 )
+region = Rect2( 353, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 1
+atlas = ExtResource( 51 )
+region = Rect2( 706, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 1
+atlas = ExtResource( 51 )
+region = Rect2( 0, 0, 353, 628 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -142,25 +143,25 @@ animations = [ {
 "name": "ACB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
+"frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
-"name": "Tbow",
-"speed": 5.0
+"name": "RCB",
+"speed": 1.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"frames": [ SubResource( 8 ), SubResource( 9 ) ],
 "loop": true,
 "name": "BP",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 11 ) ],
 "loop": true,
 "name": "BoFa",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 12 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
 "loop": true,
-"name": "RCB",
-"speed": 1.0
+"name": "Tbow",
+"speed": 5.0
 } ]
 
 [sub_resource type="CapsuleShape" id=16]
@@ -187,101 +188,107 @@ region_rect = Rect2( 0, 0, 68, 68 )
 [sub_resource type="StyleBoxEmpty" id=23]
 
 [sub_resource type="InputEventAction" id=24]
-action = "Prayer"
+action = "Inventory"
 
 [sub_resource type="ShortCut" id=25]
 shortcut = SubResource( 24 )
 
-[sub_resource type="AtlasTexture" id=26]
-atlas = ExtResource( 45 )
-region = Rect2( 0, 0, 82, 80 )
+[sub_resource type="InputEventAction" id=26]
+action = "Prayer"
 
-[sub_resource type="AtlasTexture" id=27]
-atlas = ExtResource( 45 )
-region = Rect2( 82, 0, 82, 80 )
+[sub_resource type="ShortCut" id=27]
+shortcut = SubResource( 26 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 0, 82, 80 )
+region = Rect2( 0, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 0, 82, 80 )
+region = Rect2( 82, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 0, 80, 80 )
+region = Rect2( 164, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 80, 82, 80 )
+region = Rect2( 246, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 80, 82, 80 )
+region = Rect2( 320, 80, 80, 80 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 80, 82, 80 )
+region = Rect2( 0, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 80, 82, 80 )
+region = Rect2( 82, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 80, 80, 80 )
+region = Rect2( 164, 0, 82, 80 )
 
-[sub_resource type="SpriteFrames" id=36]
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 45 )
+region = Rect2( 246, 0, 82, 80 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 45 )
+region = Rect2( 320, 0, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=38]
 animations = [ {
-"frames": [ SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ) ],
-"loop": true,
-"name": "Brew",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ) ],
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
 "name": "Rest",
 "speed": 5.0
+}, {
+"frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
+"loop": true,
+"name": "Brew",
+"speed": 5.0
 } ]
 
-[sub_resource type="StyleBoxEmpty" id=37]
+[sub_resource type="StyleBoxEmpty" id=39]
 
-[sub_resource type="AtlasTexture" id=38]
+[sub_resource type="AtlasTexture" id=40]
 atlas = ExtResource( 57 )
 region = Rect2( 0, 0, 28, 24 )
 
-[sub_resource type="AtlasTexture" id=39]
+[sub_resource type="AtlasTexture" id=41]
 atlas = ExtResource( 57 )
 region = Rect2( 28, 0, 28, 24 )
 
-[sub_resource type="SpriteFrames" id=40]
+[sub_resource type="SpriteFrames" id=42]
 animations = [ {
-"frames": [ SubResource( 38 ), SubResource( 39 ) ],
+"frames": [ SubResource( 40 ), SubResource( 41 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 } ]
 
-[sub_resource type="DynamicFont" id=41]
+[sub_resource type="DynamicFont" id=43]
 size = 62
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=42]
+[sub_resource type="DynamicFont" id=44]
 size = 40
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=43]
+[sub_resource type="DynamicFont" id=45]
 size = 32
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="Animation" id=44]
+[sub_resource type="Animation" id=46]
 length = 4.0
 loop = true
 tracks/0/type = "value"
@@ -309,10 +316,10 @@ tracks/1/keys = {
 "values": [ 0.0, 2.29144, 0.0, -3.13036 ]
 }
 
-[sub_resource type="DynamicFont" id=45]
+[sub_resource type="DynamicFont" id=47]
 font_data = ExtResource( 10 )
 
-[sub_resource type="StyleBoxTexture" id=46]
+[sub_resource type="StyleBoxTexture" id=48]
 texture = ExtResource( 5 )
 region_rect = Rect2( 0, 0, 42, 42 )
 margin_left = 6.0
@@ -324,14 +331,14 @@ expand_margin_right = 2.0
 expand_margin_top = 2.0
 expand_margin_bottom = 3.0
 
-[sub_resource type="Theme" id=47]
+[sub_resource type="Theme" id=49]
 PopupMenu/colors/font_color = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/colors/font_color_accel = Color( 0.7, 0.7, 0.7, 0.8 )
 PopupMenu/colors/font_color_disabled = Color( 0.4, 0.4, 0.4, 0.8 )
 PopupMenu/colors/font_color_hover = Color( 0.88, 0.88, 0.88, 1 )
 PopupMenu/constants/hseparation = 4
 PopupMenu/constants/vseparation = 4
-PopupMenu/fonts/font = SubResource( 45 )
+PopupMenu/fonts/font = SubResource( 47 )
 PopupMenu/icons/checked = ExtResource( 3 )
 PopupMenu/icons/radio_checked = ExtResource( 3 )
 PopupMenu/icons/radio_unchecked = ExtResource( 24 )
@@ -340,11 +347,11 @@ PopupMenu/icons/unchecked = ExtResource( 24 )
 PopupMenu/styles/hover = null
 PopupMenu/styles/labeled_separator_left = null
 PopupMenu/styles/labeled_separator_right = null
-PopupMenu/styles/panel = SubResource( 46 )
+PopupMenu/styles/panel = SubResource( 48 )
 PopupMenu/styles/panel_disabled = null
 PopupMenu/styles/separator = null
 
-[sub_resource type="StyleBoxFlat" id=48]
+[sub_resource type="StyleBoxFlat" id=50]
 content_margin_left = 3.0
 content_margin_top = 3.0
 content_margin_bottom = 0.0
@@ -361,45 +368,16 @@ corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 anti_aliasing = false
 
-[sub_resource type="StyleBoxEmpty" id=49]
+[sub_resource type="StyleBoxEmpty" id=51]
 
-[sub_resource type="DynamicFont" id=50]
+[sub_resource type="DynamicFont" id=52]
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="GDScript" id=51]
-script/source = "extends OptionButton
+[sub_resource type="StyleBoxEmpty" id=53]
 
-var key = ShortCut.new()
-
-func _ready():
-	key.set_shortcut(InputMap.get_action_list(\"F1\")[0])
-	$\"../../../TopTab/InvButton\".set_shortcut(key)
-	select(Save.invFkey)
-
-func _on_OptionButton_item_selected(_index):
-	if selected == 0:
-		Save.invFkey = 0
-		key.set_shortcut(InputMap.get_action_list(\"F1\")[0])
-		$\"../../../TopTab/InvButton\".set_shortcut(key)
-	if selected == 1:
-		Save.invFkey = 1
-		key.set_shortcut(InputMap.get_action_list(\"F2\")[0])
-		$\"../../../TopTab/InvButton\".set_shortcut(key)
-	if selected == 2:
-		Save.invFkey = 2
-		key.set_shortcut(InputMap.get_action_list(\"F3\")[0])
-		$\"../../../TopTab/InvButton\".set_shortcut(key)
-	if selected == 3:
-		Save.invFkey = 3
-		key.set_shortcut(InputMap.get_action_list(\"F4\")[0])
-		$\"../../../TopTab/InvButton\".set_shortcut(key)
-"
-
-[sub_resource type="StyleBoxEmpty" id=52]
-
-[sub_resource type="StyleBoxFlat" id=53]
+[sub_resource type="StyleBoxFlat" id=54]
 bg_color = Color( 0.0862745, 0.0784314, 0.0901961, 1 )
 border_width_left = 2
 border_width_top = 2
@@ -412,20 +390,20 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 corner_detail = 3
 
-[sub_resource type="DynamicFont" id=54]
+[sub_resource type="DynamicFont" id=55]
 size = 32
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=55]
+[sub_resource type="DynamicFont" id=56]
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=56]
+[sub_resource type="DynamicFont" id=57]
 outline_size = 1
 extra_spacing_char = 1
 font_data = ExtResource( 10 )
 
-[sub_resource type="StyleBoxFlat" id=57]
+[sub_resource type="StyleBoxFlat" id=58]
 content_margin_top = 4.0
 bg_color = Color( 0.0196078, 0.0235294, 0.0784314, 1 )
 border_width_left = 2
@@ -441,20 +419,20 @@ corner_radius_bottom_left = 5
 corner_detail = 1
 anti_aliasing = false
 
-[sub_resource type="DynamicFont" id=58]
+[sub_resource type="DynamicFont" id=59]
 size = 32
 outline_size = 1
 outline_color = Color( 0, 0, 0, 1 )
 font_data = ExtResource( 10 )
 
-[sub_resource type="DynamicFont" id=59]
+[sub_resource type="DynamicFont" id=60]
 size = 20
 outline_size = 2
 outline_color = Color( 0, 0, 0, 1 )
 use_filter = true
 font_data = ExtResource( 10 )
 
-[sub_resource type="Environment" id=60]
+[sub_resource type="Environment" id=61]
 background_mode = 1
 background_color = Color( 0.243137, 0.109804, 0.109804, 1 )
 
@@ -466,10 +444,10 @@ __meta__ = {
 }
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
-margin_left = 479.0
-margin_top = 1288.0
-margin_right = 879.0
-margin_bottom = 1438.0
+margin_left = 3809.95
+margin_top = 1542.27
+margin_right = 4209.95
+margin_bottom = 1692.27
 rect_scale = Vector2( 1, -1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -480,7 +458,6 @@ pause_mode = 2
 size = Vector2( 400, 150 )
 transparent_bg = true
 handle_input_locally = false
-usage = 0
 render_target_update_mode = 3
 gui_disable_input = true
 
@@ -508,7 +485,6 @@ pause_mode = 2
 process_priority = 1
 visible = false
 position = Vector2( 346, 45 )
-rotation = 8.05154e-10
 scale = Vector2( 1.848, 1.243 )
 texture = ExtResource( 25 )
 flip_h = true
@@ -542,7 +518,6 @@ pause_mode = 2
 process_priority = 1
 visible = false
 position = Vector2( 56, 45 )
-rotation = 8.05154e-10
 scale = Vector2( 1.848, 1.243 )
 texture = ExtResource( 25 )
 script = ExtResource( 6 )
@@ -575,7 +550,6 @@ pause_mode = 2
 transform = Transform( -2.05082, 0.00191848, 0, -0.00254349, -2.71895, 0, 0, 0, 0.876284, -67.3447, 5.14198, -71.5289 )
 offset = Vector2( -4.548, -63.197 )
 billboard = 1
-alpha_cut = 2
 texture = SubResource( 3 )
 script = ExtResource( 14 )
 
@@ -583,10 +557,29 @@ script = ExtResource( 14 )
 transform = Transform( 1.05722, 0, -0.146371, 0, 1.08163, 0, 0.15486, 0, 0.999265, -67.2474, 2.97678, -71.807 )
 extra_cull_margin = 3523.44
 billboard = 2
-alpha_cut = 2
 frames = SubResource( 15 )
 animation = "RCB"
 script = ExtResource( 7 )
+
+[node name="Spatial" type="Spatial" parent="."]
+transform = Transform( -0.399999, 0, -6.03982e-08, 0, 0.4, 0, 6.03982e-08, 0, -0.399999, -67.3527, -35, -61.3201 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TrackballCamera" type="Camera" parent="Spatial"]
+transform = Transform( -2.50001, -1.88351e-07, 3.27142e-07, 0, 2.16657, 1.24739, -3.77489e-07, 1.2474, -2.16657, -9.35326, 78.6769, -96.2946 )
+cull_mask = 2148532223
+fov = 47.0409
+near = 0.01
+far = 1157.3
+script = ExtResource( 9 )
+__meta__ = {
+"_editor_description_": ""
+}
+zoom_strength = 5.618
+zoom_minimum = -803
+zoom_maximum = 33333.0
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
 transform = Transform( 1, 0, -7.10543e-15, 0, 1, 0, 7.10543e-15, 0, 1, -67.3527, -38.8667, -71.7375 )
@@ -606,26 +599,6 @@ collision_mask = 3
 [node name="CollisionShape" type="CollisionShape" parent="KinematicBody/Player"]
 transform = Transform( 1, -7.10459e-15, -6.99606e-15, 7.10459e-15, 0.0153931, 0.999882, -6.99606e-15, -0.999882, 0.0153931, 0.139404, -0.873016, -0.102947 )
 shape = SubResource( 17 )
-
-[node name="Spatial" type="Spatial" parent="."]
-transform = Transform( -0.399999, 0, -6.03982e-08, 0, 0.4, 0, 6.03982e-08, 0, -0.399999, -67.3527, -35, -71.7375 )
-__meta__ = {
-"_editor_description_": ""
-}
-
-[node name="TrackballCamera" type="Camera" parent="Spatial"]
-transform = Transform( -2.50001, -1.88351e-07, 3.27142e-07, 0, 2.16657, 1.24739, -3.77489e-07, 1.2474, -2.16657, -9.35326, 78.6769, -96.2946 )
-cull_mask = 2148532223
-fov = 47.0409
-near = 0.01
-far = 1157.3
-script = ExtResource( 9 )
-__meta__ = {
-"_editor_description_": ""
-}
-zoom_strength = 5.618
-zoom_minimum = -803
-zoom_maximum = 33333.0
 
 [node name="Floor" type="Spatial" parent="."]
 pause_mode = 2
@@ -855,12 +828,14 @@ collision_mask = 7
 transform = Transform( 0.999998, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999998, 32.6284, -36.9465, 41.8034 )
 shape = SubResource( 18 )
 
-[node name="PrayNode" type="Node2D" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="PrayNode" type="Node2D" parent="CanvasLayer"]
 position = Vector2( 188.344, 100.071 )
 scale = Vector2( 1.67228, 1.67228 )
 z_index = 3
 
-[node name="Column2" type="TextureRect" parent="PrayNode"]
+[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode"]
 pause_mode = 2
 margin_left = 1005.97
 margin_top = 294.0
@@ -873,7 +848,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Column3" type="TextureRect" parent="PrayNode"]
+[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode"]
 pause_mode = 2
 margin_left = 772.489
 margin_top = 294.0
@@ -885,7 +860,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayPanel" type="TextureRect" parent="PrayNode"]
+[node name="PrayPanel" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 799.241
 margin_top = 292.044
 margin_right = 1010.24
@@ -895,12 +870,12 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayerIcon" type="Sprite3D" parent="PrayNode"]
+[node name="PrayerIcon" type="Sprite3D" parent="CanvasLayer/PrayNode"]
 transform = Transform( 6.18165, 0, 0, 0, 6.18165, 0, 0, 0, 6.18165, -67.3127, 10.0504, -72.1634 )
 billboard = 1
 texture = ExtResource( 8 )
 
-[node name="MageButton" type="Button" parent="PrayNode"]
+[node name="MageButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 847.0
 margin_top = 426.464
 margin_right = 887.0
@@ -915,7 +890,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RangedButton" type="Button" parent="PrayNode"]
+[node name="RangedButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 889.0
 margin_top = 425.568
 margin_right = 925.0
@@ -930,7 +905,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="MeleeButton" type="Button" parent="PrayNode"]
+[node name="MeleeButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 927.251
 margin_top = 426.912
 margin_right = 963.251
@@ -945,7 +920,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RedemButton" type="Button" parent="PrayNode"]
+[node name="RedemButton" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 886.034
 margin_top = 461.671
 margin_right = 1032.03
@@ -963,7 +938,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="SharpEye" type="Button" parent="PrayNode"]
+[node name="SharpEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 925.84
 margin_top = 308.149
 margin_right = 963.84
@@ -981,7 +956,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HawkEye" type="Button" parent="PrayNode"]
+[node name="HawkEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 842.0
 margin_top = 382.0
 margin_right = 892.0
@@ -997,7 +972,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="EagleEye" type="Button" parent="PrayNode"]
+[node name="EagleEye" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 958.476
 margin_top = 420.467
 margin_right = 1001.48
@@ -1014,7 +989,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rigour" type="Button" parent="PrayNode"]
+[node name="Rigour" type="Button" parent="CanvasLayer/PrayNode"]
 margin_left = 881.799
 margin_top = 496.869
 margin_right = 930.799
@@ -1030,10 +1005,10 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Prayers" type="Node" parent="PrayNode"]
+[node name="Prayers" type="Node" parent="CanvasLayer/PrayNode"]
 script = ExtResource( 2 )
 
-[node name="TopTab" type="TextureRect" parent="PrayNode"]
+[node name="TopTab" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 776.0
 margin_top = 254.0
 margin_right = 1034.0
@@ -1044,7 +1019,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InvButton" type="Button" parent="PrayNode/TopTab"]
+[node name="InvButton" type="Button" parent="CanvasLayer/PrayNode/TopTab"]
 margin_left = 113.0
 margin_top = 1.0
 margin_right = 146.0
@@ -1052,13 +1027,14 @@ margin_bottom = 41.0
 custom_styles/focus = SubResource( 23 )
 shortcut_in_tooltip = false
 action_mode = 0
+shortcut = SubResource( 25 )
 flat = true
 script = ExtResource( 41 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PrayerButton" type="Button" parent="PrayNode/TopTab"]
+[node name="PrayerButton" type="Button" parent="CanvasLayer/PrayNode/TopTab"]
 margin_left = 183.0
 margin_top = 1.0
 margin_right = 217.0
@@ -1066,14 +1042,14 @@ margin_bottom = 41.0
 custom_styles/focus = SubResource( 23 )
 shortcut_in_tooltip = false
 action_mode = 0
-shortcut = SubResource( 25 )
+shortcut = SubResource( 27 )
 flat = true
 script = ExtResource( 44 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="InvBG" type="TextureRect" parent="PrayNode"]
+[node name="InvBG" type="TextureRect" parent="CanvasLayer/PrayNode"]
 visible = false
 margin_left = 810.075
 margin_top = 305.356
@@ -1084,19 +1060,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Brew1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew1" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 36.3613, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Brew"
 
-[node name="Button" type="Button" parent="PrayNode/InvBG/Brew1"]
+[node name="Button" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew1"]
 margin_left = -40.0
 margin_top = -34.0
 margin_right = 32.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1104,19 +1080,19 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Brew2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew2" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 78.8093, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Brew"
 
-[node name="Button2" type="Button" parent="PrayNode/InvBG/Brew2"]
+[node name="Button2" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew2"]
 margin_left = -37.0
 margin_top = -34.0
 margin_right = 30.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1125,19 +1101,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Brew3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew3" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 118.242, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Brew"
 
-[node name="Button3" type="Button" parent="PrayNode/InvBG/Brew3"]
+[node name="Button3" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew3"]
 margin_left = -37.0
 margin_top = -34.0
 margin_right = 30.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1146,19 +1122,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Brew4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Brew4" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 156.421, 21.7728 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Brew"
 
-[node name="Button4" type="Button" parent="PrayNode/InvBG/Brew4"]
+[node name="Button4" type="Button" parent="CanvasLayer/PrayNode/InvBG/Brew4"]
 margin_left = -36.0
 margin_top = -34.0
 margin_right = 29.0
 margin_bottom = 33.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 46 )
@@ -1167,19 +1143,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest1" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest1" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 36.3613, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Rest"
 
-[node name="Button5" type="Button" parent="PrayNode/InvBG/Rest1"]
+[node name="Button5" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest1"]
 margin_left = -36.0
 margin_top = -41.0
 margin_right = 29.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -1188,19 +1164,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest2" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest2" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 78.8093, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Rest"
 
-[node name="Button6" type="Button" parent="PrayNode/InvBG/Rest2"]
+[node name="Button6" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest2"]
 margin_left = -38.0
 margin_top = -41.0
 margin_right = 31.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -1209,19 +1185,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest3" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest3" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 118.242, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Rest"
 
-[node name="Button7" type="Button" parent="PrayNode/InvBG/Rest3"]
+[node name="Button7" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest3"]
 margin_left = -39.0
 margin_top = -41.0
 margin_right = 31.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -1230,19 +1206,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Rest4" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Rest4" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 156.421, 70.2781 )
 scale = Vector2( 0.493247, 0.490615 )
-frames = SubResource( 36 )
+frames = SubResource( 38 )
 animation = "Rest"
 
-[node name="Button8" type="Button" parent="PrayNode/InvBG/Rest4"]
+[node name="Button8" type="Button" parent="CanvasLayer/PrayNode/InvBG/Rest4"]
 margin_left = -35.0
 margin_top = -41.0
 margin_right = 27.0
 margin_bottom = 26.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 47 )
@@ -1251,19 +1227,19 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Sweets" type="AnimatedSprite" parent="PrayNode/InvBG"]
+[node name="Sweets" type="AnimatedSprite" parent="CanvasLayer/PrayNode/InvBG"]
 position = Vector2( 34.1071, 110.178 )
 scale = Vector2( 1.16059, 1.16059 )
-frames = SubResource( 40 )
+frames = SubResource( 42 )
 speed_scale = 2.0
 
-[node name="Button9" type="Button" parent="PrayNode/InvBG/Sweets"]
+[node name="Button9" type="Button" parent="CanvasLayer/PrayNode/InvBG/Sweets"]
 margin_left = -15.0
 margin_top = -14.0
 margin_right = 14.0
 margin_bottom = 13.0
 focus_mode = 1
-custom_styles/focus = SubResource( 37 )
+custom_styles/focus = SubResource( 39 )
 enabled_focus_mode = 1
 flat = true
 script = ExtResource( 58 )
@@ -1272,46 +1248,46 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Timer" type="Timer" parent="PrayNode/InvBG/Sweets"]
+[node name="Timer" type="Timer" parent="CanvasLayer/PrayNode/InvBG/Sweets"]
 wait_time = 0.2
 one_shot = true
 
-[node name="Potion" type="AudioStreamPlayer" parent="PrayNode/InvBG"]
+[node name="Potion" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode/InvBG"]
 stream = ExtResource( 63 )
 volume_db = 19.945
 
-[node name="StreakCounterTxt" type="RichTextLabel" parent="PrayNode"]
+[node name="StreakCounterTxt" type="RichTextLabel" parent="CanvasLayer/PrayNode"]
 margin_left = 124.719
 margin_top = -57.0
 margin_right = 398.719
 margin_bottom = 7.99999
 rect_scale = Vector2( 0.359271, 0.359271 )
-custom_fonts/normal_font = SubResource( 41 )
+custom_fonts/normal_font = SubResource( 43 )
 text = "Kill Streak:"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="StreakCounter" type="Label" parent="PrayNode"]
+[node name="StreakCounter" type="Label" parent="CanvasLayer/PrayNode"]
 margin_left = 217.163
 margin_top = -58.2175
 margin_right = 278.162
 margin_bottom = -18.2175
 rect_scale = Vector2( 0.717157, 0.690555 )
-custom_fonts/font = SubResource( 42 )
+custom_fonts/font = SubResource( 44 )
 custom_colors/font_color = Color( 0.972549, 1, 0.0666667, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="PrayNode"]
+[node name="Label" type="Label" parent="CanvasLayer/PrayNode"]
 margin_left = 785.0
 margin_top = -77.0956
 margin_right = 1085.0
 margin_bottom = 222.904
 rect_scale = Vector2( 0.622035, 0.622035 )
 rect_pivot_offset = Vector2( 161.906, 56.0449 )
-custom_fonts/font = SubResource( 43 )
+custom_fonts/font = SubResource( 45 )
 custom_colors/font_color = Color( 0.921569, 1, 0, 1 )
 text = "Join Lost Legion on OSRS!
 
@@ -1326,45 +1302,45 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="PrayNode/Label"]
-anims/TextAnim = SubResource( 44 )
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CanvasLayer/PrayNode/Label"]
+anims/TextAnim = SubResource( 46 )
 
-[node name="MagePray" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="MagePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 21 )
 volume_db = 16.932
 
-[node name="RangePray" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="RangePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 17 )
 volume_db = 19.185
 
-[node name="PrayOff" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="PrayOff" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 20 )
 volume_db = 17.165
 
-[node name="EagleEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="EagleEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 52 )
 volume_db = 10.097
 
-[node name="SharpEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="SharpEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 54 )
 volume_db = 10.097
 
-[node name="HawkEyeSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="HawkEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 56 )
 volume_db = 10.097
 
-[node name="RigourSfx" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="RigourSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 55 )
 volume_db = 10.097
 
-[node name="PrayDrain" type="AudioStreamPlayer" parent="PrayNode"]
+[node name="PrayDrain" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 53 )
 volume_db = 8.077
 
-[node name="CanvasLayer2" type="CanvasLayer" parent="PrayNode"]
+[node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = 2
 
-[node name="Inv" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+[node name="Inv" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer2"]
 anchor_left = -0.0553265
 anchor_top = -0.0281445
 anchor_right = -0.0553265
@@ -1377,11 +1353,10 @@ rect_scale = Vector2( 2.80049, 2.80049 )
 texture = ExtResource( 2418 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="OptionButton" type="OptionButton" parent="PrayNode/CanvasLayer2/Inv"]
-anchor_left = -7.62939e-08
+[node name="OptionButton" type="OptionButton" parent="CanvasLayer/PrayNode/CanvasLayer2/Inv"]
 anchor_top = 0.0135798
 anchor_bottom = 0.0506165
 margin_left = 30.2269
@@ -1389,23 +1364,23 @@ margin_top = 4.70929
 margin_right = 76.2269
 margin_bottom = 22.7093
 rect_scale = Vector2( 0.783212, 0.920047 )
-theme = SubResource( 47 )
+theme = SubResource( 49 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 48 )
-custom_styles/focus = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 52 )
 shortcut_in_tooltip = false
 text = "F1"
 align = 1
 items = [ "F1", null, false, 0, null, "F2", null, false, 1, null, "F3", null, false, 2, null, "F4", null, false, 3, null ]
 selected = 0
-script = SubResource( 51 )
+script = ExtResource( 12 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="PrayerIcon2" type="TextureRect" parent="PrayNode/CanvasLayer2"]
+[node name="PrayerIcon2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer2"]
 anchor_left = -0.0263893
 anchor_top = -0.0324354
 anchor_right = -0.0263893
@@ -1418,10 +1393,10 @@ rect_scale = Vector2( 3.01147, 3.01147 )
 texture = ExtResource( 2410 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="OptionButton2" type="OptionButton" parent="PrayNode/CanvasLayer2/PrayerIcon2"]
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2"]
 anchor_left = -0.104604
 anchor_top = 0.051628
 anchor_right = -0.104604
@@ -1431,12 +1406,12 @@ margin_top = 4.7093
 margin_right = 78.8243
 margin_bottom = 22.7093
 rect_scale = Vector2( 0.707901, 0.831579 )
-theme = SubResource( 47 )
+theme = SubResource( 49 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 48 )
-custom_styles/focus = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 52 )
 shortcut_in_tooltip = false
 text = "F2"
 align = 1
@@ -1444,14 +1419,14 @@ items = [ "F1", null, false, 0, null, "F2", null, false, 1, null, "F3", null, fa
 selected = 1
 script = ExtResource( 2420 )
 __meta__ = {
-"_edit_use_anchors_": true,
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PrayNode"]
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = -2
 
-[node name="LevelWindow" type="NinePatchRect" parent="PrayNode/CanvasLayer"]
+[node name="LevelWindow" type="NinePatchRect" parent="CanvasLayer/PrayNode/CanvasLayer"]
 show_behind_parent = true
 anchor_left = -0.058208
 anchor_top = -0.032685
@@ -1474,7 +1449,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="HpIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+[node name="HpIcon" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow"]
 margin_left = 4.86316
 margin_top = 41.6955
 margin_right = 32.8632
@@ -1482,10 +1457,10 @@ margin_bottom = 66.6955
 texture = ExtResource( 2409 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="HpLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+[node name="HpLvl" type="LineEdit" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon"]
 anchor_left = 1.17895
 anchor_top = 0.594216
 anchor_right = 2.53395
@@ -1495,17 +1470,17 @@ margin_top = -10.0657
 margin_right = 38.52
 margin_bottom = 8.75927
 rect_scale = Vector2( 0.516648, 0.516648 )
-custom_styles/focus = SubResource( 52 )
-custom_styles/normal = SubResource( 53 )
-custom_fonts/font = SubResource( 54 )
+custom_styles/focus = SubResource( 53 )
+custom_styles/normal = SubResource( 54 )
+custom_fonts/font = SubResource( 55 )
 custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
 align = 1
 max_length = 3
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="HpLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/HpIcon"]
+[node name="HpLvl2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon"]
 margin_left = -0.266357
 margin_top = 11.2868
 margin_right = 14.7336
@@ -1513,10 +1488,10 @@ margin_bottom = 25.2868
 texture = ExtResource( 2419 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="PrayerIcon" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow"]
+[node name="PrayerIcon" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow"]
 margin_left = 83.7797
 margin_top = 40.596
 margin_right = 110.78
@@ -1524,10 +1499,10 @@ margin_bottom = 65.596
 texture = ExtResource( 2410 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="PrayerLvl" type="LineEdit" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+[node name="PrayerLvl" type="LineEdit" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
 anchor_left = 1.033
 anchor_top = 0.634016
 anchor_right = 2.26
@@ -1537,19 +1512,19 @@ margin_top = -9.78132
 margin_right = 47.3167
 margin_bottom = 11.7937
 rect_scale = Vector2( 0.516648, 0.516648 )
-custom_styles/focus = SubResource( 52 )
-custom_styles/normal = SubResource( 53 )
-custom_fonts/font = SubResource( 54 )
+custom_styles/focus = SubResource( 53 )
+custom_styles/normal = SubResource( 54 )
+custom_fonts/font = SubResource( 55 )
 custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
 text = "99"
 align = 1
 max_length = 3
 __meta__ = {
-"_edit_use_anchors_": true,
+"_edit_use_anchors_": false,
 "_editor_description_": ""
 }
 
-[node name="PrayerLvl2" type="TextureRect" parent="PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
+[node name="PrayerLvl2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon"]
 margin_left = -0.399414
 margin_top = 11.9868
 margin_right = 14.6006
@@ -1557,10 +1532,10 @@ margin_bottom = 25.9868
 texture = ExtResource( 2419 )
 expand = true
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="OrbContainer2" type="TextureRect" parent="PrayNode"]
+[node name="OrbContainer2" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 724.0
 margin_top = 110.0
 margin_right = 806.0
@@ -1571,7 +1546,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HpBar" type="TextureProgress" parent="PrayNode/OrbContainer2"]
+[node name="HpBar" type="TextureProgress" parent="CanvasLayer/PrayNode/OrbContainer2"]
 modulate = Color( 0.85098, 0.129412, 0.129412, 1 )
 anchor_left = 0.489475
 anchor_top = 0.390669
@@ -1591,10 +1566,10 @@ fill_mode = 3
 nine_patch_stretch = true
 script = ExtResource( 2415 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer2"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PrayNode/OrbContainer2"]
 anchor_left = 0.325998
 anchor_top = 0.469706
 anchor_right = 0.341623
@@ -1604,16 +1579,16 @@ margin_top = -2.0
 margin_right = 4.0
 margin_bottom = 24.0
 rect_scale = Vector2( 1.41128, 1.41128 )
-custom_fonts/normal_font = SubResource( 55 )
+custom_fonts/normal_font = SubResource( 56 )
 bbcode_enabled = true
 visible_characters = 3
 fit_content_height = true
 scroll_active = false
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="OrbContainer" type="TextureRect" parent="PrayNode"]
+[node name="OrbContainer" type="TextureRect" parent="CanvasLayer/PrayNode"]
 margin_left = 701.582
 margin_top = 156.151
 margin_right = 783.582
@@ -1625,7 +1600,7 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="PrayerBar" type="TextureProgress" parent="PrayNode/OrbContainer"]
+[node name="PrayerBar" type="TextureProgress" parent="CanvasLayer/PrayNode/OrbContainer"]
 margin_left = 39.0
 margin_top = 5.0
 margin_right = 67.0
@@ -1644,7 +1619,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PrayNode/OrbContainer"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/PrayNode/OrbContainer"]
 anchor_left = 0.325998
 anchor_top = 0.469706
 anchor_right = 0.341623
@@ -1654,7 +1629,7 @@ margin_top = -2.0
 margin_right = 5.41101
 margin_bottom = 24.0
 rect_scale = Vector2( 1.41128, 1.41128 )
-custom_fonts/normal_font = SubResource( 55 )
+custom_fonts/normal_font = SubResource( 56 )
 bbcode_enabled = true
 fit_content_height = true
 scroll_active = false
@@ -1663,10 +1638,10 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Timer" type="Timer" parent="PrayNode/OrbContainer"]
+[node name="Timer" type="Timer" parent="CanvasLayer/PrayNode/OrbContainer"]
 wait_time = 1.2
 
-[node name="ColorRect" type="ColorRect" parent="PrayNode"]
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer/PrayNode"]
 margin_left = 730.32
 margin_top = 535.986
 margin_right = 770.32
@@ -1676,7 +1651,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HealerBar" type="NinePatchRect" parent="."]
+[node name="HealerBar" type="NinePatchRect" parent="CanvasLayer"]
 margin_top = 2.0
 margin_right = 149.0
 margin_bottom = 44.0
@@ -1687,19 +1662,17 @@ patch_margin_left = 21
 patch_margin_top = 21
 patch_margin_right = 21
 patch_margin_bottom = 21
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="HealerBar"]
+[node name="Label" type="Label" parent="CanvasLayer/HealerBar"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 108.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Spawn Healers:"
@@ -1707,7 +1680,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="TextureButton" parent="HealerBar"]
+[node name="CheckBox" type="TextureButton" parent="CanvasLayer/HealerBar"]
 margin_left = 123.0
 margin_top = 13.0
 margin_right = 140.0
@@ -1721,11 +1694,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Timer" type="Timer" parent="HealerBar"]
+[node name="Timer" type="Timer" parent="CanvasLayer/HealerBar"]
 process_mode = 0
 wait_time = 0.6
 
-[node name="Reset" type="NinePatchRect" parent="."]
+[node name="Reset" type="NinePatchRect" parent="CanvasLayer"]
 margin_left = 0.793701
 margin_top = 275.802
 margin_right = 85.7937
@@ -1737,19 +1710,17 @@ patch_margin_left = 21
 patch_margin_top = 21
 patch_margin_right = 21
 patch_margin_bottom = 21
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Reset"]
+[node name="Label" type="Label" parent="CanvasLayer/Reset"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 52.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Reset:"
@@ -1757,7 +1728,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CheckBox" type="CheckBox" parent="Reset"]
+[node name="CheckBox" type="CheckBox" parent="CanvasLayer/Reset"]
 margin_left = 54.8128
 margin_top = 10.7903
 margin_right = 79.8128
@@ -1772,7 +1743,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Delay" type="NinePatchRect" parent="."]
+[node name="Delay" type="NinePatchRect" parent="CanvasLayer"]
 visible = false
 margin_left = 0.793701
 margin_top = 275.672
@@ -1785,19 +1756,17 @@ patch_margin_left = 21
 patch_margin_top = 21
 patch_margin_right = 21
 patch_margin_bottom = 21
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Delay"]
+[node name="Label" type="Label" parent="CanvasLayer/Delay"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 52.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Delay:"
@@ -1805,7 +1774,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionButton3" type="OptionButton" parent="Delay"]
+[node name="OptionButton3" type="OptionButton" parent="CanvasLayer/Delay"]
 anchor_left = -3.79822
 anchor_top = 0.386996
 anchor_right = -3.72275
@@ -1815,12 +1784,12 @@ margin_top = -3.25385
 margin_right = 503.611
 margin_bottom = 14.7462
 rect_scale = Vector2( 0.783212, 0.920047 )
-theme = SubResource( 47 )
+theme = SubResource( 49 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 48 )
-custom_styles/focus = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 52 )
 shortcut_in_tooltip = false
 text = "40ms"
 clip_text = true
@@ -1831,7 +1800,7 @@ __meta__ = {
 "_edit_use_anchors_": true
 }
 
-[node name="MaxHit" type="NinePatchRect" parent="."]
+[node name="MaxHit" type="NinePatchRect" parent="CanvasLayer"]
 margin_left = 1.01176
 margin_top = 185.155
 margin_right = 125.012
@@ -1843,19 +1812,17 @@ patch_margin_left = 21
 patch_margin_top = 21
 patch_margin_right = 21
 patch_margin_bottom = 21
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="MaxHit"]
+[node name="Label" type="Label" parent="CanvasLayer/MaxHit"]
 margin_left = 9.0
 margin_top = 14.0
 margin_right = 62.0
 margin_bottom = 30.0
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Max Hit:"
@@ -1863,7 +1830,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label2" type="LineEdit" parent="MaxHit"]
+[node name="Label2" type="LineEdit" parent="CanvasLayer/MaxHit"]
 anchor_right = 0.024
 margin_left = 70.8099
 margin_top = 11.8994
@@ -1875,9 +1842,9 @@ focus_mode = 1
 size_flags_horizontal = 12
 size_flags_vertical = 12
 size_flags_stretch_ratio = 0.42
-custom_styles/normal = SubResource( 57 )
-custom_fonts/font = SubResource( 58 )
-text = "39"
+custom_styles/normal = SubResource( 58 )
+custom_fonts/font = SubResource( 59 )
+text = "32"
 align = 1
 max_length = 3
 expand_to_text_length = true
@@ -1888,7 +1855,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="MaxHit"]
+[node name="Panel" type="Panel" parent="CanvasLayer/MaxHit"]
 visible = false
 margin_left = 642.316
 margin_top = 131.394
@@ -1899,7 +1866,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="RichTextLabel" type="RichTextLabel" parent="MaxHit/Panel"]
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/MaxHit/Panel"]
 margin_left = -3.7041
 margin_top = 43.6303
 margin_right = 59.2959
@@ -1910,7 +1877,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextureRect" type="TextureRect" parent="MaxHit/Panel"]
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer/MaxHit/Panel"]
 margin_left = 14.5414
 margin_top = 1.80482
 margin_right = 43.5414
@@ -1921,7 +1888,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Attack Speed" type="NinePatchRect" parent="."]
+[node name="Attack Speed" type="NinePatchRect" parent="CanvasLayer"]
 margin_top = 91.0
 margin_right = 143.0
 margin_bottom = 133.0
@@ -1932,19 +1899,18 @@ patch_margin_left = 21
 patch_margin_top = 21
 patch_margin_right = 21
 patch_margin_bottom = 21
-axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Label" type="Label" parent="Attack Speed"]
+[node name="Label" type="Label" parent="CanvasLayer/Attack Speed"]
 margin_left = 9.36613
 margin_top = 13.8695
 margin_right = 86.3662
 margin_bottom = 29.8695
 rect_scale = Vector2( 1.11337, 1.11337 )
-custom_fonts/font = SubResource( 56 )
+custom_fonts/font = SubResource( 57 )
 custom_colors/font_color = Color( 0.968627, 1, 0, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 text = "Weapon:"
@@ -1952,7 +1918,7 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="OptionButton2" type="OptionButton" parent="Attack Speed"]
+[node name="OptionButton2" type="OptionButton" parent="CanvasLayer/Attack Speed"]
 anchor_left = -4.53447
 anchor_top = -2.60001
 anchor_right = -4.31768
@@ -1962,12 +1928,12 @@ margin_top = 123.201
 margin_right = 767.429
 margin_bottom = 141.201
 rect_scale = Vector2( 0.783212, 0.920047 )
-theme = SubResource( 47 )
+theme = SubResource( 49 )
 custom_styles/hover = ExtResource( 2417 )
-custom_styles/pressed = SubResource( 48 )
-custom_styles/focus = SubResource( 49 )
+custom_styles/pressed = SubResource( 50 )
+custom_styles/focus = SubResource( 51 )
 custom_styles/normal = ExtResource( 2417 )
-custom_fonts/font = SubResource( 50 )
+custom_fonts/font = SubResource( 52 )
 shortcut_in_tooltip = false
 text = "RCB (5)"
 clip_text = true
@@ -1976,10 +1942,10 @@ items = [ "BP (2)", null, false, 0, null, "BoFa (4)", null, false, 1, null, "RCB
 selected = 2
 script = ExtResource( 62 )
 __meta__ = {
-"_edit_use_anchors_": true
+"_edit_use_anchors_": false
 }
 
-[node name="CamButton" type="TextureButton" parent="."]
+[node name="CamButton" type="TextureButton" parent="CanvasLayer"]
 margin_left = 3.08455
 margin_top = 471.294
 margin_right = 48.0846
@@ -1997,13 +1963,13 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CamControls" type="Label" parent="."]
+[node name="CamControls" type="Label" parent="CanvasLayer"]
 margin_left = 116.787
 margin_top = 487.897
 margin_right = 313.786
 margin_bottom = 668.897
 rect_scale = Vector2( 1.55786, 1.55786 )
-custom_fonts/font = SubResource( 59 )
+custom_fonts/font = SubResource( 60 )
 custom_colors/font_color = Color( 1, 0.772549, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -2038,40 +2004,40 @@ transform = Transform( -0.094677, -0.257983, -0.961499, -0.628918, -0.733186, 0.
 light_energy = 0.65
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 60 )
+environment = SubResource( 61 )
 [connection signal="input_event" from="Floor/StaticBody" to="KinematicBody" method="_on_StaticBody_input_event"]
-[connection signal="toggled" from="PrayNode/MageButton" to="PrayNode/Prayers" method="_on_mage_toggled"]
-[connection signal="toggled" from="PrayNode/RangedButton" to="PrayNode/Prayers" method="_on_ranged_toggled"]
-[connection signal="toggled" from="PrayNode/MeleeButton" to="PrayNode/Prayers" method="_on_MeleeButton_toggled"]
-[connection signal="toggled" from="PrayNode/RedemButton" to="PrayNode/RedemButton" method="_on_RedemButton_toggled"]
-[connection signal="toggled" from="PrayNode/SharpEye" to="PrayNode/Prayers" method="_on_SharpEye_toggled"]
-[connection signal="toggled" from="PrayNode/HawkEye" to="PrayNode/Prayers" method="_on_HawkEye_toggled"]
-[connection signal="toggled" from="PrayNode/EagleEye" to="PrayNode/Prayers" method="_on_EagleEye_toggled"]
-[connection signal="toggled" from="PrayNode/Rigour" to="PrayNode/Prayers" method="_on_Rigour_pressed"]
-[connection signal="pressed" from="PrayNode/TopTab/InvButton" to="PrayNode/TopTab/InvButton" method="_on_InvButton_pressed"]
-[connection signal="pressed" from="PrayNode/TopTab/PrayerButton" to="PrayNode/TopTab/PrayerButton" method="_on_PrayerButton_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew1/Button" to="PrayNode/InvBG/Brew1/Button" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew2/Button2" to="PrayNode/InvBG/Brew2/Button2" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew3/Button3" to="PrayNode/InvBG/Brew3/Button3" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Brew4/Button4" to="PrayNode/InvBG/Brew4/Button4" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest1/Button5" to="PrayNode/InvBG/Rest1/Button5" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest2/Button6" to="PrayNode/InvBG/Rest2/Button6" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest3/Button7" to="PrayNode/InvBG/Rest3/Button7" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Rest4/Button8" to="PrayNode/InvBG/Rest4/Button8" method="_on_Button_pressed"]
-[connection signal="pressed" from="PrayNode/InvBG/Sweets/Button9" to="PrayNode/InvBG/Sweets/Button9" method="_on_Button_pressed"]
-[connection signal="timeout" from="PrayNode/InvBG/Sweets/Timer" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer_timeout"]
-[connection signal="item_selected" from="PrayNode/CanvasLayer2/Inv/OptionButton" to="PrayNode/CanvasLayer2/Inv/OptionButton" method="_on_OptionButton_item_selected"]
-[connection signal="item_selected" from="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" to="PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]
-[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
-[connection signal="text_changed" from="PrayNode/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="PrayNode/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
-[connection signal="timeout" from="PrayNode/OrbContainer/Timer" to="PrayNode/Prayers" method="_on_Timer_timeout"]
-[connection signal="button_down" from="HealerBar/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_button_down"]
-[connection signal="timeout" from="HealerBar/Timer" to="Reset/CheckBox" method="_on_Timer_timeout"]
-[connection signal="pressed" from="Reset/CheckBox" to="Reset/CheckBox" method="_on_CheckBox_pressed"]
-[connection signal="item_selected" from="Delay/OptionButton3" to="Delay/OptionButton3" method="_on_OptionButton2_item_selected"]
-[connection signal="text_changed" from="MaxHit/Label2" to="MaxHit/Label2" method="_on_Label2_text_changed"]
-[connection signal="item_selected" from="Attack Speed/OptionButton2" to="Attack Speed/OptionButton2" method="_on_OptionButton2_item_selected"]
-[connection signal="pressed" from="CamButton" to="CamButton" method="_on_CamButton_pressed"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/MageButton" to="CanvasLayer/PrayNode/Prayers" method="_on_mage_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/RangedButton" to="CanvasLayer/PrayNode/Prayers" method="_on_ranged_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/MeleeButton" to="CanvasLayer/PrayNode/Prayers" method="_on_MeleeButton_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/RedemButton" to="CanvasLayer/PrayNode/RedemButton" method="_on_RedemButton_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/SharpEye" to="CanvasLayer/PrayNode/Prayers" method="_on_SharpEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/HawkEye" to="CanvasLayer/PrayNode/Prayers" method="_on_HawkEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/EagleEye" to="CanvasLayer/PrayNode/Prayers" method="_on_EagleEye_toggled"]
+[connection signal="toggled" from="CanvasLayer/PrayNode/Rigour" to="CanvasLayer/PrayNode/Prayers" method="_on_Rigour_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/TopTab/InvButton" to="CanvasLayer/PrayNode/TopTab/InvButton" method="_on_InvButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/TopTab/PrayerButton" to="CanvasLayer/PrayNode/TopTab/PrayerButton" method="_on_PrayerButton_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew1/Button" to="CanvasLayer/PrayNode/InvBG/Brew1/Button" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew2/Button2" to="CanvasLayer/PrayNode/InvBG/Brew2/Button2" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew3/Button3" to="CanvasLayer/PrayNode/InvBG/Brew3/Button3" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Brew4/Button4" to="CanvasLayer/PrayNode/InvBG/Brew4/Button4" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest1/Button5" to="CanvasLayer/PrayNode/InvBG/Rest1/Button5" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest2/Button6" to="CanvasLayer/PrayNode/InvBG/Rest2/Button6" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest3/Button7" to="CanvasLayer/PrayNode/InvBG/Rest3/Button7" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Rest4/Button8" to="CanvasLayer/PrayNode/InvBG/Rest4/Button8" method="_on_Button_pressed"]
+[connection signal="pressed" from="CanvasLayer/PrayNode/InvBG/Sweets/Button9" to="CanvasLayer/PrayNode/InvBG/Sweets/Button9" method="_on_Button_pressed"]
+[connection signal="timeout" from="CanvasLayer/PrayNode/InvBG/Sweets/Timer" to="CanvasLayer/PrayNode/InvBG/Sweets/Button9" method="_on_Timer_timeout"]
+[connection signal="item_selected" from="CanvasLayer/PrayNode/CanvasLayer2/Inv/OptionButton" to="CanvasLayer/PrayNode/CanvasLayer2/Inv/OptionButton" method="_on_OptionButton_item_selected"]
+[connection signal="item_selected" from="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" to="CanvasLayer/PrayNode/CanvasLayer2/PrayerIcon2/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/HpIcon/HpLvl" to="CanvasLayer/PrayNode/OrbContainer2/HpBar" method="_on_HpLvl_text_changed"]
+[connection signal="text_changed" from="CanvasLayer/PrayNode/CanvasLayer/LevelWindow/PrayerIcon/PrayerLvl" to="CanvasLayer/PrayNode/OrbContainer/PrayerBar" method="_on_PrayerLvl_text_changed"]
+[connection signal="timeout" from="CanvasLayer/PrayNode/OrbContainer/Timer" to="CanvasLayer/PrayNode/Prayers" method="_on_Timer_timeout"]
+[connection signal="button_down" from="CanvasLayer/HealerBar/CheckBox" to="CanvasLayer/Reset/CheckBox" method="_on_CheckBox_button_down"]
+[connection signal="timeout" from="CanvasLayer/HealerBar/Timer" to="CanvasLayer/Reset/CheckBox" method="_on_Timer_timeout"]
+[connection signal="pressed" from="CanvasLayer/Reset/CheckBox" to="CanvasLayer/Reset/CheckBox" method="_on_CheckBox_pressed"]
+[connection signal="item_selected" from="CanvasLayer/Delay/OptionButton3" to="CanvasLayer/Delay/OptionButton3" method="_on_OptionButton2_item_selected"]
+[connection signal="text_changed" from="CanvasLayer/MaxHit/Label2" to="CanvasLayer/MaxHit/Label2" method="_on_Label2_text_changed"]
+[connection signal="item_selected" from="CanvasLayer/Attack Speed/OptionButton2" to="CanvasLayer/Attack Speed/OptionButton2" method="_on_OptionButton2_item_selected"]
+[connection signal="pressed" from="CanvasLayer/CamButton" to="CanvasLayer/CamButton" method="_on_CamButton_pressed"]
 [connection signal="timeout" from="Timer" to="Timer" method="_on_Timer_timeout"]
 [connection signal="timeout" from="Timer2" to="Timer" method="_on_Timer2_timeout"]
-[connection signal="timeout" from="Timer3" to="PrayNode/InvBG/Sweets/Button9" method="_on_Timer3_timeout"]
+[connection signal="timeout" from="Timer3" to="CanvasLayer/PrayNode/InvBG/Sweets/Button9" method="_on_Timer3_timeout"]

@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=1]
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( -0.399999, 0, -6.03982e-08, 0, 0.4, 0, 6.03982e-08, 0, -0.399999, -67.3527, -35, -61.3201 )
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TrackballCamera" type="Camera" parent="."]
+transform = Transform( -2.50001, -1.88351e-07, 3.27142e-07, 0, 2.16657, 1.24739, -3.77489e-07, 1.2474, -2.16657, -9.35326, 78.6769, -96.2946 )
+cull_mask = 2148532223
+fov = 47.0409
+near = 0.01
+far = 1157.3
+script = ExtResource( 1 )
+__meta__ = {
+"_editor_description_": ""
+}
+zoom_strength = 5.618
+zoom_minimum = -803
+zoom_maximum = 33333.0

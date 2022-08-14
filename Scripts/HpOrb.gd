@@ -16,7 +16,7 @@ func _on_HpLvl_text_changed(new_text):
 	Save.maxHitpoints = int(new_text)
 	Save.hitPoints = int(new_text)
 	Save.hpText = new_text
-	$"../../../ViewportContainer2/Viewport2/ProgressBar".max_value = int(new_text)
-	$"../../../ViewportContainer2/Viewport2/ProgressBar".value = int(new_text)
+	$"../../../../ViewportContainer2/Viewport2/ProgressBar".max_value = int(new_text)
+	$"../../../../ViewportContainer2/Viewport2/ProgressBar".value = int(new_text)
 	max_value = int(new_text)
 	value = max_value

@@ -5,9 +5,9 @@ onready var hitLabel = $"../../MaxHit/Label2"
 func _ready():
 		if Globals.setDefaults:
 			select(2)
-			$"../../ViewportContainer2/Viewport2/AnimatedSprite3".animation = "RCB"
+			$"../../../ViewportContainer2/Viewport2/AnimatedSprite3".animation = "RCB"
 		else:
-			$"../../ViewportContainer2/Viewport2/AnimatedSprite3".animation = Save.playerAnim
+			$"../../../ViewportContainer2/Viewport2/AnimatedSprite3".animation = Save.playerAnim
 			select(Save.weaponSelect)
 	
 func _on_OptionButton2_item_selected(_index):
