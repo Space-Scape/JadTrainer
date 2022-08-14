@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.s3tc.stex"
-path.etc2="res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.etc2.stex"
+path="res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/hitsplatBlue.png"
-dest_files=[ "res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.s3tc.stex", "res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.etc2.stex" ]
+dest_files=[ "res://.import/hitsplatBlue.png-b33dc42d4fffc0f68262028741a5757c.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

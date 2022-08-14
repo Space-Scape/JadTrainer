@@ -14,7 +14,7 @@ dest_files=[ "res://.import/grabber.png-e93e8fe288648dffb434efc7aad865d0.stex" ]
 
 [params]
 
-compress/mode=3
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

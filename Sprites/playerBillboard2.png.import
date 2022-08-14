@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.s3tc.stex"
-path.etc2="res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.etc2.stex"
+path="res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/playerBillboard2.png"
-dest_files=[ "res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.s3tc.stex", "res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.etc2.stex" ]
+dest_files=[ "res://.import/playerBillboard2.png-643632085ed83b83053499f3cdc4a44d.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

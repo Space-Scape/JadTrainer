@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.s3tc.stex"
-path.etc2="res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.etc2.stex"
+path="res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Acb.png"
-dest_files=[ "res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.s3tc.stex", "res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.etc2.stex" ]
+dest_files=[ "res://.import/Acb.png-ddc8e951814e906ea670c99326f5fdbc.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

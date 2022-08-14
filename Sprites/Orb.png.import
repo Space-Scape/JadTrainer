@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.s3tc.stex"
-path.etc2="res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.etc2.stex"
+path="res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Orb.png"
-dest_files=[ "res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.s3tc.stex", "res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.etc2.stex" ]
+dest_files=[ "res://.import/Orb.png-10b6d3bf1f92892387f1872b497f1058.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0

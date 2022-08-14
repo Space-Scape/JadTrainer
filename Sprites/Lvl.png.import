@@ -2,21 +2,19 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.s3tc.stex"
-path.etc2="res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.etc2.stex"
+path="res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc2" ],
-"vram_texture": true
+"vram_texture": false
 }
 
 [deps]
 
 source_file="res://Sprites/Lvl.png"
-dest_files=[ "res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.s3tc.stex", "res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.etc2.stex" ]
+dest_files=[ "res://.import/Lvl.png-64bf8038dd5f72dda6431e5564e7f46c.stex" ]
 
 [params]
 
-compress/mode=2
+compress/mode=0
 compress/lossy_quality=0.7
 compress/hdr_mode=0
 compress/bptc_ldr=0
