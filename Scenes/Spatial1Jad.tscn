@@ -82,85 +82,85 @@ viewport_path = NodePath("ViewportContainer2/Viewport2")
 
 [sub_resource type="AtlasTexture" id=4]
 flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 0, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=5]
-flags = 7
-atlas = ExtResource( 85 )
-region = Rect2( 443, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=6]
-flags = 7
-atlas = ExtResource( 86 )
-region = Rect2( 0, 0, 518, 814 )
-
-[sub_resource type="AtlasTexture" id=7]
-flags = 7
-atlas = ExtResource( 86 )
-region = Rect2( 518, 0, 518, 814 )
-
-[sub_resource type="AtlasTexture" id=8]
-flags = 7
 atlas = ExtResource( 84 )
 region = Rect2( 0, 0, 325, 677 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=5]
 flags = 7
 atlas = ExtResource( 84 )
 region = Rect2( 325, 0, 325, 677 )
 
-[sub_resource type="AtlasTexture" id=10]
-flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=11]
-flags = 7
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=6]
 flags = 7
 atlas = ExtResource( 51 )
 region = Rect2( 353, 0, 353, 628 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=7]
 flags = 7
 atlas = ExtResource( 51 )
 region = Rect2( 706, 0, 353, 628 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=8]
 flags = 7
 atlas = ExtResource( 51 )
 region = Rect2( 0, 0, 353, 628 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 7
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 7
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=11]
+flags = 7
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=12]
+flags = 7
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=13]
+flags = 7
+atlas = ExtResource( 86 )
+region = Rect2( 0, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=14]
+flags = 7
+atlas = ExtResource( 86 )
+region = Rect2( 518, 0, 518, 814 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
 "frames": [ SubResource( 4 ), SubResource( 4 ), SubResource( 4 ), SubResource( 5 ) ],
 "loop": true,
-"name": "BoFa",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 6 ), SubResource( 6 ), SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "RCB",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 9 ) ],
-"loop": true,
 "name": "ACB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
+"loop": true,
+"name": "Tbow",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "BP",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 12 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 12 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ), SubResource( 14 ) ],
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "Tbow",
-"speed": 5.0
+"name": "BoFa",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "RCB",
+"speed": 1.0
 } ]
 
 [sub_resource type="CapsuleShape" id=16]
@@ -585,7 +585,7 @@ extra_cull_margin = 3523.44
 billboard = 2
 alpha_cut = 2
 frames = SubResource( 15 )
-animation = "BoFa"
+animation = "RCB"
 script = ExtResource( 7 )
 
 [node name="KinematicBody" type="KinematicBody" parent="."]
@@ -1969,11 +1969,11 @@ custom_styles/focus = SubResource( 49 )
 custom_styles/normal = ExtResource( 2417 )
 custom_fonts/font = SubResource( 50 )
 shortcut_in_tooltip = false
-text = "BoFa (4)"
+text = "RCB (5)"
 clip_text = true
 align = 1
 items = [ "BP (2)", null, false, 0, null, "BoFa (4)", null, false, 1, null, "RCB (5)", null, false, 2, null, "ACB (5)", null, false, 3, null, "TBow (5)", null, false, 4, null ]
-selected = 1
+selected = 2
 script = ExtResource( 62 )
 __meta__ = {
 "_edit_use_anchors_": true

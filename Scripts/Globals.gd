@@ -4,6 +4,8 @@ var tick : int
 
 var setDefaults = true
 
+var clickGround
+
 var attWithMage
 var attWithRange
 var attWithMelee

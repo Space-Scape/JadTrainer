@@ -53,6 +53,7 @@ func _process(delta):
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
+			Globals.clickGround = false
 			get_parent().canMoveToJad = false
 			get_parent().canMoveToPlayer = true
 			$\"../ViewportContainer/Viewport/HpBarSprite\".show()
@@ -65,7 +66,7 @@ func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape
 			$\"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer\".stop()
 			$\"../Timer\".start()
 			$\"../ViewportContainer/Viewport/HitTimer\".start()
-			
+			$\"../JadHeal\".stop()
 			accuracyRange = rand_range(0,6)
 			
 			$\"../Healer\".play()
@@ -197,6 +198,10 @@ script = ExtResource( 2 )
 wait_time = 3.0
 autostart = true
 
+[node name="Heal" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [node name="HealerSprite" type="Sprite3D" parent="."]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
 cast_shadow = 0
@@ -300,5 +305,6 @@ script = ExtResource( 11 )
 stream = ExtResource( 7 )
 volume_db = 13.183
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Heal" to="." method="_on_Timer_timeout"]
 [connection signal="input_event" from="Area" to="HealerAggro" method="_on_Area_input_event"]
 [connection signal="timeout" from="ViewportContainer/Viewport/HitTimer" to="ViewportContainer/Viewport/HpBar" method="_on_HitTimer_timeout"]

@@ -47,6 +47,10 @@ script = ExtResource( 3 )
 wait_time = 3.0
 autostart = true
 
+[node name="Heal" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
 [node name="HealerSprite" type="Sprite3D" parent="."]
 transform = Transform( 11.6269, 0, 0, 0, 11.6269, 0, 0, 0, 11.6269, 0, 0.032351, 0 )
 cast_shadow = 0
@@ -152,5 +156,6 @@ script = ExtResource( 13 )
 stream = ExtResource( 4 )
 volume_db = 13.183
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
+[connection signal="timeout" from="Heal" to="." method="_on_Timer_timeout"]
 [connection signal="input_event" from="Area" to="HealerAggro" method="_on_Area_input_event"]
 [connection signal="timeout" from="ViewportContainer/Viewport/HitTimer" to="ViewportContainer/Viewport/HpBar" method="_on_HitTimer_timeout"]

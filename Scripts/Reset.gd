@@ -11,6 +11,10 @@ func Reset():
 	Globals.setDefaults = false
 	Globals.healerhitDmg = false
 	Globals.hitDmg = false
+	Globals.attHealer1 = false
+	Globals.attHealer2 = false
+	Globals.attHealer3 = false
+	Globals.attHealer4 = false
 	$"../../ViewportContainer2/Viewport2/HealerHitSplat".hide()
 	$"../../Attack Speed/OptionButton2".select(Save.weaponSelect)
 	$"../../PrayNode/CanvasLayer2/Inv/OptionButton".select(Save.invFkey)

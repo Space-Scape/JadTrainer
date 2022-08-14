@@ -18,9 +18,6 @@ var hitNum
 var accuracyRange
 var accuracyNum = 3
 
-func _ready():
-	get_parent().transform.origin = Vector3(-112.47, -40, -96.504)
-
 func _process(delta):
 	cooldown.tick(delta)
 	
@@ -38,6 +35,7 @@ func _process(delta):
 func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape_idx):
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed == true and cooldown.is_ready():
+			Globals.clickGround = false
 			get_parent().canMoveToJad = false
 			get_parent().canMoveToPlayer = true
 			$"../ViewportContainer/Viewport/HpBarSprite".show()
@@ -50,7 +48,7 @@ func _on_Area_input_event(_camera, event, _click_position, _click_normal, _shape
 			$"/root/Spatial/Jad/ViewportContainer/Viewport/ProgressBarSprite2/Timer".stop()
 			$"../Timer".start()
 			$"../ViewportContainer/Viewport/HitTimer".start()
-			
+			$"../JadHeal".stop()
 			accuracyRange = rand_range(0,6)
 			
 			$"../Healer".play()

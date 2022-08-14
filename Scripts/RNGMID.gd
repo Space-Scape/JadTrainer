@@ -21,33 +21,33 @@ func _process(_x):
 
 func set_attack():
 	number = rand_range(-5,5)
-	if number > 0 and !$"../HitBoxes".jadCanMelee:
+	if number > 0 and !$"../MeleeDistance".jadCanMelee:
 		attWithMage = true
 		attWithRanged = false
 		attWithMelee = false
 		$"../Mage".play()
 		$"../AnimationPlayer".play("Mage")
 		$"../FireBall".play("FireBall")
-	if number < 0 and !$"../HitBoxes".jadCanMelee:
+	if number < 0 and !$"../MeleeDistance".jadCanMelee:
 		attWithMage = false
 		attWithRanged = true
 		attWithMelee = false
 		$"../Range".play()
 		$"../AnimationPlayer2".play("Range")
 		$"../BoulderAnim".play("Boulder")
-	if $"../HitBoxes".jadCanMelee and number >= -2 and number <= 2:
+	if $"../MeleeDistance".jadCanMelee and number >= -2 and number <= 2:
 		attWithRanged = false
 		attWithMage = false
 		attWithMelee = true
 		$"../AnimationPlayer".play("Melee")
-	elif number >= 2 and $"../HitBoxes".jadCanMelee:
+	elif number >= 2 and $"../MeleeDistance".jadCanMelee:
 		attWithRanged = true
 		attWithMage = false
 		attWithMelee = false
 		$"../Range".play()
 		$"../AnimationPlayer2".play("Range")
 		$"../BoulderAnim".play("Boulder")
-	elif number <= -2 and $"../HitBoxes".jadCanMelee:
+	elif number <= -2 and $"../MeleeDistance".jadCanMelee:
 		attWithRanged = false
 		attWithMage = true
 		attWithMelee = false

@@ -27,6 +27,10 @@ func _on_KinematicBody_input_event(_camera, event, _click_position, _click_norma
 	if event is InputEventMouseButton:
 		if event.button_index == BUTTON_LEFT and event.pressed == true and Globals.attJad == false:
 				attTimer.start()
+				Globals.attHealer1 = false
+				Globals.attHealer2 = false
+				Globals.attHealer3 = false
+				Globals.attHealer4 = false
 
 func _on_Timer_timeout():
 	Globals.attJad = true

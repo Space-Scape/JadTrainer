@@ -25,12 +25,23 @@ func _ready():
 
 func _physics_process(_delta):
 	accuracyRange = rand_range(0,6)
+	
+	translation.y  = -40
+	
 	if Globals.prayingRigour:
 		accuracyNum = 5
 	else:
 		accuracyNum = 4
 
 	if get_tree().get_root().get_child(2).has_node("Jad"):
+		if global_transform.origin.distance_to(healerCollider.global_transform.origin) < 16 and canMoveToJad:
+			yield($"Heal", "timeout")
+			jadMHPBar.value += 0.1
+			$"JadHeal".play()
+		elif canMoveToPlayer:
+			$"Heal".stop()
+			$"JadHeal".stop()
+		
 		if Globals.spawnHealers == true:
 			if canMoveToJad:
 				if global_transform.origin.distance_to(healerCollider.global_transform.origin) < 16 and canMoveToJad:
@@ -41,11 +52,6 @@ func _physics_process(_delta):
 					velocity = translation.direction_to(healerCollider.global_transform.origin) * speed
 					velocity.y = 0
 				velocity = move_and_slide(velocity)
-			
-			if global_transform.origin.distance_to(healerCollider.global_transform.origin) < 16 and canMoveToJad:
-				yield($"Timer", "timeout")
-				jadMHPBar.value += 0.1
-				$"JadHeal".play()
 			
 			if canMoveToPlayer == true:
 				if global_transform.origin.distance_to($"/root/Spatial/KinematicBody/PlayerCollider".global_transform.origin) < 7 and canMoveToPlayer:
