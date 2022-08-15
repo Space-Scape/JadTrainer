@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://addons/goutte.camera.trackball/trackball_camera.gd" type="Script" id=1]
+[ext_resource path="res://addons/goutte_camera_trackball/trackball_camera.gd" type="Script" id=1]
+
 
 [node name="Spatial" type="Spatial"]
 transform = Transform( -0.399999, 0, -6.03982e-08, 0, 0.4, 0, 6.03982e-08, 0, -0.399999, -67.3527, -35, -61.3201 )
