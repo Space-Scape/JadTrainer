@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/Potion.wav-beeda9f59fd42765659ca1b8fb439dab.sample"
+
+[deps]
+
+source_file="res://SFX/Potion.wav"
+dest_files=[ "res://.import/Potion.wav-beeda9f59fd42765659ca1b8fb439dab.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

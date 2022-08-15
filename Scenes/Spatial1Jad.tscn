@@ -94,40 +94,40 @@ atlas = ExtResource( 84 )
 region = Rect2( 325, 0, 325, 677 )
 
 [sub_resource type="AtlasTexture" id=6]
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=7]
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 51 )
 region = Rect2( 353, 0, 353, 628 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 51 )
 region = Rect2( 706, 0, 353, 628 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=8]
 atlas = ExtResource( 51 )
 region = Rect2( 0, 0, 353, 628 )
 
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
+
 [sub_resource type="AtlasTexture" id=11]
-atlas = ExtResource( 85 )
-region = Rect2( 0, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=12]
-atlas = ExtResource( 85 )
-region = Rect2( 443, 0, 443, 815 )
-
-[sub_resource type="AtlasTexture" id=13]
 atlas = ExtResource( 86 )
 region = Rect2( 0, 0, 518, 814 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 86 )
 region = Rect2( 518, 0, 518, 814 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 85 )
+region = Rect2( 0, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 85 )
+region = Rect2( 443, 0, 443, 815 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -136,24 +136,24 @@ animations = [ {
 "name": "ACB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 6 ), SubResource( 7 ) ],
-"loop": true,
-"name": "BP",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 8 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ) ],
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 7 ), SubResource( 6 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ), SubResource( 8 ) ],
 "loop": true,
 "name": "Tbow",
 "speed": 5.0
 }, {
+"frames": [ SubResource( 9 ), SubResource( 10 ) ],
+"loop": true,
+"name": "BP",
+"speed": 1.0
+}, {
 "frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
-"name": "BoFa",
+"name": "RCB",
 "speed": 1.0
 }, {
 "frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
 "loop": true,
-"name": "RCB",
+"name": "BoFa",
 "speed": 1.0
 } ]
 
@@ -1294,35 +1294,27 @@ anims/TextAnim = SubResource( 46 )
 
 [node name="MagePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 21 )
-volume_db = 16.932
 
 [node name="RangePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 17 )
-volume_db = 19.185
 
 [node name="PrayOff" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 20 )
-volume_db = 17.165
 
 [node name="EagleEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 52 )
-volume_db = 10.097
 
 [node name="SharpEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 54 )
-volume_db = 10.097
 
 [node name="HawkEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 56 )
-volume_db = 10.097
 
 [node name="RigourSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 55 )
-volume_db = 10.097
 
 [node name="PrayDrain" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 53 )
-volume_db = 8.077
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = 2

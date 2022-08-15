@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/rangeOn.wav-fe880863a4713d2419cc3e5ef524d377.sample"
+
+[deps]
+
+source_file="res://SFX/rangeOn.wav"
+dest_files=[ "res://.import/rangeOn.wav-fe880863a4713d2419cc3e5ef524d377.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

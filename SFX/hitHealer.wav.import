@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/hitHealer.wav-01703411520ddadf9ebb979a62c8cc78.sample"
+
+[deps]
+
+source_file="res://SFX/hitHealer.wav"
+dest_files=[ "res://.import/hitHealer.wav-01703411520ddadf9ebb979a62c8cc78.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
