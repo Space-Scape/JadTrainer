@@ -232,9 +232,11 @@ shape = SubResource( 1 )
 
 [node name="JadHeal" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 13 )
+volume_db = -4.0
 
 [node name="Healer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 7 )
+volume_db = -4.0
 
 [node name="HealerAggro" type="Node" parent="."]
 script = SubResource( 2 )
@@ -301,7 +303,7 @@ script = ExtResource( 11 )
 
 [node name="Healer" type="AudioStreamPlayer" parent="ViewportContainer/Viewport"]
 stream = ExtResource( 7 )
-volume_db = 13.183
+volume_db = -4.0
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]
 [connection signal="timeout" from="Heal" to="." method="_on_Timer_timeout"]
 [connection signal="input_event" from="Area" to="HealerAggro" method="_on_Area_input_event"]

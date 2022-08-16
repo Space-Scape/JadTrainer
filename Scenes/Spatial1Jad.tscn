@@ -106,28 +106,28 @@ atlas = ExtResource( 51 )
 region = Rect2( 0, 0, 353, 628 )
 
 [sub_resource type="AtlasTexture" id=9]
-atlas = ExtResource( 49 )
-region = Rect2( 0, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=10]
-atlas = ExtResource( 49 )
-region = Rect2( 305, 0, 305, 677 )
-
-[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 86 )
 region = Rect2( 0, 0, 518, 814 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=10]
 atlas = ExtResource( 86 )
 region = Rect2( 518, 0, 518, 814 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=11]
 atlas = ExtResource( 85 )
 region = Rect2( 0, 0, 443, 815 )
 
-[sub_resource type="AtlasTexture" id=14]
+[sub_resource type="AtlasTexture" id=12]
 atlas = ExtResource( 85 )
 region = Rect2( 443, 0, 443, 815 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 49 )
+region = Rect2( 0, 0, 305, 677 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 49 )
+region = Rect2( 305, 0, 305, 677 )
 
 [sub_resource type="SpriteFrames" id=15]
 animations = [ {
@@ -141,19 +141,19 @@ animations = [ {
 "name": "Tbow",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 9 ), SubResource( 10 ) ],
-"loop": true,
-"name": "BP",
-"speed": 1.0
-}, {
-"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
+"frames": [ SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "RCB",
 "speed": 1.0
 }, {
-"frames": [ SubResource( 13 ), SubResource( 13 ), SubResource( 13 ), SubResource( 14 ) ],
+"frames": [ SubResource( 11 ), SubResource( 11 ), SubResource( 11 ), SubResource( 12 ) ],
 "loop": true,
 "name": "BoFa",
+"speed": 1.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "BP",
 "speed": 1.0
 } ]
 
@@ -194,54 +194,54 @@ shortcut = SubResource( 26 )
 
 [sub_resource type="AtlasTexture" id=28]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 0, 82, 80 )
+region = Rect2( 0, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=29]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 0, 82, 80 )
+region = Rect2( 82, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=30]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 0, 82, 80 )
+region = Rect2( 164, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=31]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 0, 82, 80 )
+region = Rect2( 246, 80, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=32]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 0, 80, 80 )
+region = Rect2( 320, 80, 80, 80 )
 
 [sub_resource type="AtlasTexture" id=33]
 atlas = ExtResource( 45 )
-region = Rect2( 0, 80, 82, 80 )
+region = Rect2( 0, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=34]
 atlas = ExtResource( 45 )
-region = Rect2( 82, 80, 82, 80 )
+region = Rect2( 82, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=35]
 atlas = ExtResource( 45 )
-region = Rect2( 164, 80, 82, 80 )
+region = Rect2( 164, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=36]
 atlas = ExtResource( 45 )
-region = Rect2( 246, 80, 82, 80 )
+region = Rect2( 246, 0, 82, 80 )
 
 [sub_resource type="AtlasTexture" id=37]
 atlas = ExtResource( 45 )
-region = Rect2( 320, 80, 80, 80 )
+region = Rect2( 320, 0, 80, 80 )
 
 [sub_resource type="SpriteFrames" id=38]
 animations = [ {
 "frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ) ],
 "loop": true,
-"name": "Brew",
+"name": "Rest",
 "speed": 5.0
 }, {
 "frames": [ SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ) ],
 "loop": true,
-"name": "Rest",
+"name": "Brew",
 "speed": 5.0
 } ]
 
@@ -425,9 +425,6 @@ background_color = Color( 0.243137, 0.109804, 0.109804, 1 )
 [node name="Spatial" type="Spatial"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 42.6696, 0 )
 script = ExtResource( 66 )
-__meta__ = {
-"_edit_horizontal_guides_": [ 559.293, 410.675 ]
-}
 
 [node name="ViewportContainer2" type="ViewportContainer" parent="."]
 margin_left = 3809.95
@@ -816,18 +813,22 @@ transform = Transform( 0.999998, 0, -4.26326e-14, 0, 1, 0, 4.26326e-14, 0, 0.999
 shape = SubResource( 18 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enable = true
 
 [node name="PrayNode" type="Node2D" parent="CanvasLayer"]
 position = Vector2( 188.344, 100.071 )
 scale = Vector2( 1.67228, 1.67228 )
 z_index = 3
 
-[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode"]
+[node name="CanvasLayer3" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
+layer = 6
+
+[node name="Column2" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer3"]
 pause_mode = 2
-margin_left = 1005.97
-margin_top = 294.0
-margin_right = 1035.97
-margin_bottom = 585.0
+margin_left = 1871.0
+margin_top = 592.0
+margin_right = 1920.0
+margin_bottom = 1080.0
 texture = ExtResource( 48 )
 expand = true
 __meta__ = {
@@ -835,12 +836,15 @@ __meta__ = {
 "_editor_description_": ""
 }
 
-[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode"]
+[node name="CanvasLayer4" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
+layer = 6
+
+[node name="Column3" type="TextureRect" parent="CanvasLayer/PrayNode/CanvasLayer4"]
 pause_mode = 2
-margin_left = 772.489
-margin_top = 294.0
-margin_right = 802.489
-margin_bottom = 585.0
+margin_left = 1480.0
+margin_top = 592.0
+margin_right = 1532.0
+margin_bottom = 1080.0
 texture = ExtResource( 48 )
 expand = true
 __meta__ = {
@@ -848,6 +852,10 @@ __meta__ = {
 }
 
 [node name="PrayPanel" type="TextureRect" parent="CanvasLayer/PrayNode"]
+anchor_left = 799.0
+anchor_top = 292.0
+anchor_right = 1010.0
+anchor_bottom = 580.0
 margin_left = 799.241
 margin_top = 292.044
 margin_right = 1010.24
@@ -1241,7 +1249,7 @@ one_shot = true
 
 [node name="Potion" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode/InvBG"]
 stream = ExtResource( 63 )
-volume_db = 19.945
+volume_db = -4.0
 
 [node name="StreakCounterTxt" type="RichTextLabel" parent="CanvasLayer/PrayNode"]
 margin_left = 124.719
@@ -1294,27 +1302,35 @@ anims/TextAnim = SubResource( 46 )
 
 [node name="MagePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 21 )
+volume_db = -4.0
 
 [node name="RangePray" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 17 )
+volume_db = -4.0
 
 [node name="PrayOff" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 20 )
+volume_db = -4.0
 
 [node name="EagleEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 52 )
+volume_db = -10.0
 
 [node name="SharpEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 54 )
+volume_db = -10.0
 
 [node name="HawkEyeSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 56 )
+volume_db = -10.0
 
 [node name="RigourSfx" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 55 )
+volume_db = -10.0
 
 [node name="PrayDrain" type="AudioStreamPlayer" parent="CanvasLayer/PrayNode"]
 stream = ExtResource( 53 )
+volume_db = -8.0
 
 [node name="CanvasLayer2" type="CanvasLayer" parent="CanvasLayer/PrayNode"]
 layer = 2
